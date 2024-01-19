@@ -64,6 +64,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@melt-ui/svelte": "^0.70.0",
 		"bits-ui": "^0.14.0",
 		"mode-watcher": "^0.1.2",
 		"svelte-wrap-balancer": "^0.0.4"

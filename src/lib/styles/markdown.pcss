@@ -46,13 +46,13 @@
 	}
 
 	& code {
-		@apply grid min-w-full p-0 break-words rounded-none border-0 bg-transparent;
+		@apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
 		counter-reset: line;
 		box-decoration-break: clone;
 	}
 
 	& [data-line] {
-		@apply px-4 min-h-[1.5rem] py-0.5 w-full inline-block border-l-2 border-l-transparent;
+		@apply inline-block min-h-[1.5rem] w-full border-l-2 border-l-transparent py-0.5;
 	}
 
 	& [data-chars-id] {
@@ -60,7 +60,7 @@
 	}
 
 	& [data-highlighted-line] {
-		@apply border-l-primary bg-muted w-full;
+		@apply w-full border-l-primary bg-muted;
 	}
 
 	& [data-line-numbers] [data-line] {
