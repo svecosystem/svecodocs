@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { SvecosystemDark, SvecosystemLight } from "$lib/components/logos/index.js";
-	import { MoonStars } from "phosphor-svelte";
-	import { navigation } from "$lib/config";
+	import { GitHubLogo } from "$lib/components/logos/index.js";
 	import ThemeDropdown from "./header/theme-dropdown.svelte";
+	import HeaderLogo from "./header/header-logo.svelte";
+	import HeaderNav from "./header/header-nav.svelte";
 </script>
 
 <header
@@ -11,25 +11,14 @@
 	<div class="max-w-8xl mx-auto">
 		<div class="mx-4 border-b border-border py-4 lg:mx-0 lg:border-0 lg:px-8">
 			<div class="relative flex items-center">
-				<a href="/" class="mr-3 w-[2rem] flex-none overflow-hidden md:w-auto">
-					<SvecosystemLight class="block h-5 w-auto dark:hidden" />
-					<SvecosystemDark class="hidden h-5 w-auto dark:block" />
-					<span class="sr-only"> Current Page Here </span>
-				</a>
+				<HeaderLogo />
 				<div class="relative ml-auto hidden items-center lg:flex">
-					<nav class="text-sm font-semibold leading-6 text-muted-foreground">
-						<ul class="flex space-x-8">
-							<li>
-								{#each navigation.main as { href, title }}
-									<a {href}>{title}</a>
-								{/each}
-							</li>
-						</ul>
-					</nav>
+					<HeaderNav />
 					<div class="ml-6 flex items-center border-l border-border pl-6">
-						<ThemeDropdown>
-							<MoonStars class="size-4" />
-						</ThemeDropdown>
+						<ThemeDropdown />
+						<a href="https://github.com/svecosystem" target="_blank" class="ml-6 block">
+							<GitHubLogo class="size-5" />
+						</a>
 					</div>
 				</div>
 			</div>

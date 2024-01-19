@@ -2,8 +2,8 @@
   "title": "Introduction",
   "description": "What is this?",
   "body": {
-    "raw": "",
-    "html": ""
+    "raw": "\nHello world, this is my content\n",
+    "html": "<p>Hello world, this is my content</p>"
   },
   "_id": "introduction.md",
   "_raw": {

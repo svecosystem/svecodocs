@@ -5,8 +5,8 @@
         "title": "Introduction",
         "description": "What is this?",
         "body": {
-          "raw": "",
-          "html": ""
+          "raw": "\nHello world, this is my content\n",
+          "html": "<p>Hello world, this is my content</p>"
         },
         "_id": "introduction.md",
         "_raw": {
@@ -22,7 +22,7 @@
         "fileName": "introduction",
         "suffix": ".md"
       },
-      "documentHash": "1705620302984",
+      "documentHash": "1705627585820",
       "hasWarnings": false,
       "documentTypeName": "Doc"
     }
