@@ -5,21 +5,17 @@
 	import HeaderNav from "./header-nav.svelte";
 </script>
 
-<div class="sticky top-0 z-40 w-full flex-none backdrop-blur lg:z-50 lg:border-b lg:border-border">
-	<div class="max-w-8xl mx-auto">
-		<div class="mx-4 border-b border-border py-4 lg:mx-0 lg:border-0 lg:px-8">
-			<div class="relative flex items-center">
-				<HeaderLogo />
-				<div class="relative ml-auto hidden items-center lg:flex">
-					<HeaderNav />
-					<div class="ml-6 flex items-center border-l border-border pl-6">
-						<ThemeDropdown />
-						<a href="https://github.com/svecosystem" target="_blank" class="ml-6 block">
-							<GitHubLogo class="size-5" />
-						</a>
-					</div>
-				</div>
-			</div>
+<header class="sticky top-0 z-50 -mb-px border-b border-border bg-background/75 backdrop-blur">
+	<div class="mx-auto flex h-16 max-w-8xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+		<HeaderLogo />
+		<div class="hidden items-center gap-x-8 lg:flex">
+			<HeaderNav />
+		</div>
+		<div class="flex items-center justify-end gap-1.5 lg:flex-1">
+			<ThemeDropdown />
+			<a href="https://github.com/svecosystem" target="_blank" class="ml-6 block">
+				<GitHubLogo class="size-5" />
+			</a>
 		</div>
 	</div>
-</div>
+</header>

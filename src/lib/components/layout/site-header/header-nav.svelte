@@ -2,12 +2,10 @@
 	import { navigation } from "$lib/config";
 </script>
 
-<nav class="text-sm font-semibold leading-6 text-muted-foreground">
-	<ul class="flex space-x-8">
-		<li>
-			{#each navigation.main as { href, title }}
-				<a {href}>{title}</a>
-			{/each}
-		</li>
-	</ul>
-</nav>
+<ul role="navigation" class="hidden items-center gap-x-8 lg:flex">
+	<li class="relative">
+		{#each navigation.main as { href, title }}
+			<a {href} class="hover:text-brand text-sm text-muted-foreground">{title}</a>
+		{/each}
+	</li>
+</ul>
