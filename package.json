@@ -62,5 +62,9 @@
 		"vite": "^5.0.3",
 		"vitest": "^1.2.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"bits-ui": "^0.14.0",
+		"mode-watcher": "^0.1.2"
+	}
 }
