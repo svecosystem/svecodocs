@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { navigation } from "$lib/config";
+
+	$: currentPath = $page.url.pathname.split("/")[$page.url.pathname.split("/").length - 1];
 </script>
 
 <div class="overflow-hidden">
@@ -21,8 +24,11 @@
 										<li>
 											<a
 												href={item.href}
-												class="-ml-px block border-l border-current pl-4 font-semibold"
-												>{item.title}</a
+												class="-ml-px block border-l border-border pl-4 font-semibold {currentPath.includes(
+													item.title.toLowerCase()
+												)
+													? 'border-primary text-primary'
+													: 'border-border text-muted-foreground'}">{item.title}</a
 											>
 										</li>
 									{/each}
