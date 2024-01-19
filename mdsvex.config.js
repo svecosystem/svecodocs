@@ -117,22 +117,11 @@ function rehypeHandleMetadata() {
 
 function rehypeRenderCode() {
 	return async (tree) => {
-		let counter = 0;
 		visit(tree, (node) => {
 			if (
 				node?.type === "element" &&
 				(node?.tagName === "Components.pre" || node?.tagName === "pre")
 			) {
-				counter++;
-
-				const isNonPP = counter % 2 === 0;
-				if (isNonPP) {
-					node.properties = {
-						...node.properties,
-						"data-non-pp": ""
-					};
-				}
-
 				/** @type HTMLElement */
 				const codeEl = node.children[0];
 				if (codeEl.tagName !== "code") {

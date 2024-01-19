@@ -1,25 +1,20 @@
 <script lang="ts">
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import { mode, setMode } from "mode-watcher";
-	let className: string | undefined | null = undefined;
-	export { className as class };
+	import { setMode } from "mode-watcher";
+	import { MoonStars } from "phosphor-svelte";
+
+	const modes = ["light", "dark", "system"] as const;
 </script>
 
 <DropdownMenu.Root>
-	<DropdownMenu.Trigger class={className}>
-		<slot />
+	<DropdownMenu.Trigger>
+		<MoonStars class="size-5" />
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="z-[100]">
-		<DropdownMenu.RadioGroup value={$mode === undefined ? "system" : $mode}>
-			<DropdownMenu.RadioItem value="light" on:click={() => setMode("light")}
-				>Light</DropdownMenu.RadioItem
+		{#each modes as themeMode}
+			<DropdownMenu.Item on:click={() => setMode(themeMode)} class="capitalize"
+				>{themeMode}</DropdownMenu.Item
 			>
-			<DropdownMenu.RadioItem value="dark" on:click={() => setMode("dark")}
-				>Dark</DropdownMenu.RadioItem
-			>
-			<DropdownMenu.RadioItem value="system" on:click={() => setMode("system")}
-				>System</DropdownMenu.RadioItem
-			>
-		</DropdownMenu.RadioGroup>
+		{/each}
 	</DropdownMenu.Content>
 </DropdownMenu.Root>

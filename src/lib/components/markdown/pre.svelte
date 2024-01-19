@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CopyCodeButton } from "$lib/components/index.js";
+	import CopyCodeButton from "$lib/components/copy-code-button.svelte";
 	import { cn, createCopyCodeButton } from "$lib/utils/index.js";
 
 	let className: string | undefined | null = undefined;
@@ -9,9 +9,9 @@
 </script>
 
 <pre
-	class={cn("mb-4 mt-6 overflow-x-auto rounded-lg border py-4 bg-primary/5", className)}
+	class={cn("mb-4 mt-6 overflow-x-auto rounded-lg border bg-primary/5 py-4", className)}
 	use:setCodeString
 	{...$$restProps}>
 	<slot />
 </pre>
-<CopyCodeButton {copyCode} copied={$copied} class={cn("absolute right-4 top-4 pre-copy-btn")} />
+<CopyCodeButton {copyCode} copied={$copied} class={cn("pre-copy-btn absolute right-4 top-4")} />
