@@ -23,6 +23,6 @@
 	<PageHeader.Heading>{doc.title}</PageHeader.Heading>
 	<PageHeader.Description>{doc.description}</PageHeader.Description>
 </PageHeader.Root>
-<div class="markdown relative pt-8">
+<div class="markdown prose dark:prose-invert relative pt-8">
 	<svelte:component this={component} />
 </div>
