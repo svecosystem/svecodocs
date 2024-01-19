@@ -1,28 +1,45 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { SidebarNav } from "$lib/components/layout/sidebar";
 	import { TableOfContents } from "$lib/components/layout/toc";
+	import { cn } from "$lib/utils";
 </script>
 
 <div class="overflow-hidden">
-	<div class="mx-auto max-w-8xl px-4 sm:px-6 md:px-8">
+	<div
+		class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10"
+	>
 		<div
-			class="fixed inset-0 left-[max(0px,calc(50%-45rem))] right-auto top-[3.8125rem] z-20 hidden w-[19rem] overflow-y-auto pb-10 pl-8 pr-6 lg:block"
+			class="fixed z-30 hidden h-[calc(100vh-4rem)] w-full shrink-0 overflow-y-auto md:sticky md:block"
 		>
-			<nav class="relative lg:text-sm lg:leading-6">
-				<div class="pointer-events-none sticky top-0 -ml-0.5">
-					<!-- Search -->
-				</div>
-				<SidebarNav />
-			</nav>
+			<div class="h-full pr-4 lg:py-2">
+				<nav class="relative lg:text-sm lg:leading-6">
+					<div class="pointer-events-none sticky top-0 -ml-0.5">
+						<!-- Search -->
+					</div>
+					<SidebarNav />
+				</nav>
+			</div>
 		</div>
-		<div class="lg:pl-[19.5rem]">
-			<main class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
+		<main
+			class={cn(
+				"relative pb-6 pl-4 pr-4 pt-16 md:pl-0 lg:gap-10 xl:grid-cols-[1fr_220px]",
+				$page.error ?? "xl:grid"
+			)}
+		>
+			<div class="mx-auto w-full min-w-0 max-w-3xl" id="content">
 				<slot />
-			</main>
-			<footer class="mt-16 text-sm leading-6">
-				<!-- footer -->
-			</footer>
-			<TableOfContents />
-		</div>
+			</div>
+			{#if !$page.error}
+				<div class="hidden text-sm xl:block">
+					<div class="sticky top-4 -mt-10 h-[calc(100vh-4rem)] overflow-hidden pt-6">
+						<TableOfContents />
+					</div>
+				</div>
+			{/if}
+		</main>
+		<footer class="mt-16 text-sm leading-6">
+			<!-- footer -->
+		</footer>
 	</div>
 </div>
