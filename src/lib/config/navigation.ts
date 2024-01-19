@@ -34,6 +34,11 @@ export const navigation: Navigation = {
 					title: "Introduction",
 					href: "/docs/introduction",
 					items: []
+				},
+				{
+					title: "Getting Started",
+					href: "/docs/getting-started",
+					items: []
 				}
 			]
 		},
