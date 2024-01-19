@@ -38,7 +38,7 @@
 		{#each tree as heading, i (i)}
 			{@const node = heading.node.innerHTML}
 			{@const nodeWithoutSpan = node.replace(/<span.*<\/span>/g, "")}
-			<li class="-mt-1 {level === 1 && 'border-l'}">
+			<li class="mt-0 {level === 1 && 'border-l'}">
 				<div
 					class={cn(
 						"-mx-[1px] inline-flex items-center justify-center gap-1 border-l border-l-transparent pb-2 pl-4 text-sm text-muted-foreground no-underline transition-colors data-[hover]:border-l-foreground",
