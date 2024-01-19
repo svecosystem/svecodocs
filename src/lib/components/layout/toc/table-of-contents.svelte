@@ -16,7 +16,7 @@
 	});
 </script>
 
-<div class="overflow-y-auto rounded-lg p-4">
+<div class="overflow-y-auto rounded-lg px-4 pt-8">
 	<h5 class="mb-4 text-sm font-semibold leading-6">On this page</h5>
 	<nav>
 		{#key $headingsTree}
