@@ -56,6 +56,9 @@ const config = {
 			},
 			fontFamily: {
 				sans: ["Inter", ...fontFamily.sans]
+			},
+			maxWidth: {
+				"8xl": "90rem"
 			}
 		}
 	}
