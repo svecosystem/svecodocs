@@ -1,12 +1,18 @@
 export const siteConfig = {
-	name: "Formsnap",
-	url: "https://formsnap.vercel.app",
+	name: "Svecosystem Docs Starter",
+	url: "https://svecosystem.com",
 	description: "Componentized & accessible forms for SvelteKit.",
 	links: {
 		twitter: "https://twitter.com/huntabyte",
-		github: "https://github.com/huntabyte/formsnap"
+		github: "https://github.com/svecosystem"
 	},
-	keywords: `Svelte,SvelteKit,Svelte Components,Headless Svelte Components,SvelteKit forms, svelte forms library,`
+	author: "Huntabyte",
+	keywords: "Svelte ecosystem,ecosystem,svecosystem,sveltekit,svelte libraries",
+	ogImage: {
+		url: "https://www.svecosystem.com/og.png",
+		width: "1200",
+		height: "630"
+	}
 };
 
 export type SiteConfig = typeof siteConfig;
