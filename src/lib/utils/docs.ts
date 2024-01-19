@@ -48,3 +48,12 @@ export async function getDoc(slug: string): Promise<TDoc> {
 		title: doc.metadata.title
 	};
 }
+
+export function slugFromPathname(pathname: string) {
+	return pathname.split("/").pop() ?? "";
+}
+
+export function isTitleActive(currentSlug: string, title: string) {
+	const slugifiedTitle = title.toLowerCase().replaceAll(" ", "-");
+	return currentSlug === slugifiedTitle;
+}

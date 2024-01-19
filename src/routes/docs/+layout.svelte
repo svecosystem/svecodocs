@@ -1,8 +1,5 @@
 <script lang="ts">
-	import { page } from "$app/stores";
-	import { navigation } from "$lib/config";
-
-	$: currentPath = $page.url.pathname.split("/")[$page.url.pathname.split("/").length - 1];
+	import { SidebarNav } from "$lib/components/layout/sidebar";
 </script>
 
 <div class="overflow-hidden">
@@ -14,36 +11,7 @@
 				<div class="pointer-events-none sticky top-0 -ml-0.5">
 					<!-- Search -->
 				</div>
-				<ul>
-					{#each navigation.sidebar as nav}
-						<li class="mt-12 lg:mt-8">
-							{#if nav.items.length}
-								<h5 class="mb-8 font-semibold text-muted-foreground lg:mb-3">{nav.title}</h5>
-								<ul class="space-y-6 border-l border-border lg:space-y-2">
-									{#each nav.items as item}
-										<li>
-											<a
-												href={item.href}
-												class="-ml-px block border-l border-border pl-4 font-semibold {currentPath.includes(
-													item.title.toLowerCase()
-												)
-													? 'border-primary text-primary'
-													: 'border-border text-muted-foreground'}">{item.title}</a
-											>
-										</li>
-									{/each}
-								</ul>
-							{:else}
-								<a
-									href={nav.href}
-									class="group mb-4 flex items-center font-semibold lg:text-sm lg:leading-6"
-								>
-									{nav.title}
-								</a>
-							{/if}
-						</li>
-					{/each}
-				</ul>
+				<SidebarNav />
 			</nav>
 		</div>
 		<div class="lg:pl-[19.5rem]">
