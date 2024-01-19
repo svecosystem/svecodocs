@@ -1,4 +1,5 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
+import typography from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -61,7 +62,8 @@ const config = {
 				"8xl": "90rem"
 			}
 		}
-	}
+	},
+	plugins: [typography]
 };
 
 export default config;

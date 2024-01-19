@@ -4,6 +4,6 @@
 	export { className as class };
 </script>
 
-<header class={cn("relative border-b border-border pb-8", className)}>
+<header class={cn("relative pb-8", className)}>
 	<slot />
 </header>
