@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@melt-ui/svelte':
+    specifier: ^0.70.0
+    version: 0.70.0(svelte@4.2.9)
   bits-ui:
     specifier: ^0.14.0
     version: 0.14.0(svelte@4.2.9)
@@ -754,6 +757,20 @@ packages:
 
   /@melt-ui/svelte@0.68.0(svelte@4.2.9):
     resolution: {integrity: sha512-/QvA98hnYEodZtHJ71+ocum/WWp30hVNt3F8uiZKnNYwZDaiQYjlyR9AaGKYcZLCe6R68op1mfCzc0kTzJilyA==}
+    peerDependencies:
+      svelte: '>=3 <5'
+    dependencies:
+      '@floating-ui/core': 1.5.3
+      '@floating-ui/dom': 1.5.4
+      '@internationalized/date': 3.5.1
+      dequal: 2.0.3
+      focus-trap: 7.5.4
+      nanoid: 5.0.4
+      svelte: 4.2.9
+    dev: false
+
+  /@melt-ui/svelte@0.70.0(svelte@4.2.9):
+    resolution: {integrity: sha512-ni14892MHJMAxSl2cz1pcgfnLR7fee1nNDJmx47hV19ewxSs8eQ8iguPrfx1ONtgjbp2YYVZhlpERi7szd30cA==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
