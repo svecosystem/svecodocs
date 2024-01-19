@@ -39,7 +39,13 @@ export const navigation: Navigation = {
 		},
 		{
 			title: "API Reference",
-			items: []
+			items: [
+				{
+					title: "Root",
+					href: "/docs/api-reference/root",
+					items: []
+				}
+			]
 		}
 	]
 };

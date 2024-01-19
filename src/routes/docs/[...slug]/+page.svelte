@@ -3,6 +3,7 @@
 	import { page } from "$app/stores";
 	import type { SvelteComponent } from "svelte";
 	import type { PageData } from "./$types.js";
+	import { PageHeader } from "$lib/components/layout/index.js";
 
 	type Component = $$Generic<typeof SvelteComponent>;
 
@@ -17,8 +18,11 @@
 	}
 </script>
 
-<div class="mx-auto w-full min-w-0">
-	<div class="markdown pt-8">
-		<svelte:component this={component} />
-	</div>
+<PageHeader.Root>
+	<PageHeader.Tagline>{tagline}</PageHeader.Tagline>
+	<PageHeader.Heading>{doc.title}</PageHeader.Heading>
+	<PageHeader.Description>{doc.description}</PageHeader.Description>
+</PageHeader.Root>
+<div class="markdown relative pt-8">
+	<svelte:component this={component} />
 </div>
