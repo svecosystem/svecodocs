@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { SvecosystemDark, SvecosystemLight } from "$lib/components/logos/index.js";
+	import { MoonStars } from "phosphor-svelte";
 	import { navigation } from "$lib/config";
+	import ThemeDropdown from "./header/theme-dropdown.svelte";
 </script>
 
 <header
@@ -24,6 +26,11 @@
 							</li>
 						</ul>
 					</nav>
+					<div class="ml-6 flex items-center border-l border-border pl-6">
+						<ThemeDropdown>
+							<MoonStars class="size-4" />
+						</ThemeDropdown>
+					</div>
 				</div>
 			</div>
 		</div>
