@@ -8,7 +8,7 @@
 </script>
 
 <Drawer.Root>
-	<Drawer.Trigger class="size-5 md:hidden">
+	<Drawer.Trigger class="ml-5 md:hidden" aria-label="open menu">
 		<List class="size-5" />
 	</Drawer.Trigger>
 	<Drawer.Portal>
