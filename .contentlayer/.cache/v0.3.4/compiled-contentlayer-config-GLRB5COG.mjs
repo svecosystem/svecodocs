@@ -30,6 +30,10 @@ var Doc = defineDocumentType(() => ({
     description: {
       type: "string",
       required: true
+    },
+    tagline: {
+      type: "string",
+      required: true
     }
   },
   computedFields
@@ -43,4 +47,4 @@ export {
   Doc,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-U6K3E474.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-GLRB5COG.mjs.map

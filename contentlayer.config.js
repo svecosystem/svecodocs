@@ -1,36 +1,40 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-import path from 'path';
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import path from "path";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
 	slug: {
-		type: 'string',
-		resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/')
+		type: "string",
+		resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
 	},
 	slugFull: {
-		type: 'string',
+		type: "string",
 		resolve: (doc) => `/${doc._raw.flattenedPath}`
 	},
 	fileName: {
-		type: 'string',
-		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split('/').slice(-1).join('/')).name
+		type: "string",
+		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split("/").slice(-1).join("/")).name
 	},
 	suffix: {
-		type: 'string',
-		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split('/').slice(-1).join('/')).ext
+		type: "string",
+		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split("/").slice(-1).join("/")).ext
 	}
 };
 
 export const Doc = defineDocumentType(() => ({
-	name: 'Doc',
+	name: "Doc",
 	filePathPattern: `**/*.md`,
 	fields: {
 		title: {
-			type: 'string',
+			type: "string",
 			required: true
 		},
 		description: {
-			type: 'string',
+			type: "string",
+			required: true
+		},
+		tagline: {
+			type: "string",
 			required: true
 		}
 	},
@@ -38,7 +42,7 @@ export const Doc = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-	contentDirPath: './content',
+	contentDirPath: "./content",
 	documentTypes: [Doc],
 	disableImportAliasWarning: true
 });

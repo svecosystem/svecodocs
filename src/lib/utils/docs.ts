@@ -1,7 +1,7 @@
-import { error, redirect } from "@sveltejs/kit";
+import { error } from "@sveltejs/kit";
 import type { Doc } from "../../../.contentlayer/generated/index.js";
 
-export type FrontMatter = Pick<Doc, "title" | "description">;
+export type FrontMatter = Pick<Doc, "title" | "description" | "tagline">;
 
 export type DocFile = {
 	default: import("svelte").SvelteComponent;
@@ -21,10 +21,6 @@ export function slugFromPath(path: string) {
 }
 
 export async function getDoc(slug: string): Promise<TDoc> {
-	if (slug === "components") {
-		redirect(303, "/docs/components/accordion");
-	}
-
 	const modules = import.meta.glob(`/content/**/*.md`);
 
 	let match: { path?: string; resolver?: DocResolver } = {};

@@ -15,6 +15,7 @@ export type Doc = {
   type: 'Doc'
   title: string
   description: string
+  tagline: string
   /** Markdown file body */
   body: Markdown
   slug: string

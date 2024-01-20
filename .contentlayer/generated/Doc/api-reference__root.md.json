@@ -1,6 +1,7 @@
 {
   "title": "Root",
   "description": "Something",
+  "tagline": "API Reference",
   "body": {
     "raw": "\nHello world, this is my content\n",
     "html": "<p>Hello world, this is my content</p>"
