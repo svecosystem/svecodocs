@@ -20,16 +20,7 @@
 			<div class="mx-auto w-full min-w-0 max-w-3xl pt-8" id="content">
 				<slot />
 			</div>
-
-			{#if !$page.error}
-				<div>
-					<div
-						class="fixed z-30 hidden h-[calc(100vh-65px)] w-[220px] shrink-0 overflow-y-auto text-sm xl:block"
-					>
-						<TableOfContents />
-					</div>
-				</div>
-			{/if}
+			<TableOfContents />
 		</main>
 	</div>
 	<Footer />
