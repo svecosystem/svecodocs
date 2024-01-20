@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { buttonVariants } from "$lib/components/ui/button";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 	import { setMode } from "mode-watcher";
 	import { MoonStars } from "phosphor-svelte";
@@ -7,8 +8,11 @@
 </script>
 
 <DropdownMenu.Root>
-	<DropdownMenu.Trigger aria-label="Change theme">
-		<MoonStars class="size-5" />
+	<DropdownMenu.Trigger
+		aria-label="Change theme"
+		class={buttonVariants({ variant: "subtle", size: "icon" })}
+	>
+		<MoonStars class="size-6" />
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="z-[100]">
 		{#each modes as themeMode}

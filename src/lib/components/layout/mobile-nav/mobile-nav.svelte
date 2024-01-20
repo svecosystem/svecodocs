@@ -5,11 +5,16 @@
 	import { navigation, siteConfig } from "$lib/config";
 	import MobileNavItem from "./mobile-nav-item.svelte";
 	import MobileNavLink from "./mobile-nav-link.svelte";
+	import { buttonVariants } from "$lib/components/ui/button";
+	import { cn } from "$lib/utils";
 </script>
 
 <Drawer.Root>
-	<Drawer.Trigger class="ml-5 md:hidden" aria-label="open menu">
-		<List class="size-5" />
+	<Drawer.Trigger
+		class={cn(buttonVariants({ variant: "subtle", size: "icon" }), "md:hidden")}
+		aria-label="open menu"
+	>
+		<List class="size-6" />
 	</Drawer.Trigger>
 	<Drawer.Portal>
 		<Drawer.Overlay class="fixed inset-0 z-[60] bg-black/40" />
@@ -50,11 +55,7 @@
 					>
 						GitHub
 					</MobileNavLink>
-					<MobileNavLink
-						class="text-xs text-muted-foreground"
-						href={siteConfig.links.twitter}
-						external
-					>
+					<MobileNavLink class="text-xs text-muted-foreground" href={siteConfig.links.x} external>
 						X
 					</MobileNavLink>
 				</div>

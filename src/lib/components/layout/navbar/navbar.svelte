@@ -1,26 +1,13 @@
 <script lang="ts">
-	import { GitHubLogo } from "$lib/components/logos/index.js";
-	import ThemeDropdown from "./theme-dropdown.svelte";
 	import NavbarLogo from "./navbar-logo.svelte";
 	import NavbarNav from "./navbar-nav.svelte";
-	import MobileNav from "../mobile-nav/mobile-nav.svelte";
+	import NavbarIcons from "./navbar-icons.svelte";
 </script>
 
 <header class="sticky top-0 z-50 -mb-px border-b border-border bg-background/75 backdrop-blur">
 	<div class="mx-auto flex h-16 max-w-8xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
 		<NavbarLogo />
 		<NavbarNav />
-		<div class="flex items-center justify-end lg:flex-1">
-			<ThemeDropdown />
-			<a
-				href="https://github.com/svecosystem"
-				target="_blank"
-				aria-label="View this project on Github"
-				class="ml-5"
-			>
-				<GitHubLogo class="size-5" />
-			</a>
-			<MobileNav />
-		</div>
+		<NavbarIcons />
 	</div>
 </header>

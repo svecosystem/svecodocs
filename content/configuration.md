@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Configuration
 description: Learn how to get started with this template.
 tagline: Overview
 ---
