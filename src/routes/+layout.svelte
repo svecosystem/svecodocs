@@ -11,5 +11,9 @@
 <Metadata />
 <ModeWatcher />
 <Navbar />
-<slot />
-<Footer />
+<div class="flex min-h-[calc(100vh-4rem)] flex-col">
+	<div class="flex-grow">
+		<slot />
+	</div>
+	<Footer />
+</div>
