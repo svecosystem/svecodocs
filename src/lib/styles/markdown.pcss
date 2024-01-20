@@ -35,7 +35,7 @@
 }
 
 [data-metadata] [data-code-copy] {
-	@apply top-16 !important;
+	@apply top-3 !important;
 }
 
 [data-rehype-pretty-code-fragment] {
@@ -89,11 +89,15 @@
 }
 
 [data-rehype-pretty-code-title] {
-	@apply mt-2 px-4 pt-6 text-sm font-medium;
+	@apply mt-6 flex rounded-t-lg bg-muted px-4 py-3 text-sm;
 }
 
+/* [data-rehype-pretty-code-title][data-language="svelte"] {
+	@apply px-11;
+} */
+
 [data-rehype-pretty-code-title] + pre {
-	@apply mt-2;
+	@apply mt-0 rounded-t-none;
 }
 
 [data-callout] > p:last-child {

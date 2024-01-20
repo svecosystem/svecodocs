@@ -8,7 +8,7 @@
 			<li class="relative">
 				<a
 					{href}
-					class="hover:text-brand text-sm text-muted-foreground"
+					class="text-sm text-muted-foreground hover:text-brand"
 					target={external ? "_blank" : undefined}>{title}</a
 				>
 			</li>
