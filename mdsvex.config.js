@@ -109,6 +109,7 @@ function rehypeHandleMetadata() {
 
 				if (node.children.at(0).tagName === "div") {
 					node.properties["data-metadata"] = "";
+					node.children.at(-1).properties["data-metadata"] = "";
 				}
 			}
 		});
