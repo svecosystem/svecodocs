@@ -22,8 +22,18 @@ export type Navigation = {
 export const navigation: Navigation = {
 	main: [
 		{
-			title: "Docs",
-			href: "/docs/introduction"
+			title: "Documentation",
+			href: "/docs"
+		},
+		{
+			title: "Svecosystem",
+			href: "https://svecosystem.com",
+			external: true
+		},
+		{
+			title: "Releases",
+			href: "https://github.com/svecosystem/mode-watcher/releases",
+			external: true
 		}
 	],
 	sidebar: [
