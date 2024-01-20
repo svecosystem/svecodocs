@@ -5,17 +5,20 @@ import Description from "./alert-description.svelte";
 import Title from "./alert-title.svelte";
 
 export const alertVariants = tv({
-	base: "relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11",
+	base: "relative w-full rounded-tr-lg rounded-br-lg border-l-4 px-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-6 [&>svg+div]:translate-y-[-3px] pb-4 pt-[22px]",
 
 	variants: {
 		variant: {
-			default: "bg-background text-foreground",
-			destructive:
-				"text-destructive border-destructive/50 dark:border-destructive [&>svg]:text-destructive text-destructive"
+			note: "text-foreground [&>svg]:text-sky-800 bg-sky-200 [&>h5]:text-sky-800 border-sky-600 dark:[&>svg]:text-sky-500 dark:bg-sky-500/20 dark:[&>h5]:text-sky-500 dark:border-sky-600",
+			danger:
+				"text-foreground [&>svg]:text-red-800 bg-rose-200 [&>h5]:text-red-800 border-rose-600 dark:[&>svg]:text-red-300 dark:bg-rose-500/20 dark:[&>h5]:text-red-300 dark:border-rose-600",
+			tip: "text-foreground [&>svg]:text-fuchsia-800 bg-fuchsia-200 [&>h5]:text-fuchsia-800 border-fuchsia-600 dark:[&>svg]:text-fuchsia-500 dark:bg-fuchsia-500/20 dark:[&>h5]:text-fuchsia-500 dark:border-fuchsia-600",
+			warning:
+				"text-foreground [&>svg]:text-amber-800 bg-amber-200 [&>h5]:text-amber-800 border-amber-600 dark:[&>svg]:text-amber-500 dark:bg-amber-500/20 dark:[&>h5]:text-amber-500 dark:border-amber-600"
 		}
 	},
 	defaultVariants: {
-		variant: "default"
+		variant: "note"
 	}
 });
 

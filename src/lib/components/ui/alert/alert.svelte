@@ -8,7 +8,7 @@
 	};
 
 	let className: $$Props["class"] = undefined;
-	export let variant: $$Props["variant"] = "default";
+	export let variant: $$Props["variant"] = "note";
 	export { className as class };
 </script>
 

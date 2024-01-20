@@ -1,15 +1,28 @@
 <script lang="ts">
 	import * as Alert from "$lib/components/ui/alert/index.js";
+	import { RocketLaunch, Info, WarningOctagon, Warning } from "phosphor-svelte";
+
+	export let type: "note" | "warning" | "danger" | "tip" = "note";
+	export let title: string | undefined = undefined;
+
+	const iconMap = {
+		note: Info,
+		tip: RocketLaunch,
+		warning: Warning,
+		danger: WarningOctagon
+	} as const;
 </script>
 
-<Alert.Root class="mt-4">
-	<slot name="icon" />
+<Alert.Root class="mt-4" variant={type}>
+	<svelte:component this={iconMap[type]} class="size-6" weight="bold" />
 
-	<Alert.Title class="text-lg">
-		<slot name="title" />
-	</Alert.Title>
+	{#if title}
+		<Alert.Title class="text-lg">
+			{title}
+		</Alert.Title>
+	{/if}
 
-	<Alert.Description class="text-sm leading-relaxed">
+	<Alert.Description class="leading-relaxed">
 		<p>
 			<slot />
 		</p>

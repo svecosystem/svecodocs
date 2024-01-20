@@ -61,6 +61,18 @@ const config = {
 			},
 			maxWidth: {
 				"8xl": "90rem"
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						"code::before": {
+							content: ""
+						},
+						"code::after": {
+							content: ""
+						}
+					}
+				}
 			}
 		}
 	},
