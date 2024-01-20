@@ -41,7 +41,7 @@
 			<li class="mt-0 {level === 1 && 'border-l'}">
 				<div
 					class={cn(
-						"-mx-[1px] inline-flex items-center justify-center gap-1 border-l border-l-transparent pb-2 pl-4 text-sm text-muted-foreground no-underline transition-colors data-[hover]:border-l-foreground",
+						" inline-flex items-center justify-center gap-1 border-l border-l-transparent pb-2 pl-4 text-sm text-muted-foreground no-underline transition-colors data-[hover]:border-l-foreground",
 						level !== 1 ? "pl-8" : "",
 						$isActive(heading.id) && "border-l-foreground"
 					)}
