@@ -1,190 +1,161 @@
 ---
 title: Getting Started
-description: What is this?
+description: Learn how to get started with this template.
 tagline: Overview
 ---
 
-<script>
-	import { Steps, Callout } from "$lib/components"
-	import A from "$lib/components/markdown/a.svelte"
-	import { WarningDiamond } from "phosphor-svelte"
-	import * as Alert from "$lib/components/ui/alert"
-</script>
+There isn't a ton of magic going on here, as this template was developed quickly to meet our own needs. The following sections will give you a brief overview of how the template is structured and how to get started.
 
-Formsnap takes the already incredible [sveltekit-superforms](https://github.com/ciscoheat/sveltekit-superforms) (winner of [Svelte Hack 2023](https://hack.sveltesociety.dev/winners) for best library), made by the brilliant [Andreas Söderlund](https://github.com/ciscoheat) and adds a component layer of abstraction to make it even simpler to use while also providing more accessible forms by default.
+## Site Config
 
-By design, [Superforms](https://superforms.rocks) is a very low-level library that gives you the tools to build and customize the behavior of your forms to your liking. Unfortunately, this also comes at the cost of writing some boilerplate code to get a form up and running. Since most applications are form heavy, this can become quite tedious, time consuming, and error prone.
+The site config is used to define the site's title, description, metadata, and other information that is used throughout the site. The site config is defined in `src/lib/config/site.ts`.
 
-Formsnap aims to solve this by providing you with a set of components that _automagically_ handle a lot of the boilerplate, while still giving you the ability to customize the behavior of your forms. Additionally, your forms will be accessible by default. You don't even have to think about it. Everyone wins!
+Here's an example of what the `site.ts` file looks like:
 
-To better demonstrate the value-add, let's look at what it takes to build an accessible signup form that has custom client-side validation using _only_ Superforms, and compare it to the same when you combine it with Formsnap.
-
-## Initializing a Superform
-
-Since the following steps are the same whether you're just using Superforms, or combining it with Formsnap, we'll use this same initialization code for both examples.
-
-If you aren't already familiar with Superforms, it's highly recommended that you check out the [documentation](https://superforms.rocks) before continuing. It's a fantastic library that you'll need to understand the basics of in order to get the most out of this project.
-
-<Steps>
-
-### Define a Zod schema
-
-Superforms requires us to define a [Zod](https://zod.dev) schema that describes the shape of our form. This schema is then used to validate the form data on the client (optional) and server, along with some other useful things.
-
-```ts title="src/routes/sign-up/schema.ts"
-import { z } from "zod";
-
-const signupFormSchema = z.object({
-	name: z.string().min(2).max(100),
-	email: z.string().email(),
-	password: z.string().min(10)
-});
-```
-
-### Return the form from a load function
-
-To seamlessly merge `PageData` and `ActionData`, we need to return the form from a load function. While this may seem a bit strange, if you've ever tried to wrangle `PageData` and `ActionData` together manually, then you know why this is necessary.
-
-```ts title="src/routes/sign-up/+page.server.ts"
-import type { PageServerLoad } from "./$types";
-import { signupFormSchema } from "./schema";
-import { superValidate } from "sveltekit-superforms/server";
-
-export const load: PageServerLoad = () => {
-	return {
-		form: superValidate(signupFormSchema)
-	};
+```ts title="src/lib/config/site.ts"
+export const siteConfig = {
+	name: "Svecosystem Docs Starter",
+	url: "https://svecosystem.com",
+	description: "Componentized & accessible forms for SvelteKit.",
+	links: {
+		twitter: "https://twitter.com/huntabyte",
+		github: "https://github.com/svecosystem"
+	},
+	author: "Huntabyte",
+	keywords: "Svelte ecosystem,ecosystem,svecosystem,sveltekit,svelte libraries",
+	ogImage: {
+		url: "https://www.svecosystem.com/og.png",
+		width: "1200",
+		height: "630"
+	}
 };
 ```
 
-</Steps>
+## Navigation Config
 
-Before we dive into the following code examples, it's important to note that we're intentionally opting out of the native form validation provided by the browser, and instead using our own client-side validation. The reason for this is quite simple. Native browser validation while accessible, is not very customizable, and certainly not pretty.
+Navigation for the various components (navbar, sidebar, etc.) is defined in a single file, `src/lib/config/navigation.ts`. The `main` navigation items are rendered in the top navigation bar, while the `sidebar` navigation items are rendered in the sidebar. The `sidebar` navigation only supports 2 levels of navigation out of the box.
 
-Having this in mind, we now have the responsibility of ensuring our form is still accessible to users who may be using assistive technology. We'll be using the [WAI ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) spec to help us with this. If you discover any accessibility issues with the code in this guide or with Formsnap in general, please [open an issue](https://github.com/huntabyte/formsnap/issues/new) so we can address it.
+Here's an example of what the `navigation.ts` file looks like:
 
-## Using _only_ Superforms
+```ts title="src/lib/config/navigation.ts"
+export const navigation: Navigation = {
+	main: [
+		{
+			title: "Documentation",
+			href: "/docs"
+		},
+		{
+			title: "Svecosystem",
+			href: "https://svecosystem.com",
+			external: true
+		},
+		{
+			title: "Releases",
+			href: "https://github.com/svecosystem/mode-watcher/releases",
+			external: true
+		}
+	],
+	sidebar: [
+		{
+			title: "Overview",
+			items: [
+				{
+					title: "Introduction",
+					href: "/docs/introduction",
+					items: []
+				},
+				{
+					title: "Getting Started",
+					href: "/docs/getting-started",
+					items: []
+				},
+				{
+					title: "Components",
+					href: "/docs/components",
+					items: []
+				}
+			]
+		},
+		{
+			title: "API Reference",
+			items: [
+				{
+					title: "Root",
+					href: "/docs/api-reference/root",
+					items: []
+				}
+			]
+		}
+	]
+};
+```
 
-```svelte title="src/routes/sign-up/+page.svelte"
+When links are marked as `external`, they will open in a new tab when clicked.
+
+## Meta Tags
+
+Meta tags are defined in the `src/lib/components/metadata.svelte` component. This component is used in the root layout component, `src/routes/+layout.svelte` to render the meta tags for each page.
+
+```svelte title="src/lib/components/metadata.svelte"
 <script lang="ts">
-	import type { PageData } from "./$types";
-	import { superForm } from "sveltekit-superforms/client";
-	import { signupFormSchema } from "./schema.ts";
-	export let data: PageData;
+	import { page } from "$app/stores";
+	import { siteConfig } from "$lib/config/site";
 
-	const { form, errors, enhance } = superForm(data.form, {
-		validators: signupFormSchema
-	});
+	export let title: string = siteConfig.name;
+
+	$: title = $page.data?.title
+		? `${$page.data.title} - ${siteConfig.name}`
+		: siteConfig.name;
 </script>
 
-<form method="POST" use:enhance>
-	<label for="name">Name</label>
-	<input
-		id="name"
-		name="name"
-		aria-describedby={$errors.name ? "name-error name-desc" : "name-desc"}
-		aria-invalid={$errors.name ? "true" : undefined}
-		bind:value={$form.name}
-	/>
-	<span id="name-desc">Be sure to use your real name.</span>
-	<span id="name-error" aria-live="assertive">
-		{#if $errors.name}
-			{$errors.name}
-		{/if}
-	</span>
-	<label for="email">Email</label>
-	<input
-		id="email"
-		name="email"
-		type="email"
-		aria-describedby={$errors.email ? "email-error email-desc" : "email-desc"}
-		aria-invalid={$errors.email ? "true" : undefined}
-		bind:value={$form.email}
-	/>
-	<span id="email-desc">It's preferred that you use your company email.</span>
-	<span id="email-error" aria-live="assertive">
-		{#if $errors.email}
-			{$errors.email}
-		{/if}
-	</span>
-	<label for="password">Password</label>
-	<input
-		id="password"
-		name="password"
-		type="password"
-		aria-describedby={$errors.password
-			? "password-error password-desc"
-			: "password-desc"}
-		aria-invalid={$errors.password ? "true" : undefined}
-		bind:value={$form.password}
-	/>
-	<span id="password-desc">Ensure the password is at least 10 characters.</span>
-	<span id="password-error" aria-live="assertive">
-		{#if $errors.password}
-			{$errors.password}
-		{/if}
-	</span>
-	<button>Submit</button>
-</form>
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={siteConfig.description} />
+	<meta name="keywords" content={siteConfig.keywords} />
+	<meta name="author" content={siteConfig.author} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content={siteConfig.url} />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={siteConfig.description} />
+	<meta name="twitter:image" content="https://shadcn-svelte.com/og.png" />
+	<meta name="twitter:image:alt" content={siteConfig.name} />
+	<meta name="twitter:creator" content={siteConfig.author} />
+	<meta property="og:title" content={title} />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content={siteConfig.url + $page.url.pathname} />
+	<meta property="og:image" content={siteConfig.ogImage.url} />
+	<meta property="og:image:alt" content={siteConfig.name} />
+	<meta property="og:image:width" content={siteConfig.ogImage.width} />
+	<meta property="og:image:height" content={siteConfig.ogImage.height} />
+	<meta property="og:description" content={siteConfig.description} />
+	<meta property="og:site_name" content={siteConfig.name} />
+	<meta property="og:locale" content="EN_US" />
+	<link rel="shortcut icon" href="/favicon-16x16.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</svelte:head>
 ```
 
-That's quite a bit of code required to get a simple, accessible form up and running. While clearly possible, we can't move as quickly as we'd like to, it's not very DRY, and it's a bit ugly to look at.
+Any meta tags could be modified by frontmatter in the markdown file, which would be returned in the `$page.data` object, and then could be used here. At the moment, the only meta tag that is modified by frontmatter on a per-route basis is the `title` tag.
 
-All is not lost though, as the whole idea behind Formsnap is to make this process simpler, without sacrificing too much of the flexibility that Superforms provides.
+## Content
 
-## Using Superforms _and_ Formsnap
+The markdown files that are used to generate the documentation are stored in the `content` directory. Each markdown file is a page in the documentation, and the directory structure is followed for navigation.
 
-```svelte title="src/routes/sign-up/+page.svelte"
-<script lang="ts">
-	import { Form } from "formsnap";
-	import type { PageData } from "./$types";
-	import { signupFormSchema } from "./schema.ts";
-	export let data: PageData;
-</script>
+Here's an example of what the `content` directory looks like:
 
-<Form.Root form={data.form} schema={signupFormSchema} let:config>
-	<Form.Field {config} name="name">
-		<Form.Label>Name</Form.Label>
-		<Form.Input />
-		<Form.Description>Be sure to use your real name.</Form.Description>
-		<Form.Validation />
-	</Form.Field>
-	<Form.Field {config} name="email">
-		<Form.Label>Email</Form.Label>
-		<Form.Input type="email" />
-		<Form.Description>
-			It's preferred that you use your company email.
-		</Form.Description>
-		<Form.Validation />
-	</Form.Field>
-	<Form.Field {config} name="password">
-		<Form.Label>Password</Form.Label>
-		<Form.Input type="password" />
-		<Form.Description>
-			Ensure the password is at least 10 characters.
-		</Form.Description>
-		<Form.Validation />
-	</Form.Field>
-</Form.Root>
+```txt
+content
+├── api-reference
+│   └── root.md
+├── components
+│   └── tabs.md
+├── docs
+│   ├── components.md
+│   ├── example.md
+│   ├── getting-started.md
+│   ├── index.md
+│   └── introduction.md
+├── index.md
 ```
 
-That's it! We just condensed a bunch of code, while retaining the same functionality. Now I know some of you might be thinking, "gross, how many times do I have to type Form?", and I hear you.
-
-You can alias the names to whatever floats your boat, here's an example:
-
-```ts title="src/lib/no-form-form.ts"
-import { Form as FormSnap } from "formsnap";
-
-const Form = FormSnap.Root;
-const Field = FormSnap.Field;
-const Label = FormSnap.Label;
-const Input = FormSnap.Input;
-const Description = FormSnap.Description;
-const Validation = FormSnap.Validation;
-
-export { Form, Field, Label, Input, Description, Validation };
-```
-
-If aliasing isn't your cup of tea either, there are alternative ways to use Formsnap that while a bit more verbose, still provide the same functionality, while giving you the ability to use native HTML elements or your own custom components. You can read more about this in the [Headless usage](/docs/headless-usage) section of the docs.
-
-To get started using Formsnap, head over to the [Quick start](/docs/quick-start) section of the docs, where you'll learn how to install and use the library.
+You can use Svelte components in your markdown files by importing them as you would in any other Svelte file. We've also included a few pre-built components that you can use within the docs. Learn more about them in the [Components](/docs/components) section.

@@ -1,6 +1,11 @@
-import { redirect } from "@sveltejs/kit";
-import type { PageLoad } from "./$types";
+import type { PageLoad } from "./$types.js";
+import { getDoc } from "$lib/utils/docs.js";
 
 export const load: PageLoad = async () => {
-	return redirect(302, "/docs/introduction");
+	const { component, title, metadata } = await getDoc("index");
+	return {
+		component,
+		title,
+		metadata
+	};
 };

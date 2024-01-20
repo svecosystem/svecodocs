@@ -8,11 +8,11 @@ tagline: Overview
 	import { Tabs, TabItem, Callout } from '$lib/components'
 </script>
 
-The Svecosystem starter template ships with a few pre-built components that you can use within the docs. These components are built using [Svelte](https://svelte.dev) and [Tailwind CSS](https://tailwindcss.com).
+The Svecosystem starter template ships with a few pre-built components that you can use within the docs. These components are built using [Svelte](https://svelte.dev), [Tailwind CSS](https://tailwindcss.com), and [shadcn-svelte](https://shadcn-svelte.com).
 
 ## Using a component
 
-To use a component, simply import it from the `$lib/components` directory and use it in the Markdown file.
+To use a component, simply import it from it's respective location and use it in the Markdown file.
 
 ```md title="content/docs/example.md"
 ---
@@ -31,7 +31,7 @@ description: An example page.
 
 ## Built-in components
 
-Here's a list of the built-in components you can start using right away.
+Here's a list of the built-in components you can start using right away. We'll add more components on an as-needed basis and will update this page accordingly.
 
 ### Tabs
 
