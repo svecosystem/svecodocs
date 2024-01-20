@@ -20,7 +20,9 @@
 						: 'border-border text-muted-foreground'}
 					"
 					href={item.href}
-				></MobileNavLink>
+				>
+					{item.title}
+				</MobileNavLink>
 			</li>
 		{/each}
 	</ul>
