@@ -14,7 +14,7 @@
 			<Sidebar />
 			<main
 				class={cn(
-					"relative pb-6 pl-4 md:pl-0 lg:gap-10 xl:grid-cols-[1fr_220px]",
+					"relative pb-6 md:pl-0 lg:gap-10 xl:grid-cols-[1fr_220px]",
 					$page.error ?? "xl:grid"
 				)}
 			>
