@@ -2,8 +2,8 @@
 	import { navigation } from "$lib/config";
 </script>
 
-<div class="hidden items-center lg:flex">
-	<ul role="navigation" class="flex w-full items-center gap-8">
+<div class="hidden items-center justify-center lg:flex">
+	<ul role="navigation" class="flex w-full items-center justify-center gap-8">
 		{#each navigation.main as { href, title, external }}
 			<li class="relative">
 				<a

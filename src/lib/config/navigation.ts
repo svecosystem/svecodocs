@@ -20,6 +20,7 @@ export type Navigation = {
 };
 
 export const navigation: Navigation = {
+	// By default, `main` navigation items are rendered in the top navigation bar.
 	main: [
 		{
 			title: "Documentation",
@@ -36,6 +37,7 @@ export const navigation: Navigation = {
 			external: true
 		}
 	],
+	// By default, `sidebar` navigation only supports 2 levels of navigation.
 	sidebar: [
 		{
 			title: "Overview",
