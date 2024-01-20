@@ -6,8 +6,8 @@
 	import { Metadata } from "$lib/components/index.js";
 </script>
 
+<TwIndicator />
 <Metadata />
 <ModeWatcher />
 <SiteHeader />
 <slot />
-<TwIndicator />
