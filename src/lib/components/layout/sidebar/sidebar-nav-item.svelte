@@ -8,7 +8,7 @@
 </script>
 
 {#if navItem.items.length}
-	<h5 class="mb-8 font-semibold text-muted-foreground lg:mb-3">{navItem.title}</h5>
+	<h5 class="mb-6 font-medium lg:mb-3 lg:text-sm">{navItem.title}</h5>
 	<ul class="space-y-6 border-l border-border lg:space-y-2">
 		{#each navItem.items as item}
 			{@const isActive = isTitleActive(currentPath, item.title)}
@@ -16,8 +16,9 @@
 				<a
 					href={item.href}
 					class="-ml-px block border-l border-border pl-4 {isActive
-						? 'border-primary text-primary'
-						: 'border-border text-muted-foreground'}">{item.title}</a
+						? 'border-brand text-brand'
+						: 'border-border text-muted-foreground hover:border-primary hover:text-primary'}"
+					>{item.title}</a
 				>
 			</li>
 		{/each}

@@ -5,7 +5,7 @@
 
 <ul>
 	{#each navigation.sidebar as navItem}
-		<li class="mt-12 lg:mt-8">
+		<li class="mt-8">
 			<SidebarNavItem {navItem} />
 		</li>
 	{/each}

@@ -11,7 +11,12 @@
 		<HeaderNav />
 		<div class="flex items-center justify-end gap-1.5 lg:flex-1">
 			<ThemeDropdown />
-			<a href="https://github.com/svecosystem" target="_blank" class="ml-6 block">
+			<a
+				href="https://github.com/svecosystem"
+				target="_blank"
+				class="ml-6 block"
+				aria-label="View this project on Github"
+			>
 				<GitHubLogo class="size-5" />
 			</a>
 		</div>

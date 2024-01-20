@@ -9,7 +9,7 @@
 <div class="flex min-h-[calc(100vh-4rem)] flex-col">
 	<div class="flex-grow">
 		<div
-			class="mx-auto h-full max-w-8xl flex-1 items-start px-4 sm:px-6 md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10 lg:px-8"
+			class="mx-auto h-full max-w-8xl flex-1 items-start px-4 sm:px-6 md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-2 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10 lg:px-8"
 		>
 			<Sidebar />
 			<main

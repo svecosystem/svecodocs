@@ -7,7 +7,7 @@
 </script>
 
 <DropdownMenu.Root>
-	<DropdownMenu.Trigger>
+	<DropdownMenu.Trigger aria-label="Change theme">
 		<MoonStars class="size-5" />
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="z-[100]">
