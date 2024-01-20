@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { CopyCodeButton } from "$lib/components/index.js";
 	import { cn, createCopyCodeButton } from "$lib/utils/index.js";
-
 	let className: string | undefined | null = undefined;
 	export { className as class };
 
@@ -15,6 +14,6 @@
 	)}
 	use:setCodeString
 	{...$$restProps}>
-	<slot />
+	<slot />	
 </pre>
 <CopyCodeButton {copyCode} copied={$copied} class={cn("pre-copy-btn absolute right-4 top-4")} />
