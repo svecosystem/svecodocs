@@ -1,22 +1,22 @@
 {
-	"title": "Root",
-	"description": "Something",
-	"tagline": "API Reference",
-	"body": {
-		"raw": "\nHello world, this is my content\n",
-		"html": "<p>Hello world, this is my content</p>"
-	},
-	"_id": "api-reference/root.md",
-	"_raw": {
-		"sourceFilePath": "api-reference/root.md",
-		"sourceFileName": "root.md",
-		"sourceFileDir": "api-reference",
-		"contentType": "markdown",
-		"flattenedPath": "api-reference/root"
-	},
-	"type": "Doc",
-	"slug": "root",
-	"slugFull": "/api-reference/root",
-	"fileName": "root",
-	"suffix": ".md"
+  "title": "Root",
+  "description": "Something",
+  "tagline": "API Reference",
+  "body": {
+    "raw": "\nHello world, this is my content\n",
+    "html": "<p>Hello world, this is my content</p>"
+  },
+  "_id": "api-reference/root.md",
+  "_raw": {
+    "sourceFilePath": "api-reference/root.md",
+    "sourceFileName": "root.md",
+    "sourceFileDir": "api-reference",
+    "contentType": "markdown",
+    "flattenedPath": "api-reference/root"
+  },
+  "type": "Doc",
+  "slug": "root",
+  "slugFull": "/api-reference/root",
+  "fileName": "root",
+  "suffix": ".md"
 }

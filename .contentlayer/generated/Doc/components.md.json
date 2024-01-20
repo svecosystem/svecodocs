@@ -1,0 +1,22 @@
+{
+  "title": "Components",
+  "description": "Pre-built components for common docs use cases",
+  "tagline": "Overview",
+  "body": {
+    "raw": "",
+    "html": ""
+  },
+  "_id": "components.md",
+  "_raw": {
+    "sourceFilePath": "components.md",
+    "sourceFileName": "components.md",
+    "sourceFileDir": ".",
+    "contentType": "markdown",
+    "flattenedPath": "components"
+  },
+  "type": "Doc",
+  "slug": "",
+  "slugFull": "/components",
+  "fileName": "components",
+  "suffix": ".md"
+}
