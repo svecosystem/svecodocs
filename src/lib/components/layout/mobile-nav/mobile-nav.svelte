@@ -4,11 +4,10 @@
 	import { List, ArrowUpRight } from "phosphor-svelte";
 	import { navigation, siteConfig } from "$lib/config";
 	import MobileNavItem from "./mobile-nav-item.svelte";
-
-	let open = false;
+	import MobileNavLink from "./mobile-nav-link.svelte";
 </script>
 
-<Drawer.Root bind:open>
+<Drawer.Root>
 	<Drawer.Trigger class="size-5 md:hidden">
 		<List class="size-5" />
 	</Drawer.Trigger>
@@ -25,14 +24,9 @@
 						<ul class="mb-8 flex w-full flex-col justify-center gap-8">
 							{#each navigation.main as { href, title, external }}
 								<li class="relative">
-									<Drawer.Close asChild let:builder>
-										<a
-											{href}
-											class="hover:text-brand h-full text-muted-foreground"
-											target={external ? "_blank" : undefined}
-											use:builder.action>{title}</a
-										>
-									</Drawer.Close>
+									<MobileNavLink target={external ? "_blank" : undefined} {href}>
+										{title}
+									</MobileNavLink>
 								</li>
 							{/each}
 						</ul>
@@ -49,22 +43,22 @@
 			</div>
 			<div class="mt-auto border-t border-border bg-primary/5 p-4">
 				<div class="mx-auto flex max-w-md justify-end gap-6">
-					<a
+					<MobileNavLink
 						class="gap-0.25 flex items-center text-xs text-muted-foreground"
 						href={siteConfig.links.github}
 						target="_blank"
 					>
 						GitHub
 						<ArrowUpRight class="-mt-2 ml-0.5 h-3 w-3" />
-					</a>
-					<a
+					</MobileNavLink>
+					<MobileNavLink
 						class="gap-0.25 flex items-center text-xs text-muted-foreground"
 						href={siteConfig.links.twitter}
 						target="_blank"
 					>
 						Twitter
 						<ArrowUpRight class="-mt-2 ml-0.5 h-3 w-3" />
-					</a>
+					</MobileNavLink>
 				</div>
 			</div>
 		</Drawer.Content>
