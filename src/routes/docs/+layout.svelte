@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import { Footer } from "$lib/components/layout";
 	import { Sidebar } from "$lib/components/layout/sidebar";
 	import { TableOfContents } from "$lib/components/layout/toc";
 	import { cn } from "$lib/utils";
@@ -25,5 +24,4 @@
 			</main>
 		</div>
 	</div>
-	<Footer />
 </div>

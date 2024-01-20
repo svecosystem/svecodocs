@@ -110,7 +110,7 @@ console.log("Hello, world!");
 
 ### Steps
 
-Steps are great for showing a list of steps to complete a task. You can use the `<Steps />` and `<Step />` components to create a list of steps in the docs.
+Steps are great for showing a list of steps to complete a task. Use the `<Steps />` and `<Step />` components to create a list of steps in the docs.
 
 ```svelte title="content/docs/example.md"
 <script>
