@@ -27,7 +27,7 @@
 		</Button>
 	</div>
 </div>
-<section class="relative mx-auto max-w-8xl px-4 pb-16 sm:px-6 sm:pb-32 lg:px-8">
+<section class="relative mx-auto max-w-6xl px-4 pb-16 sm:px-6 sm:pb-32 lg:px-8">
 	<h2 class="mb-10 text-balance text-center text-3xl font-bold tracking-tight lg:text-4xl">
 		A few notable <span class="text-brand">features</span>
 	</h2>
