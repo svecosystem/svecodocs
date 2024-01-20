@@ -4,6 +4,11 @@
 	export { className as class };
 </script>
 
-<header class={cn("relative pb-8", className)}>
+<header
+	class={cn(
+		"prose relative mb-4 max-w-3xl border-b border-border pb-8 dark:prose-invert",
+		className
+	)}
+>
 	<slot />
 </header>
