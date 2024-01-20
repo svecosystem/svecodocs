@@ -100,4 +100,10 @@ This is a tip callout.
 
 This is a warning callout.
 
+```ts
+// This is a code block within a callout.
+
+console.log("Hello, world!");
+```
+
 </Callout>

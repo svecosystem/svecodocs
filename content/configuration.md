@@ -6,7 +6,7 @@ tagline: Overview
 
 There isn't a ton of magic going on here, as this template was developed quickly to meet our own needs. The following sections will give you a brief overview of how the template is structured and how to get started.
 
-## Site Config
+## Site
 
 The site config is used to define the site's title, description, metadata, and other information that is used throughout the site. The site config is defined in `src/lib/config/site.ts`.
 
@@ -31,7 +31,7 @@ export const siteConfig = {
 };
 ```
 
-## Navigation Config
+## Navigation
 
 Navigation for the various components (navbar, sidebar, etc.) is defined in a single file, `src/lib/config/navigation.ts`. The `main` navigation items are rendered in the top navigation bar, while the `sidebar` navigation items are rendered in the sidebar. The `sidebar` navigation only supports 2 levels of navigation out of the box.
 

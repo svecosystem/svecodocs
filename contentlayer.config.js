@@ -35,7 +35,7 @@ export const Doc = defineDocumentType(() => ({
 		},
 		tagline: {
 			type: "string",
-			required: true
+			required: false
 		}
 	},
 	computedFields

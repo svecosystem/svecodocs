@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { GitHubLogo } from "$lib/components/logos";
 	import { Button } from "$lib/components/ui/button";
 </script>
 
@@ -10,8 +11,12 @@
 	<p class="mx-auto mt-4 max-w-3xl text-balance text-center text-xl">
 		An opinionated template for creating documentation sites with SvelteKit and Markdown.
 	</p>
-	<div class="flex items-center">
-		<Button href="/docs/introduction">Get Started</Button>
+	<div class="mt-6 flex items-center justify-center gap-4">
+		<Button href="/docs/introduction" variant="brand">Get Started</Button>
+		<Button href="/docs/introduction" variant="outline">
+			<GitHubLogo class="mr-2 h-4 w-4" />
+			View on GitHub
+		</Button>
 	</div>
 </div>
 
