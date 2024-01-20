@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Drawer } from "vaul-svelte";
 	import { Separator } from "$lib/components/ui/separator";
-	import { List, ArrowUpRight } from "phosphor-svelte";
+	import { List } from "phosphor-svelte";
 	import { navigation, siteConfig } from "$lib/config";
 	import MobileNavItem from "./mobile-nav-item.svelte";
 	import MobileNavLink from "./mobile-nav-link.svelte";
@@ -24,7 +24,7 @@
 						<ul class="mb-8 flex w-full flex-col justify-center gap-8">
 							{#each navigation.main as { href, title, external }}
 								<li class="relative">
-									<MobileNavLink target={external ? "_blank" : undefined} {href}>
+									<MobileNavLink {external} {href}>
 										{title}
 									</MobileNavLink>
 								</li>
@@ -46,18 +46,16 @@
 					<MobileNavLink
 						class="gap-0.25 flex items-center text-xs text-muted-foreground"
 						href={siteConfig.links.github}
-						target="_blank"
+						external
 					>
 						GitHub
-						<ArrowUpRight class="-mt-2 ml-0.5 h-3 w-3" />
 					</MobileNavLink>
 					<MobileNavLink
 						class="gap-0.25 flex items-center text-xs text-muted-foreground"
 						href={siteConfig.links.twitter}
-						target="_blank"
+						external
 					>
 						Twitter
-						<ArrowUpRight class="-mt-2 ml-0.5 h-3 w-3" />
 					</MobileNavLink>
 				</div>
 			</div>
