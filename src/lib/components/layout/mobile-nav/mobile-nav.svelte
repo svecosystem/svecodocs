@@ -44,18 +44,18 @@
 			<div class="mt-auto border-t border-border bg-primary/5 p-4">
 				<div class="mx-auto flex max-w-md justify-end gap-6">
 					<MobileNavLink
-						class="gap-0.25 flex items-center text-xs text-muted-foreground"
+						class="text-xs text-muted-foreground"
 						href={siteConfig.links.github}
 						external
 					>
 						GitHub
 					</MobileNavLink>
 					<MobileNavLink
-						class="gap-0.25 flex items-center text-xs text-muted-foreground"
+						class="text-xs text-muted-foreground"
 						href={siteConfig.links.twitter}
 						external
 					>
-						Twitter
+						X
 					</MobileNavLink>
 				</div>
 			</div>
