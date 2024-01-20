@@ -145,3 +145,37 @@
 		content: counter(step);
 	}
 }
+
+@layer components {
+	.hero-gradient {
+		background: radial-gradient(
+			circle 50vh at 50% 25%,
+			theme(colors.brand),
+			theme(colors.background) 60%
+		);
+		filter: blur(180px);
+		height: 30vh;
+		opacity: 0.5;
+		position: fixed;
+		top: 10vh;
+		left: 40vw;
+		width: 100%;
+		z-index: -1;
+	}
+
+	.features-gradient {
+		background: radial-gradient(
+			circle 50vh at 50% 25%,
+			theme(colors.brand),
+			theme(colors.background) 60%
+		);
+		filter: blur(180px);
+		height: 30vh;
+		opacity: 0.5;
+		position: fixed;
+		bottom: 20vh;
+		right: 30vw;
+		width: 100%;
+		z-index: -1;
+	}
+}
