@@ -5,7 +5,7 @@ tagline: Overview
 ---
 
 <script>
-	import { Tabs, TabItem, Callout } from '$lib/components'
+	import { Tabs, TabItem, Callout, Step, Steps } from '$lib/components'
 </script>
 
 The Svecosystem starter template ships with a few pre-built components that you can use within the docs. These components are built using [Svelte](https://svelte.dev), [Tailwind CSS](https://tailwindcss.com), and [shadcn-svelte](https://shadcn-svelte.com).
@@ -107,3 +107,49 @@ console.log("Hello, world!");
 ```
 
 </Callout>
+
+### Steps
+
+Steps are great for showing a list of steps to complete a task. You can use the `<Steps />` and `<Step />` components to create a list of steps in the docs.
+
+```svelte title="content/docs/example.md"
+<script>
+	import { Steps, Step } from "$lib/components";
+</script>
+
+<Steps>
+	<Step>Install the package</Step>
+
+	You can install the project via `npm` or `pnpm`.
+
+	<!-- Code block here -->
+
+	<Step>Start your engines</Step>
+
+	You can start the project by running `npm run dev` or `pnpm run dev`.
+
+	<!-- Code block here -->
+</Steps>
+```
+
+The above code will render the following:
+
+<Steps>
+
+<Step tocIgnore>Install the package</Step>
+
+You can install the project via `npm` or `pnpm`.
+
+```sh
+pnpm install -D myproject
+```
+
+<Step tocIgnore>Start your engines</Step>
+
+You can start the project by running `npm run dev` or `pnpm run dev`.
+
+```sh
+pnpm run dev
+```
+
+</Steps>
