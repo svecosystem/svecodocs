@@ -4,6 +4,10 @@ description: Learn how to get started with this template.
 tagline: Guide
 ---
 
+<script>
+	import { Callout } from '$lib/components'
+</script>
+
 There isn't a ton of magic going on here, as this template was developed quickly to meet our own needs. The following sections will give you a brief overview of how the template is structured and how to get started.
 
 ## Site
@@ -33,7 +37,7 @@ export const siteConfig = {
 
 ## Navigation
 
-Navigation for the various components (navbar, sidebar, etc.) is defined in a single file, `src/lib/config/navigation.ts`. The `main` navigation items are rendered in the top navigation bar, while the `sidebar` navigation items are rendered in the sidebar. The `sidebar` navigation only supports 2 levels of navigation out of the box.
+Navigation for the various components (navbar, sidebar, etc.) is defined in a single file, `src/lib/config/navigation.ts`. The `main` navigation items are rendered in the top navigation bar, while the `sidebar` navigation items are rendered in the sidebar.
 
 Here's an example of what the `navigation.ts` file looks like:
 
@@ -91,6 +95,10 @@ export const navigation: Navigation = {
 ```
 
 When links are marked as `external`, they will open in a new tab when clicked.
+
+<Callout>
+	The design of this template only supports a single level of navigation! If you need to support more, you'll need to modify the sidebar component to support it.
+</Callout>
 
 ## Meta Tags
 

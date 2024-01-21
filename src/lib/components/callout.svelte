@@ -3,7 +3,7 @@
 	import { RocketLaunch, Info, WarningOctagon, Warning } from "$lib/icons/index.js";
 
 	export let type: "note" | "warning" | "danger" | "tip" = "note";
-	export let title: string | undefined = undefined;
+	export let title: string | undefined = type.split("").map((c, i) => i === 0 ? c.toUpperCase() : c).join("");
 
 	const iconMap = {
 		note: Info,

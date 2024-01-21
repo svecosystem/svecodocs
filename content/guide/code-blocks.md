@@ -4,6 +4,10 @@ description: Learn how to use and customize code blocks.
 tagline: Guide
 ---
 
+<script>
+	import { Callout } from '$lib/components'
+</script>
+
 Having a good code block experience is important for any documentation site. This template uses [shikiji](https://shikiji.netlify.app/guide/) and [rehype-pretty-code](https://rehype-pretty-code.netlify.app/) to style and highlight code blocks.
 
 ## Basic usage
@@ -36,7 +40,11 @@ console.log("hello");
 
 You can use multiple meta strings in a single code block, and they can be in any order, separated by spaces.
 
+<Callout type="tip" title="Pretty code">
+
 The following sections will cover some of the meta strings that this template has been setup to use, but you can find a full list of meta strings in the [rehype-pretty-code documentation](https://rehype-pretty-code.netlify.app/#meta-strings).
+
+</Callout>
 
 ### Titles
 
@@ -192,4 +200,6 @@ const prettyCodeOptions = {
 };
 ```
 
+<Callout type="warning" title="Bundle Overload">
 It's important to only include the languages you need, as importing all of the languages will increase the bundle size of your site, thus increasing the load time.
+</Callout>
