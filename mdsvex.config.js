@@ -60,17 +60,31 @@ export const mdsvexOptions = {
 		backticks: false,
 		dashes: false
 	},
-	remarkPlugins: [remarkGfm, remarkRemovePrettierIgnore, remarkEscapeCode],
+	remarkPlugins: [
+		// use remark-gfm to support GitHub Flavored Markdown
+		remarkGfm,
+		// remove prettier-ignore comments from code blocks
+		remarkRemovePrettierIgnore,
+		// escape code blocks so they can be used within Svelte components
+		remarkEscapeCode
+	],
 	rehypePlugins: [
+		// convert <Component.Pre> to <pre> so it can be processed by rehype-pretty-code
 		rehypeComponentPreToPre,
+		// syntax highlight code blocks with rehype-pretty-code
 		[rehypePrettyCode, prettyCodeOptions],
+		// apply data-metadata to <figure> elements that contain a <figcaption>
 		rehypeHandleMetadata,
+		// render code blocks as HTML so they can be used within Svelte components
 		rehypeRenderCode,
+		// convert <pre> back to <Component.Pre> before rendering
 		rehypePreToComponentPre,
+		// add IDs to headings for table of contents links
 		rehypeSlug
 	]
 };
 
+// The entities we want to escape in code blocks, along with their replacements.
 const entities = [
 	[/</g, "&lt;"],
 	[/>/g, "&gt;"],
@@ -79,10 +93,17 @@ const entities = [
 ];
 
 /**
- * Removes `<!-- prettier-ignore -->` and `// prettier-ignore` from code blocks.
+ * Removes `<!-- prettier-ignore -->` and `// prettier-ignore` from code blocks
+ * before they are converted to HTML for syntax highlighting.
+ *
  * We do this because sometimes we want to force a line break in code blocks, but
  * prettier removes them, however, we don't want to include the ignore statement
  * in the final code block.
+ *
+ * One caveat is that if you did want to include the ignore statement in the final
+ * code block, you'd have to do some hacky stuff like including it in the comment
+ * itself and checking for it in the code block, but that's not something we need
+ * at the moment.
  */
 function remarkRemovePrettierIgnore() {
 	return async (tree) => {
@@ -94,6 +115,9 @@ function remarkRemovePrettierIgnore() {
 	};
 }
 
+/**
+ * Escapes code blocks so that they can be used within Svelte components.
+ */
 function remarkEscapeCode() {
 	return async (tree) => {
 		visit(tree, "inlineCode", escape);
@@ -106,6 +130,11 @@ function remarkEscapeCode() {
 	};
 }
 
+/**
+ * Converts the `<Component.Pre>` component created by mdsvex to a regular `<pre>`
+ * element so it can be processed by `rehype-pretty-code` or any other rehype plugin
+ * that expects a `<pre>` element.
+ */
 function rehypeComponentPreToPre() {
 	return async (tree) => {
 		visit(tree, (node) => {
@@ -116,6 +145,9 @@ function rehypeComponentPreToPre() {
 	};
 }
 
+/**
+ * Converts `<pre>` elements back to `<Component.Pre>` before they are rendered.
+ */
 function rehypePreToComponentPre() {
 	return async (tree) => {
 		visit(tree, (node) => {
@@ -126,6 +158,11 @@ function rehypePreToComponentPre() {
 	};
 }
 
+/**
+ * Adds `data-metadata` to `<figure>` elements that contain a `<figcaption>`.
+ * We use this to style elements within the `<figure>` differently if a `<figcaption>`
+ * is present.
+ */
 function rehypeHandleMetadata() {
 	return async (tree) => {
 		visit(tree, (node) => {
@@ -148,6 +185,9 @@ function rehypeHandleMetadata() {
 	};
 }
 
+/**
+ * Renders `<pre>` elements as HTML so they can be used within Svelte components.
+ */
 function rehypeRenderCode() {
 	return async (tree) => {
 		visit(tree, (node) => {
@@ -176,6 +216,10 @@ function rehypeRenderCode() {
 	};
 }
 
+/**
+ * Converts tabs to spaces to make wider code blocks fit better
+ * on smaller screens.
+ */
 function tabsToSpaces(code) {
 	return code.replaceAll("    ", "  ").replaceAll("\t", "  ");
 }

@@ -29,7 +29,7 @@
 	@apply relative;
 
 	& pre {
-		@apply mb-4 mt-6 overflow-x-auto rounded-lg border border-border py-4 text-sm font-medium;
+		@apply mb-4 mt-6 overflow-x-auto rounded-lg border border-border bg-[#f1f1f1] py-4 text-sm font-medium;
 	}
 
 	& code {
@@ -39,7 +39,7 @@
 	}
 
 	& [data-line] {
-		@apply inline-block min-h-[1.5rem] w-full border-l-2 border-l-transparent py-0.5;
+		@apply inline-block min-h-[1.5rem] w-full border-l-2 border-l-transparent px-4 py-0.5;
 	}
 
 	& [data-chars-id] {
@@ -47,32 +47,20 @@
 	}
 
 	& [data-highlighted-line] {
-		@apply w-full border-l-primary bg-muted;
+		@apply z-10 w-full border-l-primary bg-foreground/5;
+	}
+
+	& [data-highlighted-line][data-highlighted-line-id="add"] {
+		@apply border-l-green-600 data-[highlighted-line-id="add"]:bg-green-100;
+	}
+
+	& [data-highlighted-line][data-highlighted-line-id="remove"] {
+		@apply border-l-red-600 data-[highlighted-line-id="remove"]:bg-red-100;
 	}
 
 	& [data-line-numbers] [data-line] {
-		@apply px-2;
+		@apply -ml-2 pr-2;
 	}
-}
-
-[data-chars-id="ul"] {
-	@apply border-b border-border font-bold !important;
-}
-
-[data-chars-id="hi"] {
-	@apply rounded bg-accent/[0.1] p-1 font-bold !important;
-}
-
-[data-chars-id="r"] {
-	@apply border-border font-bold !important;
-}
-
-[data-chars-id="t"] {
-	@apply border-b font-bold !important;
-}
-
-[data-chars-id="c"] {
-	@apply border-b font-bold !important;
 }
 
 [data-rehype-pretty-code-title] {
@@ -93,10 +81,30 @@ code[data-theme*=" "] span {
 	background-color: var(--shiki-light-bg);
 }
 
+/* Dark mode specific overrides */
+
 .dark {
 	& code[data-theme*=" "],
 	code[data-theme*=" "] span {
 		color: var(--shiki-dark);
 		background-color: var(--shiki-dark-bg);
+	}
+
+	& [data-rehype-pretty-code-figure] {
+		& pre {
+			@apply bg-[#181818];
+		}
+
+		& [data-highlighted-line] {
+			@apply bg-muted;
+		}
+
+		& [data-highlighted-line][data-highlighted-line-id="add"] {
+			@apply border-l-green-500 data-[highlighted-line-id="add"]:bg-green-600/20;
+		}
+
+		& [data-highlighted-line][data-highlighted-line-id="remove"] {
+			@apply border-l-red-500 data-[highlighted-line-id="remove"]:bg-red-500/20;
+		}
 	}
 }
