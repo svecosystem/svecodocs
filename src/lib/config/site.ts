@@ -1,6 +1,6 @@
 export const siteConfig = {
 	name: "Svecodocs",
-	url: "https://svecosystem.com",
+	url: "https://svecodocs.pages.dev",
 	description: "Docs template for SvelteKit",
 	links: {
 		x: "https://x.com/huntabyte",
