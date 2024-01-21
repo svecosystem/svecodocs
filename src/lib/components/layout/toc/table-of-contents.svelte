@@ -3,7 +3,7 @@
 	import { createTableOfContents } from "@melt-ui/svelte";
 	import Tree from "./tree.svelte";
 
-	export let selector = "#content";
+	export let selector = "#sveco-content";
 
 	const {
 		elements: { item },

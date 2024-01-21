@@ -7,6 +7,7 @@ import { escapeSvelte } from "@huntabyte/mdsvex";
 import { resolve } from "path";
 import { readFileSync } from "fs";
 import { getHighlighter } from "shikiji";
+import rehypeSlug from "rehype-slug";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -65,7 +66,8 @@ export const mdsvexOptions = {
 		[rehypePrettyCode, prettyCodeOptions],
 		rehypeHandleMetadata,
 		rehypeRenderCode,
-		rehypePreToComponentPre
+		rehypePreToComponentPre,
+		rehypeSlug
 	]
 };
 

@@ -47,7 +47,7 @@
 			Nothing beats the simplicity of Markdown for documenting your projects.
 		</FeatureCard>
 		<FeatureCard title="Syntax Highlighting" icon={Code}>
-			Powered by <A href="https://shiki.matsu.io/">Shiki</A>, and enhanced by <A
+			Powered by <A href="https://shikiji.netlify.app/">Shikiji</A>, and enhanced by <A
 				href="https://rehype-pretty-code.netlify.app/">Pretty Code</A
 			> to provide the same syntax highlighting as VSCode.
 		</FeatureCard>

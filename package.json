@@ -67,9 +67,9 @@
 		"@melt-ui/svelte": "^0.70.0",
 		"bits-ui": "^0.14.0",
 		"mode-watcher": "^0.1.2",
+		"rehype-slug": "^6.0.0",
 		"shikiji": "0.10.0-beta.9",
 		"svelte-interactions": "^0.2.0",
-		"svelte-wrap-balancer": "^0.0.4",
 		"vaul-svelte": "^0.0.7"
 	}
 }
