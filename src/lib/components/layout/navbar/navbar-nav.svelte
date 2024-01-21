@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { navigation } from "$lib/config/index.js";
 	import { ArrowUpRight } from "$lib/icons/index.js";
+	import { cn } from "$lib/utils/index.js";
 </script>
 
 <nav class="hidden items-center justify-center lg:flex">
@@ -9,10 +11,12 @@
 			<li class="relative">
 				<a
 					{href}
-					class="text-sm text-muted-foreground hover:text-brand {external
-						? 'flex items-center gap-0.5'
-						: ''}"
-					target={external ? "_blank" : undefined}
+					class={cn(
+						"text-sm text-muted-foreground hover:text-brand",
+						external ? "flex items-center gap-0.5" : "",
+						$page.url.pathname === href ? "text-brand" : ""
+					)}
+					target="{external ? '_blank' : undefined})"
 				>
 					{title}
 					{#if external}

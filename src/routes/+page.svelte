@@ -2,7 +2,6 @@
 	import {
 		GitHubIcon,
 		Code,
-		RocketLaunch,
 		MarkdownIcon,
 		ShadcnIcon,
 		MoonStars,
