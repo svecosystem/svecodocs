@@ -5,7 +5,7 @@ export { default as Circle } from "phosphor-svelte/lib/Circle";
 export { default as Code } from "phosphor-svelte/lib/Code";
 export { default as ComputerTower } from "phosphor-svelte/lib/ComputerTower";
 export { default as CopySimple } from "phosphor-svelte/lib/CopySimple";
-export { default as FileHTML } from "phosphor-svelte/lib/FileHTML";
+export { default as FileHTML } from "phosphor-svelte/lib/FileHtml";
 export { default as GitHubIcon } from "./github-icon.svelte";
 export { default as Info } from "phosphor-svelte/lib/Info";
 export { default as List } from "phosphor-svelte/lib/List";
