@@ -4,7 +4,7 @@ import typography from "@tailwindcss/typography";
 /** @type {import('tailwindcss').Config} */
 const config = {
 	darkMode: ["class"],
-	content: ["./src/**/*.{html,js,svelte,ts}", "./content/**/*.{md}"],
+	content: ["./src/**/*.{html,js,svelte,ts}", "./content/**/*.md"],
 	safelist: ["dark"],
 	theme: {
 		container: {

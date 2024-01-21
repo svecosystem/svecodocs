@@ -6,6 +6,7 @@ import { visit } from "unist-util-visit";
 import { escapeSvelte } from "@huntabyte/mdsvex";
 import { resolve } from "path";
 import { readFileSync } from "fs";
+import { getHighlighter } from "shikiji";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -21,6 +22,19 @@ const prettyCodeOptions = {
 			readFileSync(resolve(__dirname, "./src/lib/styles/themes/tokyo-night-light.json"))
 		)
 	},
+	getHighlighter: (options) =>
+		getHighlighter({
+			...options,
+			langs: [
+				"plaintext",
+				import("shikiji/langs/javascript.mjs"),
+				import("shikiji/langs/typescript.mjs"),
+				import("shikiji/langs/css.mjs"),
+				import("shikiji/langs/svelte.mjs"),
+				import("shikiji/langs/shellscript.mjs"),
+				import("shikiji/langs/markdown.mjs")
+			]
+		}),
 	keepBackground: false,
 	onVisitLine(node) {
 		if (node.children.length === 0) {
@@ -45,7 +59,7 @@ export const mdsvexOptions = {
 		backticks: false,
 		dashes: false
 	},
-	remarkPlugins: [remarkGfm, remarkEscapeCode],
+	remarkPlugins: [remarkGfm, remarkRemovePrettierIgnore, remarkEscapeCode],
 	rehypePlugins: [
 		rehypeComponentPreToPre,
 		[rehypePrettyCode, prettyCodeOptions],
@@ -61,6 +75,22 @@ const entities = [
 	[/{/g, "&#123;"],
 	[/}/g, "&#125;"]
 ];
+
+/**
+ * Removes `<!-- prettier-ignore -->` and `// prettier-ignore` from code blocks.
+ * We do this because sometimes we want to force a line break in code blocks, but
+ * prettier removes them, however, we don't want to include the ignore statement
+ * in the final code block.
+ */
+function remarkRemovePrettierIgnore() {
+	return async (tree) => {
+		visit(tree, "code", (node) => {
+			node.value = node.value
+				.replaceAll("<!-- prettier-ignore -->\n", "")
+				.replaceAll("// prettier-ignore\n", "");
+		});
+	};
+}
 
 function remarkEscapeCode() {
 	return async (tree) => {
@@ -97,8 +127,8 @@ function rehypePreToComponentPre() {
 function rehypeHandleMetadata() {
 	return async (tree) => {
 		visit(tree, (node) => {
-			if (node?.type === "element" && node?.tagName === "div") {
-				if (!("data-rehype-pretty-code-fragment" in node.properties)) {
+			if (node?.type === "element" && node?.tagName === "figure") {
+				if (!("data-rehype-pretty-code-figure" in node.properties)) {
 					return;
 				}
 
@@ -107,7 +137,7 @@ function rehypeHandleMetadata() {
 					return;
 				}
 
-				if (node.children.at(0).tagName === "div") {
+				if (node.children.at(0).tagName === "figcaption") {
 					node.properties["data-metadata"] = "";
 					node.children.at(-1).properties["data-metadata"] = "";
 				}

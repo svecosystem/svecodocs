@@ -1,8 +1,8 @@
 {
-	"name": "Tokyo Night Light",
+	"name": "tokyo-night-light",
 	"author": "Enkia",
 	"maintainers": ["Enkia <enki77@gmail.com>"],
-	"type": "dark",
+	"type": "light",
 	"semanticTokenColors": {
 		"parameter.declaration": {
 			"foreground": "#8f5e15"

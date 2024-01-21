@@ -14,16 +14,12 @@ The Svecosystem starter template ships with a few pre-built components that you 
 
 To use a component, simply import it from it's respective location and use it in the Markdown file.
 
-```md title="content/docs/example.md"
----
-title: Example
-description: An example page.
----
-
+```svelte title="content/docs/example.md"
 <script>
-	import { SomeComponent } from '$lib/components'
+	import { SomeComponent } from "$lib/components";
 </script>
 
+<!-- prettier-ignore -->
 <SomeComponent>
 	Hello
 </SomeComponent>
