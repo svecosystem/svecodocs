@@ -4,6 +4,6 @@
 	export { className as class };
 </script>
 
-<h1 class={cn("mb-6 scroll-m-20 text-5xl font-bold tracking-tight", className)}>
+<h1 class={cn("mb-6 scroll-m-20 text-4xl font-bold tracking-tight", className)}>
 	<slot />
 </h1>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GitHubLogo, XLogo } from "$lib/components/logos";
+	import { GitHubIcon, XComIcon } from "$lib/icons/index.js";
 	import MobileNav from "../mobile-nav/mobile-nav.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import { siteConfig } from "$lib/config";
@@ -13,7 +13,7 @@
 		size="icon"
 		variant="subtle"
 	>
-		<GitHubLogo class="size-5" />
+		<GitHubIcon class="size-5" />
 	</Button>
 	<Button
 		href={siteConfig.links.x}
@@ -23,7 +23,7 @@
 		variant="subtle"
 		class="inline-flex items-center"
 	>
-		<XLogo class="size-4" />
+		<XComIcon class="size-4" />
 	</Button>
 	<MobileNav />
 </div>

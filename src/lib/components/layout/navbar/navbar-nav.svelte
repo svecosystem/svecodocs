@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { navigation } from "$lib/config";
-	import { ArrowUpRight } from "phosphor-svelte";
+	import { navigation } from "$lib/config/index.js";
+	import { ArrowUpRight } from "$lib/icons/index.js";
 </script>
 
 <nav class="hidden items-center justify-center lg:flex">

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Drawer } from "vaul-svelte";
 	import { Separator } from "$lib/components/ui/separator";
-	import { List } from "phosphor-svelte";
+	import { List } from "$lib/icons/index.js";
 	import { navigation, siteConfig } from "$lib/config";
 	import MobileNavItem from "./mobile-nav-item.svelte";
 	import MobileNavLink from "./mobile-nav-link.svelte";
-	import { buttonVariants } from "$lib/components/ui/button";
+	import { buttonVariants } from "$lib/components/ui/button/index.js";
 	import { cn } from "$lib/utils";
 </script>
 
