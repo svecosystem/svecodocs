@@ -16,7 +16,7 @@
 						external ? "flex items-center gap-0.5" : "",
 						$page.url.pathname === href ? "text-brand" : ""
 					)}
-					target="{external ? '_blank' : undefined})"
+					target={external ? "_blank" : undefined}
 				>
 					{title}
 					{#if external}

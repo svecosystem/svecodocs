@@ -1,7 +1,7 @@
 ---
 title: Configuration
 description: Learn how to get started with this template.
-tagline: Overview
+tagline: Guide
 ---
 
 There isn't a ton of magic going on here, as this template was developed quickly to meet our own needs. The following sections will give you a brief overview of how the template is structured and how to get started.

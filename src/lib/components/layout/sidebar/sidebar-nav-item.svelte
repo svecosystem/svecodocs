@@ -11,7 +11,9 @@
 	<h5 class="mb-6 font-medium lg:mb-3 lg:text-sm">{navItem.title}</h5>
 	<ul class="space-y-6 border-l border-border lg:space-y-2">
 		{#each navItem.items as item}
-			{@const isActive = isTitleActive(currentPath, item.title)}
+			{@const isActive = item.href
+				? isTitleActive(currentPath, slugFromPathname(item.href))
+				: false}
 			<li>
 				<a
 					href={item.href}

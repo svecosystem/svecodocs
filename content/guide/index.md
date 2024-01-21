@@ -1,7 +1,7 @@
 ---
 title: Introduction
 description: What is this?
-tagline: Overview
+tagline: Guide
 ---
 
 This template is a starting point we use for projects under the [Svecosystem](https://github.com/svecosystem) umbrella. The template is open source, but it's built for our own needs, so we won't be accepting any public feature requests. Feel free to fork the project and customize it to your own needs.
@@ -9,7 +9,7 @@ This template is a starting point we use for projects under the [Svecosystem](ht
 ## Features
 
 - **Markdown-based docs**. Write docs using Markdown and Svelte components
-- **Dark mode**. Toggle between light and dark mode
+- **Light and dark mode**. Toggle between light and dark mode
 - **Syntax highlighting**. Code blocks are automatically highlighted
 - **SEO-friendly**. Meta tags and Open Graph support out of the box
 - **Pre-built components**. Tabs, callouts, and more to use within the documentation

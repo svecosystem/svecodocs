@@ -20,9 +20,9 @@ export function slugFromPath(path: string) {
 	return path.replace("/content/", "").replace(".md", "");
 }
 
-export async function getDoc(slug: string): Promise<TDoc> {
-	const modules = import.meta.glob(`/content/**/*.md`);
+type Modules = Record<string, () => Promise<unknown>>;
 
+function findMatch(slug: string, modules: Modules) {
 	let match: { path?: string; resolver?: DocResolver } = {};
 
 	for (const [path, resolver] of Object.entries(modules)) {
@@ -31,7 +31,29 @@ export async function getDoc(slug: string): Promise<TDoc> {
 			break;
 		}
 	}
+	if (!match.path) {
+		match = getIndexDocIfExists(slug, modules);
+	}
 
+	return match;
+}
+
+function getIndexDocIfExists(slug: string, modules: Modules) {
+	let match: { path?: string; resolver?: DocResolver } = {};
+
+	for (const [path, resolver] of Object.entries(modules)) {
+		if (path.includes(`/${slug}/index.md`)) {
+			match = { path, resolver: resolver as unknown as DocResolver };
+			break;
+		}
+	}
+
+	return match;
+}
+
+export async function getDoc(slug: string): Promise<TDoc> {
+	const modules = import.meta.glob(`/content/**/*.md`);
+	const match = findMatch(slug, modules);
 	const doc = await match?.resolver?.();
 
 	if (!doc || !doc.metadata) {

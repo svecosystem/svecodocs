@@ -40,21 +40,26 @@ export const navigation: Navigation = {
 	// By default, `sidebar` navigation only supports 2 levels of navigation.
 	sidebar: [
 		{
-			title: "Overview",
+			title: "Guide",
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs/introduction",
+					href: "/docs/guide",
 					items: []
 				},
 				{
 					title: "Configuration",
-					href: "/docs/configuration",
+					href: "/docs/guide/configuration",
 					items: []
 				},
 				{
 					title: "Components",
-					href: "/docs/components",
+					href: "/docs/guide/components",
+					items: []
+				},
+				{
+					title: "Code Blocks",
+					href: "/docs/guide/code-blocks",
 					items: []
 				}
 			]

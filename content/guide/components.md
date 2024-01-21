@@ -1,7 +1,7 @@
 ---
 title: Components
 description: Pre-built components to use within the docs.
-tagline: Overview
+tagline: Guide
 ---
 
 <script>
