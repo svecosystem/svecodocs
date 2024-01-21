@@ -8,5 +8,6 @@ node_modules
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-git-filter-repo.py
 .contentlayer
+.contentlayer/
+/.contentlayer
