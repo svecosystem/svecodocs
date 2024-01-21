@@ -31,7 +31,7 @@
 		> team for our own use, but we hope you find it useful too!
 	</p>
 	<div class="mt-8 flex items-center justify-center gap-4">
-		<Button href="/docs/introduction" variant="brand" size="lg">Get Started</Button>
+		<Button href="/docs/guide" variant="brand" size="lg">Get Started</Button>
 		<Button href="https://github.com/svecosystem/svecodocs" variant="outline" size="lg">
 			<GitHubIcon class="mr-2 h-4 w-4" />
 			View on GitHub
