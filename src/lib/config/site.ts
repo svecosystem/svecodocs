@@ -1,7 +1,7 @@
 export const siteConfig = {
-	name: "Svecosystem Docs Starter",
+	name: "Svecodocs",
 	url: "https://svecosystem.com",
-	description: "Componentized & accessible forms for SvelteKit.",
+	description: "Docs template for SvelteKit",
 	links: {
 		x: "https://x.com/huntabyte",
 		github: "https://github.com/svecosystem"
@@ -9,7 +9,7 @@ export const siteConfig = {
 	author: "Huntabyte",
 	keywords: "Svelte ecosystem,ecosystem,svecosystem,sveltekit,svelte libraries",
 	ogImage: {
-		url: "https://www.svecosystem.com/og.png",
+		url: "https://svecodocs.pages.dev/og.png",
 		width: "1200",
 		height: "630"
 	},
