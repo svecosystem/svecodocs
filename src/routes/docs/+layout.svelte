@@ -15,6 +15,8 @@
 		<div class="mx-auto w-full min-w-0 max-w-3xl pt-8">
 			<slot />
 		</div>
-		<TableOfContents />
+		{#key $page.url.pathname}
+			<TableOfContents />
+		{/key}
 	</main>
 </div>
