@@ -2,7 +2,6 @@
 	import A from "$lib/components/markdown/a.svelte";
 	import { siteConfig } from "$lib/config";
 	import FooterIcons from "./footer-icons.svelte";
-	import FooterNav from "./footer-nav.svelte";
 </script>
 
 <footer class="mt-4 border-t border-border text-sm leading-6">
@@ -13,7 +12,6 @@
 			</A>
 			<p>&copy; {new Date().getFullYear()} Svecosystem Team</p>
 		</div>
-		<FooterNav />
 		<FooterIcons />
 	</div>
 </footer>

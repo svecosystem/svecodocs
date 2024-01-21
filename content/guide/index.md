@@ -4,7 +4,11 @@ description: What is this?
 tagline: Guide
 ---
 
-This template is a starting point we use for projects under the [Svecosystem](https://github.com/svecosystem) umbrella. The template is open source, but it's built for our own needs, so we won't be accepting any public feature requests. Feel free to fork the project and customize it to your own needs.
+After spending a ton of time building documentation sites for various projects, we decided to build a starter template that we could use for future projects. This template is the result of that effort.
+
+This template is a starting point we use for projects under the [Svecosystem](https://github.com/svecosystem) umbrella. The code is open source, but it's built and maintained for our own needs, so we won't be accepting any public feature requests or handling any issues related to this project.
+
+Feel free to fork the project and customize it to your own needs, or use it as a starting point for your own documentation site. We've tried to make it as easy as possible to customize the template, and we've documented some of the more common customizations throughout this site.
 
 ## Features
 
