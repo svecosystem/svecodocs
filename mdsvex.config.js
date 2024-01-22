@@ -84,14 +84,6 @@ export const mdsvexOptions = {
 	]
 };
 
-// The entities we want to escape in code blocks, along with their replacements.
-const entities = [
-	[/</g, "&lt;"],
-	[/>/g, "&gt;"],
-	[/{/g, "&#123;"],
-	[/}/g, "&#125;"]
-];
-
 /**
  * Removes `<!-- prettier-ignore -->` and `// prettier-ignore` from code blocks
  * before they are converted to HTML for syntax highlighting.
@@ -114,6 +106,14 @@ function remarkRemovePrettierIgnore() {
 		});
 	};
 }
+
+// The entities we want to escape in code blocks, along with their replacements.
+const entities = [
+	[/</g, "&lt;"],
+	[/>/g, "&gt;"],
+	[/{/g, "&#123;"],
+	[/}/g, "&#125;"]
+];
 
 /**
  * Escapes code blocks so that they can be used within Svelte components.
@@ -209,7 +209,6 @@ function rehypeRenderCode() {
 				);
 
 				codeEl.type = "raw";
-
 				codeEl.value = `{@html \`${escapeSvelte(codeString)}\`}`;
 			}
 		});
