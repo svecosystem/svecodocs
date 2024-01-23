@@ -8,6 +8,7 @@ export type NavItem = {
 
 export type SidebarNavItem = NavItem & {
 	items: SidebarNavItem[];
+	collapsible?: boolean;
 };
 
 export type NavItemWithChildren = NavItem & {
@@ -41,6 +42,7 @@ export const navigation: Navigation = {
 	sidebar: [
 		{
 			title: "Guide",
+			collapsible: true,
 			items: [
 				{
 					title: "Introduction",

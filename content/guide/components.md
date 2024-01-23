@@ -5,7 +5,7 @@ tagline: Guide
 ---
 
 <script>
-	import { Tabs, TabItem, Callout, Step, Steps } from '$lib/components'
+	import { Tabs, TabItem, Callout, Step, Steps, IconGrid } from '$lib/components'
 </script>
 
 The Svecosystem starter template ships with a few pre-built components that you can use within the docs. These components are built using [Svelte](https://svelte.dev), [Tailwind CSS](https://tailwindcss.com), and [shadcn-svelte](https://shadcn-svelte.com).
@@ -149,3 +149,19 @@ pnpm run dev
 ```
 
 </Steps>
+
+### Icons
+
+We use [Phosphor Icons](https://phosphoricons.com/) for most of our icons, except a few custom logos. You can use any of the icons in the library, however, they should be reexported from the `src/lib/icons/index.ts` file. The project exports a few icons by default, but you can add more as needed.
+
+The reasoning behind re-exporting the icons is for one, to allow us to easily switch icon libraries in the future if needed, and two, it improves the development server's performance by only importing the icons that are actually used in the project. If we were to import from `"phosphor-svelte"` directly, the entire icon library would be optimized by Vite, which would increase the development server's startup time.
+
+Here's what a re-export looks like:
+
+```ts title="src/lib/icons/index.ts"
+export { default as ArrowUpRight } from "phosphor-svelte/lib/ArrowUpRight";
+```
+
+Here's all the icons that are currently exported by default, and can be imported into your markdown files from `$lib/icons`:
+
+<IconGrid />
