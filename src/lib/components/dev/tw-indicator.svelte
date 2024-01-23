@@ -1,4 +1,5 @@
 <script lang="ts">
+	// A simple indicator to show which breakpoint is active during development
 	import { dev } from "$app/environment";
 </script>
 
