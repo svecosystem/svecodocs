@@ -8,7 +8,7 @@
 	const {
 		elements: { item },
 		states: { headingsTree, activeHeadingIdxs },
-		helpers: { isActive }
+		helpers: { isActive },
 	} = createTableOfContents({
 		selector,
 		exclude: ["h1", "h4", "h5", "h6"],
@@ -16,7 +16,7 @@
 		scrollOffset: 80,
 		headingFilterFn: (heading) => {
 			return !heading.hasAttribute("data-toc-ignore");
-		}
+		},
 	});
 </script>
 

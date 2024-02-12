@@ -6,6 +6,6 @@ export const load: PageLoad = async () => {
 	return {
 		component,
 		title,
-		metadata
+		metadata,
 	};
 };

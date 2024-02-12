@@ -6,7 +6,7 @@
 		ShadcnIcon,
 		MoonStars,
 		FileHTML,
-		Plug
+		Plug,
 	} from "$lib/icons/index.js";
 	import { Button } from "$lib/components/ui/button/index.js";
 	import FeatureCard from "$lib/components/feature-card.svelte";

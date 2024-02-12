@@ -5,20 +5,20 @@ import path from "path";
 const computedFields = {
 	slug: {
 		type: "string",
-		resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
+		resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
 	},
 	slugFull: {
 		type: "string",
-		resolve: (doc) => `/${doc._raw.flattenedPath}`
+		resolve: (doc) => `/${doc._raw.flattenedPath}`,
 	},
 	fileName: {
 		type: "string",
-		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split("/").slice(-1).join("/")).name
+		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split("/").slice(-1).join("/")).name,
 	},
 	suffix: {
 		type: "string",
-		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split("/").slice(-1).join("/")).ext
-	}
+		resolve: (doc) => path.parse(doc._raw.sourceFilePath.split("/").slice(-1).join("/")).ext,
+	},
 };
 
 export const Doc = defineDocumentType(() => ({
@@ -27,22 +27,22 @@ export const Doc = defineDocumentType(() => ({
 	fields: {
 		title: {
 			type: "string",
-			required: true
+			required: true,
 		},
 		description: {
 			type: "string",
-			required: true
+			required: true,
 		},
 		tagline: {
 			type: "string",
-			required: false
-		}
+			required: false,
+		},
 	},
-	computedFields
+	computedFields,
 }));
 
 export default makeSource({
 	contentDirPath: "./content",
 	documentTypes: [Doc],
-	disableImportAliasWarning: true
+	disableImportAliasWarning: true,
 });

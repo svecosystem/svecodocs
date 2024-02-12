@@ -3,13 +3,16 @@
 	import { RocketLaunch, Info, WarningOctagon, Warning } from "$lib/icons/index.js";
 
 	export let type: "note" | "warning" | "danger" | "tip" = "note";
-	export let title: string | undefined = type.split("").map((c, i) => i === 0 ? c.toUpperCase() : c).join("");
+	export let title: string | undefined = type
+		.split("")
+		.map((c, i) => (i === 0 ? c.toUpperCase() : c))
+		.join("");
 
 	const iconMap = {
 		note: Info,
 		tip: RocketLaunch,
 		warning: Warning,
-		danger: WarningOctagon
+		danger: WarningOctagon,
 	} as const;
 </script>
 

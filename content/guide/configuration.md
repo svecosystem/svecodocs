@@ -23,15 +23,15 @@ export const siteConfig = {
 	description: "Componentized & accessible forms for SvelteKit.",
 	links: {
 		twitter: "https://twitter.com/huntabyte",
-		github: "https://github.com/svecosystem"
+		github: "https://github.com/svecosystem",
 	},
 	author: "Huntabyte",
 	keywords: "Svelte ecosystem,ecosystem,svecosystem,sveltekit,svelte libraries",
 	ogImage: {
 		url: "https://www.svecosystem.com/og.png",
 		width: "1200",
-		height: "630"
-	}
+		height: "630",
+	},
 };
 ```
 
@@ -46,18 +46,18 @@ export const navigation: Navigation = {
 	main: [
 		{
 			title: "Documentation",
-			href: "/docs"
+			href: "/docs",
 		},
 		{
 			title: "Svecosystem",
 			href: "https://svecosystem.com",
-			external: true
+			external: true,
 		},
 		{
 			title: "Releases",
 			href: "https://github.com/svecosystem/mode-watcher/releases",
-			external: true
-		}
+			external: true,
+		},
 	],
 	sidebar: [
 		{
@@ -66,19 +66,19 @@ export const navigation: Navigation = {
 				{
 					title: "Introduction",
 					href: "/docs/introduction",
-					items: []
+					items: [],
 				},
 				{
 					title: "Getting Started",
 					href: "/docs/getting-started",
-					items: []
+					items: [],
 				},
 				{
 					title: "Components",
 					href: "/docs/components",
-					items: []
-				}
-			]
+					items: [],
+				},
+			],
 		},
 		{
 			title: "API Reference",
@@ -86,11 +86,11 @@ export const navigation: Navigation = {
 				{
 					title: "Root",
 					href: "/docs/api-reference/root",
-					items: []
-				}
-			]
-		}
-	]
+					items: [],
+				},
+			],
+		},
+	],
 };
 ```
 

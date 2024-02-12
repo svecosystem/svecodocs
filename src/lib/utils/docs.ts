@@ -63,7 +63,7 @@ export async function getDoc(slug: string): Promise<TDoc> {
 	return {
 		component: doc.default,
 		metadata: doc.metadata,
-		title: doc.metadata.title
+		title: doc.metadata.title,
 	};
 }
 

@@ -19,9 +19,9 @@
 	<Drawer.Portal>
 		<Drawer.Overlay class="fixed inset-0 z-[60] bg-black/40" />
 		<Drawer.Content
-			class="fixed bottom-0 left-0 right-0 z-[70] mt-24 flex h-[96%] flex-col rounded-t-[10px] bg-background"
+			class="fixed bottom-0 left-0 right-0 z-[70] mt-24 flex max-h-[96%] flex-col rounded-t-[10px] bg-background"
 		>
-			<div class="flex-1 rounded-t-[10px] bg-card p-4">
+			<div class="max-h-[96%] flex-1 overflow-y-auto rounded-t-[10px] bg-card p-4">
 				<div class="mx-auto mb-8 h-1.5 w-12 flex-shrink-0 rounded-full bg-primary/20" />
 				<div class="mx-auto max-w-md">
 					<Drawer.Title class="sr-only mb-4 font-medium">Navigation</Drawer.Title>
@@ -54,9 +54,6 @@
 						external
 					>
 						GitHub
-					</MobileNavLink>
-					<MobileNavLink class="text-xs text-muted-foreground" href={siteConfig.links.x} external>
-						X
 					</MobileNavLink>
 				</div>
 			</div>

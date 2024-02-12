@@ -14,7 +14,7 @@
 			<div class="flex items-center justify-center">
 				<svelte:component this={getIcon(icon)} class="size-6" />
 			</div>
-			<div class="text-center text-sm">{icon}</div>
+			<div class="text-center text-xs">{icon}</div>
 		</div>
 	{/each}
 </div>

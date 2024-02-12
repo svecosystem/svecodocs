@@ -193,9 +193,9 @@ const prettyCodeOptions = {
 				import("shikiji/langs/css.mjs"),
 				import("shikiji/langs/svelte.mjs"),
 				import("shikiji/langs/shellscript.mjs"),
-				import("shikiji/langs/markdown.mjs")
-			]
-		})
+				import("shikiji/langs/markdown.mjs"),
+			],
+		}),
 	// ...
 };
 ```

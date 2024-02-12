@@ -18,17 +18,17 @@
 	<Collapsible.Root bind:open>
 		{@const titleClasses =
 			"mb-6 inline-flex w-full items-center justify-between font-medium lg:mb-3 lg:text-sm"}
+		{#if notCollapsible}
+			<h5 class={titleClasses}>
+				{navItem.title}
+			</h5>
+		{:else}
+			<Collapsible.Trigger class={titleClasses}>
+				{navItem.title}
+				<CaretRight class={cn("size-4 transition-transform ", open && "rotate-90")} />
+			</Collapsible.Trigger>
+		{/if}
 		<ul class="space-y-6 border-l border-border lg:space-y-2">
-			{#if notCollapsible}
-				<h5 class={titleClasses}>
-					{navItem.title}
-				</h5>
-			{:else}
-				<Collapsible.Trigger class={titleClasses}>
-					{navItem.title}
-					<CaretRight class={cn("size-4 transition-transform ", open && "rotate-90")} />
-				</Collapsible.Trigger>
-			{/if}
 			<Collapsible.Content class="space-y-6 lg:space-y-2">
 				{#each navItem.items as item}
 					{@const isActive = item.href

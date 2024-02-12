@@ -73,8 +73,7 @@ The above code will render the following:
 
 <Callout type="note" title="Note">
 
-    This is a note, used to highlight important information or provide additional
-    context. You can use Markdown in here as well! Just ensure you include a space between the component and the content in your Markdown file.
+This is a note, used to highlight important information or provide additional context. You can use Markdown in here as well! Just ensure you include a space between the component and the content in your Markdown file.
 
 </Callout>
 

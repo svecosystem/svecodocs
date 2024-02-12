@@ -14,12 +14,12 @@ export const alertVariants = tv({
 				"text-foreground [&>svg]:text-red-800 bg-rose-200 [&>h5]:text-red-800 border-rose-600 dark:[&>svg]:text-red-300 dark:bg-rose-500/20 dark:[&>h5]:text-red-300 dark:border-rose-600",
 			tip: "text-foreground [&>svg]:text-fuchsia-800 bg-fuchsia-200 [&>h5]:text-fuchsia-800 border-fuchsia-600 dark:[&>svg]:text-fuchsia-400 dark:bg-fuchsia-500/20 dark:[&>h5]:text-fuchsia-400 dark:border-fuchsia-600",
 			warning:
-				"text-foreground [&>svg]:text-amber-800 bg-amber-200 [&>h5]:text-amber-800 border-amber-600 dark:[&>svg]:text-amber-400 dark:bg-amber-500/20 dark:[&>h5]:text-amber-400 dark:border-amber-600"
-		}
+				"text-foreground [&>svg]:text-amber-800 bg-amber-200 [&>h5]:text-amber-800 border-amber-600 dark:[&>svg]:text-amber-400 dark:bg-amber-500/20 dark:[&>h5]:text-amber-400 dark:border-amber-600",
+		},
 	},
 	defaultVariants: {
-		variant: "note"
-	}
+		variant: "note",
+	},
 });
 
 export type Variant = VariantProps<typeof alertVariants>["variant"];
@@ -32,5 +32,5 @@ export {
 	//
 	Root as Alert,
 	Description as AlertDescription,
-	Title as AlertTitle
+	Title as AlertTitle,
 };

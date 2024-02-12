@@ -25,18 +25,18 @@ export const navigation: Navigation = {
 	main: [
 		{
 			title: "Documentation",
-			href: "/docs"
+			href: "/docs",
 		},
 		{
 			title: "Svecosystem",
 			href: "https://svecosystem.com",
-			external: true
+			external: true,
 		},
 		{
 			title: "Releases",
 			href: "https://github.com/svecosystem/mode-watcher/releases",
-			external: true
-		}
+			external: true,
+		},
 	],
 	// By default, `sidebar` navigation only supports 2 levels of navigation.
 	sidebar: [
@@ -46,25 +46,25 @@ export const navigation: Navigation = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs/guide",
-					items: []
+					href: "/docs",
+					items: [],
 				},
 				{
 					title: "Configuration",
 					href: "/docs/guide/configuration",
-					items: []
+					items: [],
 				},
 				{
 					title: "Components",
 					href: "/docs/guide/components",
-					items: []
+					items: [],
 				},
 				{
 					title: "Code Blocks",
 					href: "/docs/guide/code-blocks",
-					items: []
-				}
-			]
-		}
-	]
+					items: [],
+				},
+			],
+		},
+	],
 };
