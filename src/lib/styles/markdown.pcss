@@ -16,7 +16,7 @@
 	counter-increment: line;
 	content: counter(line);
 	display: inline-block;
-	width: 1.8rem;
+	width: 1.35rem;
 	margin-right: 0.5rem;
 	text-align: center;
 }
@@ -33,9 +33,13 @@
 	}
 
 	& code {
-		@apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
+		@apply grid min-w-fit break-words rounded-none border-0 bg-transparent p-0;
 		counter-reset: line;
 		box-decoration-break: clone;
+	}
+
+	& code[data-line-numbers] {
+		font-size: 13px !important;
 	}
 
 	& [data-line] {
@@ -59,7 +63,7 @@
 	}
 
 	& [data-line-numbers] [data-line] {
-		@apply -ml-2 pr-2;
+		@apply pr-2;
 	}
 }
 
