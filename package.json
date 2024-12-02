@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"build": "pnpm -r build",
+		"build": "pnpm build:packages && pnpm build:docs",
 		"build:packages": "pnpm -F \"./packages/**\" --parallel build",
 		"build:docs": "pnpm -F \"./docs/**\" build",
 		"check": "pnpm build:packages && pnpm -r check",

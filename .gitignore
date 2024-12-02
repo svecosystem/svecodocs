@@ -112,3 +112,7 @@ generated-assets
 .idea/
 
 .velite
+docs/public
+docs/.wrangler
+start/.wrangler
+start/public

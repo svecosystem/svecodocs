@@ -44,10 +44,13 @@ export default tseslint.config(
 			".svelte-kit/",
 			"dist/",
 			".svelte-kit/**/*",
-			"sites/docs/.svelte-kit/**/*",
+			"docs/.svelte-kit/**/*",
 			".svelte-kit",
-			"playgrounds/**/*",
-			"packages/cli/dist/**/*",
+			"start/.svelte-kit/**/*",
+			"start/node_modules/**/*",
+			"start/build/**/*",
+			"packages/kit/dist/**/*",
+			"packages/kit/.svelte-kit/**/*",
 		],
 	}
 );
