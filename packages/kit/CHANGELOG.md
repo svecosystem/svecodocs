@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.0.5
+
+### Patch Changes
+
+- themes: change primary orange background ([#14](https://github.com/svecosystem/svecodocs/pull/14))
+
 ## 0.0.4
 
 ### Patch Changes
