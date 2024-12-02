@@ -103,7 +103,8 @@ function useIsAtBottom() {
 		const buffer = 20;
 		untrack(() => {
 			isAtBottom =
-				window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - buffer;
+				window.innerHeight + window.scrollY >=
+				document.documentElement.scrollHeight - buffer;
 		});
 	}
 

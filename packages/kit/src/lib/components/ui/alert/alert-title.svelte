@@ -13,7 +13,7 @@
 
 <h5
 	bind:this={ref}
-	class={cn("mb-1 ml-8 pt-0.5 leading-none font-medium -tracking-[0.01em]", className)}
+	class={cn("mb-1 ml-8 pt-0.5 font-medium leading-none -tracking-[0.01em]", className)}
 	{...restProps}
 >
 	{@render children?.()}

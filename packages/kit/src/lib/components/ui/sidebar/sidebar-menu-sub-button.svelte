@@ -32,7 +32,7 @@
 
 	const mergedProps = $derived({
 		class: cn(
-			"text-foreground ring-sidebar-ring hover:bg-primary-hover hover:text-foreground active:bg-primary-active active:text-foreground [&>svg]:text-foreground flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 select-none",
+			"text-foreground ring-sidebar-ring hover:bg-primary-hover hover:text-foreground active:bg-primary-active active:text-foreground [&>svg]:text-foreground flex h-7 min-w-0 -translate-x-px select-none items-center gap-2 overflow-hidden rounded-md px-2 outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
 			"data-[active=true]:bg-primary-hover data-[active=true]:text-foreground",
 			size === "sm" && "text-xs",
 			size === "md" && "text-sm",

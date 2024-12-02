@@ -16,7 +16,10 @@
 
 {#if tree?.items?.length && level < 3}
 	<ul
-		class={cn("m-0 list-none", { "pl-4": level !== 1, "border-border/50 border-l": level === 1 })}
+		class={cn("m-0 list-none", {
+			"pl-4": level !== 1,
+			"border-border/50 border-l": level === 1,
+		})}
 	>
 		{#each tree.items as item, index (index)}
 			{@const active = tocState.isActive(item)}
