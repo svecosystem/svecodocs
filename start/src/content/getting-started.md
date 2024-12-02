@@ -42,9 +42,9 @@ import { defineSiteConfig } from "@svecodocs/kit";
 export const siteConfig = defineSiteConfig({
 	title: "Svecodocs",
 	description: "A SvelteKit docs starter template",
-	keywords: "sveltekit, docs, starter, template",
+	keywords: ["sveltekit", "docs", "starter", "template"],
 	ogImage: {
-		url: "https://docs.svecosystem.com/og.png",
+		url: "https://docs.sveco.dev/og.png",
 		height: 630,
 		width: 1200,
 	},
