@@ -1,5 +1,13 @@
 # @svecodocs/kit
 
+## 0.0.4
+
+### Patch Changes
+
+- header tweaks ([#13](https://github.com/svecosystem/svecodocs/pull/13))
+
+- adjust checkbox and switch ([#11](https://github.com/svecosystem/svecodocs/pull/11))
+
 ## 0.0.3
 
 ### Patch Changes
