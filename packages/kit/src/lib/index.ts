@@ -19,4 +19,9 @@ export { default as NativeSelect } from "./components/ui/native-select/native-se
 export { createNavigation, cn, cleanMarkdown } from "./utils.js";
 export { defineSiteConfig } from "./define-site-config.js";
 export { defineNavigation } from "./define-navigation.js";
+export { default as Slider } from "./components/ui/slider/slider.svelte";
+export { default as Switch } from "./components/ui/switch/switch.svelte";
+export { default as Checkbox } from "./components/ui/checkbox/checkbox.svelte";
+export { default as Separator } from "./components/ui/separator/separator.svelte";
+
 export * from "./components/steps/index.js";
