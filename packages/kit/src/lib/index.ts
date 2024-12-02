@@ -24,5 +24,4 @@ export { default as Switch } from "./components/ui/switch/switch.svelte";
 export { default as Checkbox } from "./components/ui/checkbox/checkbox.svelte";
 export { default as Separator } from "./components/ui/separator/separator.svelte";
 
-
 export * from "./components/steps/index.js";
