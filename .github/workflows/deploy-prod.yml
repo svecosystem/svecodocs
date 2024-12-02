@@ -6,6 +6,8 @@ on:
         paths:
             - docs/**
             - packages/kit/**
+    workflow_dispatch:
+
 
 jobs:
     deploy-production:
