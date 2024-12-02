@@ -1,0 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@variant dark (&:where(.dark, .dark *));

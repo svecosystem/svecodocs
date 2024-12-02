@@ -1,0 +1,31 @@
+@import "./shared.css";
+
+:root {
+	--theme-color-brand-50: var(--color-fuchsia-50);
+	--theme-color-brand-100: var(--color-fuchsia-100);
+	--theme-color-brand-200: var(--color-fuchsia-200);
+	--theme-color-brand-300: var(--color-fuchsia-300);
+	--theme-color-brand-400: var(--color-fuchsia-400);
+	--theme-color-brand-500: var(--color-fuchsia-500);
+	--theme-color-brand-600: var(--color-fuchsia-600);
+	--theme-color-brand-700: var(--color-fuchsia-700);
+	--theme-color-brand-800: var(--color-fuchsia-800);
+	--theme-color-brand-900: var(--color-fuchsia-900);
+	--theme-color-brand-950: var(--color-fuchsia-950);
+
+	--theme-color-brand: var(--theme-color-brand-600);
+	--theme-color-brand-border: var(--theme-color-brand-700);
+	--theme-color-brand-hover: var(--theme-color-brand-500);
+	--theme-color-brand-foreground: var(--theme-color-background);
+	--theme-color-brand-link: var(--theme-color-brand-600);
+	--theme-color-brand-link-hover: var(--theme-color-brand-700);
+
+	&:where(.dark) {
+		--theme-color-brand: var(--theme-color-brand-600);
+		--theme-color-brand-border: var(--theme-color-brand-700);
+		--theme-color-brand-hover: var(--theme-color-brand-500);
+		--theme-color-brand-foreground: var(--theme-color-foreground);
+		--theme-color-brand-link: var(--theme-color-brand-500);
+		--theme-color-brand-link-hover: var(--theme-color-brand-400);
+	}
+}

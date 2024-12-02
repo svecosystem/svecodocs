@@ -1,0 +1,45 @@
+{
+	"name": "root",
+	"description": "Monorepo for Svecodocs",
+	"private": true,
+	"version": "0.0.0",
+	"author": "Hunter Johnston <https://github.com/huntabyte>",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"build": "pnpm -r build",
+		"build:packages": "pnpm -F \"./packages/**\" --parallel build",
+		"build:docs": "pnpm -F \"./docs/**\" build",
+		"check": "pnpm build:packages && pnpm -r check",
+		"ci:publish": "pnpm build:packages && changeset publish",
+		"dev": "pnpm -F \"./packages/**\" svelte-kit sync && pnpm -r --parallel --reporter append-only --color dev",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint ."
+	},
+	"engines": {
+		"pnpm": ">=9.0.0",
+		"node": ">=20"
+	},
+	"packageManager": "pnpm@9.14.4",
+	"devDependencies": {
+		"@changesets/cli": "^2.27.10",
+		"@eslint/js": "^9.12.0",
+		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
+		"@tailwindcss/vite": "4.0.0-beta.4",
+		"@types/node": "^22.10.1",
+		"@typescript-eslint/eslint-plugin": "^8.10.0",
+		"@typescript-eslint/scope-manager": "^8.10.0",
+		"@typescript-eslint/utils": "^8.10.0",
+		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.46.1",
+		"globals": "^15.11.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-svelte": "^3.3.2",
+		"prettier-plugin-tailwindcss": "^0.6.8",
+		"svelte": "^5.2.11",
+		"svelte-eslint-parser": "^0.43.0",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.10.0"
+	}
+}
