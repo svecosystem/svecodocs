@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.0.3
+
+### Patch Changes
+
+- export more components ([#9](https://github.com/svecosystem/svecodocs/pull/9))
+
 ## 0.0.2
 
 ### Patch Changes
