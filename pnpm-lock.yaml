@@ -128,9 +128,27 @@ importers:
       mode-watcher:
         specifier: ^0.5.0
         version: 0.5.0(svelte@5.2.11)
+      phosphor-svelte:
+        specifier: ^3.0.0
+        version: 3.0.0(svelte@5.2.11)(vite@5.4.11(@types/node@22.10.1)(lightningcss@1.28.2)(terser@5.36.0))
+      rehype-autolink-headings:
+        specifier: ^7.1.0
+        version: 7.1.0
+      rehype-pretty-code:
+        specifier: ^0.14.0
+        version: 0.14.0(shiki@1.24.0)
+      rehype-slug:
+        specifier: ^6.0.0
+        version: 6.0.0
+      remark-gfm:
+        specifier: ^4.0.0
+        version: 4.0.0
       remove-markdown:
         specifier: ^0.5.5
         version: 0.5.5
+      shiki:
+        specifier: ^1.24.0
+        version: 1.24.0
       svelte-toolbelt:
         specifier: ^0.4.4
         version: 0.4.6(svelte@5.2.11)
@@ -143,6 +161,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.0.0-beta.4)
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -171,27 +192,9 @@ importers:
       mdsx:
         specifier: ^0.0.6
         version: 0.0.6(svelte@5.2.11)
-      phosphor-svelte:
-        specifier: ^3.0.0
-        version: 3.0.0(svelte@5.2.11)(vite@5.4.11(@types/node@22.10.1)(lightningcss@1.28.2)(terser@5.36.0))
       publint:
         specifier: ^0.2.0
         version: 0.2.12
-      rehype-autolink-headings:
-        specifier: ^7.1.0
-        version: 7.1.0
-      rehype-pretty-code:
-        specifier: ^0.14.0
-        version: 0.14.0(shiki@1.24.0)
-      rehype-slug:
-        specifier: ^6.0.0
-        version: 6.0.0
-      remark-gfm:
-        specifier: ^4.0.0
-        version: 4.0.0
-      shiki:
-        specifier: ^1.24.0
-        version: 1.24.0
       svelte:
         specifier: ^5.2.11
         version: 5.2.11
@@ -207,9 +210,6 @@ importers:
       unified:
         specifier: ^11.0.5
         version: 11.0.5
-      unist-util-visit:
-        specifier: ^5.0.0
-        version: 5.0.0
       vite:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.1)(lightningcss@1.28.2)(terser@5.36.0)

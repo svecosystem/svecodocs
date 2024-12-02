@@ -64,19 +64,12 @@
 		"@types/mdast": "^4.0.4",
 		"@types/node": "^22.10.1",
 		"mdsx": "^0.0.6",
-		"phosphor-svelte": "^3.0.0",
 		"publint": "^0.2.0",
-		"rehype-autolink-headings": "^7.1.0",
-		"rehype-pretty-code": "^0.14.0",
-		"rehype-slug": "^6.0.0",
-		"remark-gfm": "^4.0.0",
-		"shiki": "^1.24.0",
 		"svelte": "^5.2.11",
 		"svelte-check": "^4.0.0",
 		"tailwindcss": "4.0.0-beta.4",
 		"typescript": "^5.0.0",
 		"unified": "^11.0.5",
-		"unist-util-visit": "^5.0.0",
 		"vite": "^5.0.11"
 	},
 	"dependencies": {
@@ -84,10 +77,17 @@
 		"clsx": "^2.1.1",
 		"flexsearch": "^0.7.43",
 		"mode-watcher": "^0.5.0",
+		"phosphor-svelte": "^3.0.0",
+		"rehype-autolink-headings": "^7.1.0",
+		"rehype-pretty-code": "^0.14.0",
+		"rehype-slug": "^6.0.0",
+		"remark-gfm": "^4.0.0",
+		"shiki": "^1.24.0",
 		"remove-markdown": "^0.5.5",
 		"svelte-toolbelt": "^0.4.4",
 		"tailwind-merge": "^2.5.5",
 		"tailwind-variants": "^0.3.0",
-		"tailwindcss-animate": "^1.0.7"
+		"tailwindcss-animate": "^1.0.7",
+		"unist-util-visit": "^5.0.0"
 	}
 }
