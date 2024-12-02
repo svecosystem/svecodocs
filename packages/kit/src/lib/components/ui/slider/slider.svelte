@@ -13,7 +13,7 @@
 <SliderPrimitive.Root
 	bind:ref
 	bind:value
-	class={cn("relative flex w-full touch-none items-center select-none", className)}
+	class={cn("relative flex w-full touch-none select-none items-center", className)}
 	{...restProps}
 >
 	{#snippet children({ thumbs })}
@@ -23,7 +23,7 @@
 		{#each thumbs as thumb}
 			<SliderPrimitive.Thumb
 				index={thumb}
-				class="bg-brand-hover ring-offset-background focus-visible:ring-muted-foreground block size-6 rounded-full shadow-sm transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+				class="bg-brand-hover ring-offset-background focus-visible:ring-muted-foreground block size-6 rounded-full shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
 			/>
 		{/each}
 	{/snippet}

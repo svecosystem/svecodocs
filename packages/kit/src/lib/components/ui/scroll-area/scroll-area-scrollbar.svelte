@@ -15,7 +15,7 @@
 	bind:ref
 	{orientation}
 	class={cn(
-		"flex touch-none transition-colors select-none",
+		"flex touch-none select-none transition-colors",
 		orientation === "vertical" && "h-full w-[11px] border-l border-l-transparent p-px",
 		orientation === "horizontal" && "h-[11px] w-full border-t border-t-transparent p-px",
 		"data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out-0 data-[state=visible]:fade-in-0",
