@@ -4,7 +4,7 @@ export const siteConfig = defineSiteConfig({
 	name: "Svecodocs",
 	url: "https://docs.svecosystem.com",
 	ogImage: {
-		url: "https://docs.svecosystem.com/og-image.png",
+		url: "https://docs.svecosystem.com/og.png",
 		height: "630",
 		width: "1200",
 	},
