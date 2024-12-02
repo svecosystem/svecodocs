@@ -1,0 +1,31 @@
+@import "./shared.css";
+
+:root {
+	--theme-color-brand-50: var(--color-cyan-50);
+	--theme-color-brand-100: var(--color-cyan-100);
+	--theme-color-brand-200: var(--color-cyan-200);
+	--theme-color-brand-300: var(--color-cyan-300);
+	--theme-color-brand-400: var(--color-cyan-400);
+	--theme-color-brand-500: var(--color-cyan-500);
+	--theme-color-brand-600: var(--color-cyan-600);
+	--theme-color-brand-700: var(--color-cyan-700);
+	--theme-color-brand-800: var(--color-cyan-800);
+	--theme-color-brand-900: var(--color-cyan-900);
+	--theme-color-brand-950: var(--color-cyan-950);
+
+	--theme-color-brand: var(--theme-color-brand-400);
+	--theme-color-brand-border: var(--theme-color-brand-500);
+	--theme-color-brand-hover: var(--theme-color-brand-300);
+	--theme-color-brand-foreground: var(--theme-color-foreground);
+	--theme-color-brand-link: var(--theme-color-brand-500);
+	--theme-color-brand-link-hover: var(--theme-color-brand-400);
+
+	&:where(.dark) {
+		--theme-color-brand: var(--theme-color-brand-300);
+		--theme-color-brand-border: var(--theme-color-brand-400);
+		--theme-color-brand-hover: var(--theme-color-brand-200);
+		--theme-color-brand-foreground: var(--theme-color-background);
+		--theme-color-brand-link: var(--theme-color-brand-300);
+		--theme-color-brand-link-hover: var(--theme-color-brand-200);
+	}
+}

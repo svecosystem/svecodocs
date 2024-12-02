@@ -1,0 +1,90 @@
+{
+	"name": "@svecodocs/kit",
+	"version": "0.0.0",
+	"scripts": {
+		"build": "pnpm package",
+		"dev": "svelte-package --watch",
+		"dev:svelte": "vite dev",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"types": "./dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		},
+		"./globals.css": "./dist/styles/globals.css",
+		"./theme-amber.css": "./dist/styles/theme-amber.css",
+		"./theme-blue.css": "./dist/styles/theme-blue.css",
+		"./theme-cyan.css": "./dist/styles/theme-cyan.css",
+		"./theme-emerald.css": "./dist/styles/theme-emerald.css",
+		"./theme-fuchsia.css": "./dist/styles/theme-fuchsia.css",
+		"./theme-green.css": "./dist/styles/theme-green.css",
+		"./theme-indigo.css": "./dist/styles/theme-indigo.css",
+		"./theme-lime.css": "./dist/styles/theme-lime.css",
+		"./theme-orange.css": "./dist/styles/theme-orange.css",
+		"./theme-pink.css": "./dist/styles/theme-pink.css",
+		"./theme-purple.css": "./dist/styles/theme-purple.css",
+		"./theme-red.css": "./dist/styles/theme-red.css",
+		"./theme-rose.css": "./dist/styles/theme-rose.css",
+		"./theme-sky.css": "./dist/styles/theme-sky.css",
+		"./theme-teal.css": "./dist/styles/theme-teal.css",
+		"./theme-violet.css": "./dist/styles/theme-violet.css",
+		"./theme-yellow.css": "./dist/styles/theme-yellow.css",
+		"./mdsxConfig": {
+			"types": "./dist/configs/mdsx-config.d.ts",
+			"default": "./dist/configs/mdsx-config.js"
+		}
+	},
+	"peerDependencies": {
+		"@sveltejs/kit": "^2.0.0",
+		"bits-ui": "1.0.0-next.65",
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.9.0",
+		"@sveltejs/package": "^2.3.7",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@tailwindcss/vite": "4.0.0-beta.4",
+		"@types/hast": "^3.0.4",
+		"@types/mdast": "^4.0.4",
+		"@types/node": "^22.10.1",
+		"mdsx": "^0.0.6",
+		"phosphor-svelte": "^3.0.0",
+		"publint": "^0.2.0",
+		"rehype-autolink-headings": "^7.1.0",
+		"rehype-pretty-code": "^0.14.0",
+		"rehype-slug": "^6.0.0",
+		"remark-gfm": "^4.0.0",
+		"shiki": "^1.24.0",
+		"svelte": "^5.2.11",
+		"svelte-check": "^4.0.0",
+		"tailwindcss": "4.0.0-beta.4",
+		"typescript": "^5.0.0",
+		"unified": "^11.0.5",
+		"unist-util-visit": "^5.0.0",
+		"vite": "^5.0.11"
+	},
+	"dependencies": {
+		"bits-ui": "1.0.0-next.65",
+		"clsx": "^2.1.1",
+		"flexsearch": "^0.7.43",
+		"mode-watcher": "^0.5.0",
+		"remove-markdown": "^0.5.5",
+		"svelte-toolbelt": "^0.4.4",
+		"tailwind-merge": "^2.5.5",
+		"tailwind-variants": "^0.3.0",
+		"tailwindcss-animate": "^1.0.7"
+	}
+}
