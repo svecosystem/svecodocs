@@ -14,7 +14,7 @@
 	bind:ref
 	bind:checked
 	class={cn(
-		"data-[state=checked]:bg-foreground data-[state=unchecked]:bg-muted inset-shadow-foreground/5 data-[state=checked]:inset-shadow-muted/10 inset-shadow-2xs inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 data-[state=checked]:brightness-[110%]",
+		"data-[state=checked]:bg-foreground data-[state=unchecked]:bg-muted inset-shadow-foreground/5 data-[state=checked]:inset-shadow-muted/10 inset-shadow-2xs inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full disabled:pointer-events-none disabled:opacity-50 data-[state=checked]:brightness-[110%]",
 		className
 	)}
 	{...restProps}
