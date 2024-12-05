@@ -1,5 +1,21 @@
 # @svecodocs/kit
 
+## 0.1.0
+
+### Minor Changes
+
+- change: remove `createNavigation` in favor of `defineNavigation` ([#17](https://github.com/svecosystem/svecodocs/pull/17))
+
+- change: geist mono -> jet brains mono ([#17](https://github.com/svecosystem/svecodocs/pull/17))
+
+- change: use Inter as main font ([#17](https://github.com/svecosystem/svecodocs/pull/17))
+
+- update tailwindcss to 4.0.0-beta.5 ([#17](https://github.com/svecosystem/svecodocs/pull/17))
+
+### Patch Changes
+
+- fix: theme contrast issues ([#17](https://github.com/svecosystem/svecodocs/pull/17))
+
 ## 0.0.5
 
 ### Patch Changes
