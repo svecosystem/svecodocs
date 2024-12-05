@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.1
+
+### Patch Changes
+
+- fix: code background color in darkmode ([#21](https://github.com/svecosystem/svecodocs/pull/21))
+
 ## 0.1.0
 
 ### Minor Changes
