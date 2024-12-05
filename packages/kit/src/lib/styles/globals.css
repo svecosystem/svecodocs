@@ -163,7 +163,7 @@
 	}
 
 	#content code:not(pre > code):not(.custom) {
-		@apply dark:bg-muted bg-primary-hover text-foreground relative rounded-[5px] px-[0.375rem] py-[0.1875rem] font-mono text-[0.9em];
+		@apply text-foreground relative rounded-[5px] bg-gray-200/60 px-[0.375rem] py-[0.1875rem] font-mono text-[0.9em] dark:bg-gray-100;
 	}
 
 	a:has(code) {
@@ -190,7 +190,7 @@
 	}
 
 	[data-rehype-pretty-code-figure] code {
-		@apply grid min-w-0 break-words rounded-none border-0 p-0;
+		@apply grid min-w-0 break-words rounded-none border-0 p-0 text-sm md:text-base;
 		counter-reset: line;
 		box-decoration-break: clone;
 	}

@@ -26,6 +26,7 @@
 	class="size-7 px-0 py-0"
 	onclick={() => copier.copyToClipboard()}
 	data-pre-copy-btn=""
+	aria-label="Copy code"
 >
 	{#if copier.isCopied}
 		<Check />
