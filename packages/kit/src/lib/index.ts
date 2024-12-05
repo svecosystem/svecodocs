@@ -16,7 +16,7 @@ export { default as Input } from "./components/ui/input/input.svelte";
 export { default as Textarea } from "./components/ui/textarea/textarea.svelte";
 export { default as Label } from "./components/ui/label/label.svelte";
 export { default as NativeSelect } from "./components/ui/native-select/native-select.svelte";
-export { createNavigation, cn, cleanMarkdown } from "./utils.js";
+export { cn, cleanMarkdown } from "./utils.js";
 export { defineSiteConfig } from "./define-site-config.js";
 export { defineNavigation } from "./define-navigation.js";
 export { default as Slider } from "./components/ui/slider/slider.svelte";

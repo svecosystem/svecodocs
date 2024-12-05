@@ -1,4 +1,4 @@
-import { createNavigation } from "@svecodocs/kit";
+import { defineNavigation } from "@svecodocs/kit";
 import ChalkboardTeacher from "phosphor-svelte/lib/ChalkboardTeacher";
 import RocketLaunch from "phosphor-svelte/lib/RocketLaunch";
 import Tag from "phosphor-svelte/lib/Tag";
@@ -20,7 +20,7 @@ const configuration = allDocs
 		href: `/docs/${doc.slug}`,
 	}));
 
-export const navigation = createNavigation({
+export const navigation = defineNavigation({
 	anchors: [
 		{
 			title: "Introduction",

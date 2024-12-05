@@ -15,7 +15,7 @@ The following guide will walk you through the process of getting a Svecodocs pro
 Clone the Svecodocs starter template:
 
 ```bash
-pnpx degit svecosystem/svecodocs/starter
+pnpx degit svecosystem/svecodocs/start
 ```
 
 ## Navigation
@@ -23,9 +23,9 @@ pnpx degit svecosystem/svecodocs/starter
 The starter template comes with a basic navigation structure to get your started. To customize the navigation, adjust the `src/lib/navigation.ts` file.
 
 ```ts
-import { createNavigation } from "@svecodocs/kit";
+import { defineNavigation } from "@svecodocs/kit";
 
-export const navigation = createNavigation({
+export const navigation = defineNavigation({
 	// Customize the navigation here
 });
 ```
