@@ -163,7 +163,7 @@
 	}
 
 	#content code:not(pre > code):not(.custom) {
-		@apply text-foreground relative rounded-[5px] bg-gray-200/60 px-[0.375rem] py-[0.1875rem] font-mono text-[0.9em] dark:bg-gray-100;
+		@apply text-foreground relative rounded-[5px] bg-gray-200/60 px-[0.375rem] py-[0.1875rem] font-mono text-[0.9em] dark:bg-gray-100/10;
 	}
 
 	a:has(code) {
