@@ -13,7 +13,7 @@
 		"check:watch": "pnpm build:content && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@svecodocs/kit": "workspace:*",
+		"@svecodocs/kit": "^0.0.5",
 		"@sveltejs/adapter-cloudflare": "^4.8.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
