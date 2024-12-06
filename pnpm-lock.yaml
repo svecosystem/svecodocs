@@ -104,6 +104,9 @@ importers:
       satori-html:
         specifier: ^0.3.2
         version: 0.3.2
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
       svelte:
         specifier: ^5.2.11
         version: 5.2.11
