@@ -116,3 +116,4 @@ docs/public
 docs/.wrangler
 start/.wrangler
 start/public
+docs/static/images/og/**/*
