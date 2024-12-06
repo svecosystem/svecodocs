@@ -5,11 +5,6 @@ import { mkdir, unlink, stat } from "node:fs/promises";
 import { dirname } from "node:path";
 import sharp from "sharp";
 
-/**
- * Ensures all directories in a path exist before writing a file
- * @param filePath - Full path where the file will be written
- * @throws {Error} If directory creation fails
- */
 async function ensureDirectoryExists(filePath) {
 	const directory = dirname(filePath);
 	await mkdir(directory, { recursive: true });
@@ -25,8 +20,7 @@ async function logCompressionStats(tempPath, finalPath) {
 	);
 }
 
-// Example usage with your screenshot code:
-async function saveScreenshot(page, doc) {
+async function saveAndCompressScreenshot(page, doc) {
 	const tempPath = `./static/images/og/tmp/${doc.slug}.png`;
 	const finalPath = `./static/images/og/${doc.slug}.webp`;
 	await ensureDirectoryExists(tempPath);
@@ -57,7 +51,6 @@ async function saveScreenshot(page, doc) {
 async function startDevServer() {
 	const server = spawn("pnpm", ["dev"], {
 		stdio: ["ignore", "pipe", "inherit"],
-		// Remove process group creation to prevent killing parent
 		detached: false,
 	});
 
@@ -84,7 +77,6 @@ async function build() {
 		server = await startDevServer();
 		console.log("Server started, waiting for warm-up...");
 		await new Promise((resolve) => setTimeout(resolve, 3000));
-		console.log("Generating OG images...");
 		await generateOGImages(docs);
 		console.log("OG images generated, starting production build...");
 	} catch (error) {
@@ -92,9 +84,7 @@ async function build() {
 		process.exit(1);
 	} finally {
 		if (server) {
-			// Properly terminate only the dev server process
 			server.kill();
-			// Wait for the process to fully terminate
 			await new Promise((resolve) => {
 				server.on("close", resolve);
 			});
@@ -102,35 +92,39 @@ async function build() {
 	}
 }
 
-async function generateOGImages(docs) {
+async function generateSingleOGImage(doc) {
+	const browser = await puppeteer.launch({
+		defaultViewport: {
+			width: 1440,
+			height: 900,
+			deviceScaleFactor: 2,
+		},
+	});
+
 	try {
-		const browser = await puppeteer.launch({
-			defaultViewport: {
-				width: 1440,
-				height: 900,
-				deviceScaleFactor: 2,
-			},
-		});
+		const page = await browser.newPage();
+		const pageUrl = `http://localhost:5173/api/og?title=${doc.title}&description=${
+			doc.description
+		}`;
 
-		console.log("☀️ Generating OG images...");
-		for (const doc of docs) {
-			const pageUrl = `http://localhost:5173/api/og?title=${doc.title}&description=${
-				doc.description
-			}`;
-			console.log(`- ${doc.title}`);
-
-			const page = await browser.newPage();
-			await page.goto(pageUrl, {
-				waitUntil: "networkidle2",
-			});
-
-			await saveScreenshot(page, doc);
-		}
-
+		await page.goto(pageUrl, { waitUntil: "networkidle2" });
+		await saveAndCompressScreenshot(page, doc);
+		console.log(`✓ Generated: ${doc.title}`);
+	} finally {
 		await browser.close();
-		console.log("✅ Done!");
+	}
+}
+async function generateOGImages(docs) {
+	console.log("☀️ Starting parallel OG image generation...");
+	const startTime = Date.now();
+
+	try {
+		await Promise.all(docs.map(generateSingleOGImage));
+
+		const endTime = Date.now();
+		console.log(`✅ All images generated in ${(endTime - startTime) / 1000}s!`);
 	} catch (error) {
-		console.error(error);
+		console.error("Failed to generate OG images:", error);
 		throw error;
 	}
 }
