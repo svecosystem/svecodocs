@@ -1,27 +1,39 @@
 import { spawn } from "node:child_process";
 import puppeteer from "puppeteer";
 import { docs } from "../.velite/index.js";
-import { mkdir } from "node:fs/promises";
+import { mkdir, unlink, stat } from "node:fs/promises";
 import { dirname } from "node:path";
+import sharp from "sharp";
 
 /**
  * Ensures all directories in a path exist before writing a file
  * @param filePath - Full path where the file will be written
  * @throws {Error} If directory creation fails
  */
-export async function ensureDirectoryExists(filePath) {
+async function ensureDirectoryExists(filePath) {
 	const directory = dirname(filePath);
 	await mkdir(directory, { recursive: true });
 }
 
+async function logCompressionStats(tempPath, finalPath) {
+	const originalSize = (await stat(tempPath)).size;
+	const compressedSize = (await stat(finalPath)).size;
+	const savingsPercent = (((originalSize - compressedSize) / originalSize) * 100).toFixed(1);
+
+	console.log(
+		`  Compressed: ${(originalSize / 1024 / 1024).toFixed(2)}MB → ${(compressedSize / 1024 / 1024).toFixed(2)}MB (${savingsPercent}% reduction)`
+	);
+}
+
 // Example usage with your screenshot code:
 async function saveScreenshot(page, doc) {
-	const filePath = `./static/images/og/${doc.slug}.png`;
-
-	await ensureDirectoryExists(filePath);
+	const tempPath = `./static/images/og/tmp/${doc.slug}.png`;
+	const finalPath = `./static/images/og/${doc.slug}.webp`;
+	await ensureDirectoryExists(tempPath);
+	await ensureDirectoryExists(finalPath);
 
 	await page.screenshot({
-		path: filePath,
+		path: tempPath,
 		clip: {
 			x: 0,
 			y: 0,
@@ -29,6 +41,18 @@ async function saveScreenshot(page, doc) {
 			height: 630,
 		},
 	});
+
+	await sharp(tempPath)
+		.webp({
+			quality: 80,
+			compressionLevel: 9,
+			palette: true,
+		})
+		.toFile(finalPath);
+
+	await logCompressionStats(tempPath, finalPath);
+
+	await unlink(tempPath);
 }
 async function startDevServer() {
 	const server = spawn("pnpm", ["dev"], {
