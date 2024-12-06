@@ -1,5 +1,5 @@
 ---
-title: Demo Container
+title: DemoContainer
 description: Display a container with a border and a background color for examples/demos.
 section: Components
 ---
