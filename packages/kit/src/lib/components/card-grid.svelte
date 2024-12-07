@@ -19,6 +19,6 @@
 	setContext("is-grid", true);
 </script>
 
-<div class="grid {getCols()} mt-6 gap-5" data-card-grid="">
+<div class="flex flex-col md:grid {getCols()} mt-6 gap-5" data-card-grid="">
 	{@render children?.()}
 </div>

@@ -5,23 +5,67 @@ section: Components
 ---
 
 <script>
+	import { PropField, Collapsible } from "@svecodocs/kit";
+</script>
+
+Use the `PropField` component to annotate props/params in your documentation.
+
+## Usage
+
+```svelte title="document.md"
+<script>
 	import { PropField } from "@svecodocs/kit";
 </script>
 
-Work in progress.
+<PropField name="checked" type="boolean" required defaultValue="false">
+	<!-- Space here-->
+	The checked state of the checkbox.
+	<!-- Space here-->
+</PropField>
+```
 
-## API Reference
+## Examples
 
-### Props
+### Basic
 
-<PropField name="checked" type="boolean" defaultValue="false">
+<PropField name="checked" type="boolean" defaultValue="false" required>
 The checked state of the checkbox.
 </PropField>
 
-<PropField name="onCheckedChange" type="(checked: boolean) => void">
-The name of the prop.
-</PropField>
+### Object
 
-<PropField name="name" type="string" required>
-The name used to submit the checkbox as a form field.
+You can use `PropField` in combination with the [`Collapsible`](/docs/components/collapsible) component to represent more complex types.
+
+```svelte title="document.md"
+<script>
+	import { PropField, Collapsible } from "@svecodocs/kit";
+</script>
+
+<PropField name="options" type="CheckboxOptions" required>
+	<!-- Space here -->
+	Configuration options to customize the behavior of the `Checkbox` component.
+	<!-- Space here -->
+	<Collapsible title="properties">
+		<PropField name="width" type="number" required>
+			The width to apply to the checkbox.
+		</PropField>
+		<PropField name="height" type="number" required defaultValue="20">
+			The height to apply to the checkbox.
+		</PropField>
+	</Collapsible>
+</PropField>
+```
+
+<PropField name="options" type="CheckboxOptions" required>
+
+Configuration options to customize the behavior of the `Checkbox` component.
+
+<Collapsible title="properties">
+	<PropField name="width" type="number" required>
+	The width to apply to the checkbox.
+	</PropField>
+	<PropField name="height" type="number" required defaultValue="20">
+	The height to apply to the checkbox.
+	</PropField>
+</Collapsible>
 </PropField>

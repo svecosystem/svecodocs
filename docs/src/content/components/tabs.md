@@ -5,7 +5,7 @@ section: Components
 ---
 
 <script>
-	import { Tabs, TabItem, Callout } from "@svecodocs/kit";
+	import { Tabs, TabItem, Callout, PropField } from "@svecodocs/kit";
 </script>
 
 You can use the `Tabs` and `TabItem` components to create tabbed interfaces. A `label` prop must be provided to each `TabItem` which will be used to display the label. Whichever tab should be active by default is specified by the `value` prop on the `Tabs` component.
@@ -63,3 +63,17 @@ export async function load() {
 <Callout type="note" class="mt-8">
 	If you plan to use markdown-specific syntax in your tabs, ensure you include a space between the component and the content in your Markdown file.
 </Callout>
+
+## Props
+
+### Tabs
+
+<PropField name="value" type="string" required>
+The label of the tab to be active by default.
+</PropField>
+
+### TabItem
+
+<PropField name="label" type="string" required>
+The label to display for the tab.
+</PropField>
