@@ -69,3 +69,25 @@ Configuration options to customize the behavior of the `Checkbox` component.
 	</PropField>
 </Collapsible>
 </PropField>
+
+## Props
+
+<PropField name="name" type="string" required>
+The name of the prop.
+</PropField>
+
+<PropField name="type" type="string" required>
+The type of the prop.
+</PropField>
+
+<PropField name="defaultValue" type="string">
+The default value of the prop.
+</PropField>
+
+<PropField name="required" type="boolean" defaultValue="false">
+Whether the prop is required.
+</PropField>
+
+<PropField name="children" type="Snippet">
+The description/content to display within the prop field.
+</PropField>

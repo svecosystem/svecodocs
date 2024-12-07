@@ -99,6 +99,12 @@ The title to display in the card.
 The icon to display in the card.
 </PropField>
 
+<PropField name="href" type="string">
+
+If provided, the card will become a link. The `target` is handled automatically based on what the `href` starts with. External links will open in a new tab, and internal links will open in the current tab.
+
+</PropField>
+
 <PropField name="children" type="Snippet">
 The body content of the card.
 </PropField>
