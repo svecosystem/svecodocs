@@ -23,3 +23,7 @@ section: Components
 <DemoContainer class="flex items-center gap-2.5 flex-wrap">
 	<Switch checked />
 </DemoContainer>
+
+## Props
+
+See [Bits UI Switch](https://bits-ui.com/docs/components/switch) for available props.

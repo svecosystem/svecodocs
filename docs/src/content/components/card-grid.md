@@ -5,7 +5,7 @@ section: Components
 ---
 
 <script>
-	import { CardGrid, Card } from "@svecodocs/kit";
+	import { CardGrid, Card, PropField } from "@svecodocs/kit";
 	import RocketLaunch from "phosphor-svelte/lib/RocketLaunch";
 	import Blueprint from "phosphor-svelte/lib/Blueprint";
 	import Binary from "phosphor-svelte/lib/Binary";
@@ -92,3 +92,9 @@ Use the `CardGrid` component to display a grid of [`Card`](/docs/components/card
 		content in your Markdown file.
 	</Card>
 </CardGrid>
+
+## Props
+
+<PropField name="cols" type="number" defaultValue="2">
+The number of columns to display the cards in. Uses flex column layout when in smaller viewports.
+</PropField>

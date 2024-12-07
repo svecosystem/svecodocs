@@ -5,7 +5,7 @@ section: Components
 ---
 
 <script>
-	import { Callout } from "@svecodocs/kit";
+	import { Callout, PropField } from "@svecodocs/kit";
 	import Avocado from "phosphor-svelte/lib/Avocado";
 </script>
 
@@ -86,3 +86,21 @@ This is an example of a note callout with a custom icon.
 This is an example of a warning callout with a custom title.
 
 </Callout>
+
+## Props
+
+<PropField name="type" type="'warning' | 'note' | 'danger' | 'tip' | 'success'" defaultValue="'note'">
+The type of callout to display.
+</PropField>
+
+<PropField name="title" type="string">
+Override the default title for the callout.
+</PropField>
+
+<PropField name="icon" type="Component">
+Override the default icon for the callout.
+</PropField>
+
+<PropField name="children" type="Snippet">
+The content to display inside of the callout's body.
+</PropField>

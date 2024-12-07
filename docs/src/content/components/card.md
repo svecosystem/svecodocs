@@ -5,7 +5,7 @@ section: Components
 ---
 
 <script>
-	import { Card } from "@svecodocs/kit";
+	import { Card, PropField } from "@svecodocs/kit";
 	import RocketLaunch from "phosphor-svelte/lib/RocketLaunch";
 </script>
 
@@ -88,3 +88,23 @@ You can use the `horizontal` prop to display the card horizontally.
 <Card title="A horizontal card" horizontal icon={RocketLaunch}>
 You can use markdown in here, just ensure to include a space between the component and the content in your Markdown file.
 </Card>
+
+## Props
+
+<PropField name="title" type="string" required>
+The title to display in the card.
+</PropField>
+
+<PropField name="icon" type="Component">
+The icon to display in the card.
+</PropField>
+
+<PropField name="href" type="string">
+
+If provided, the card will become a link. The `target` is handled automatically based on what the `href` starts with. External links will open in a new tab, and internal links will open in the current tab.
+
+</PropField>
+
+<PropField name="children" type="Snippet">
+The body content of the card.
+</PropField>

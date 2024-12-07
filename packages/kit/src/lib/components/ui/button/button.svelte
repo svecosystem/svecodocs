@@ -8,12 +8,12 @@
 		variants: {
 			variant: {
 				default:
-					"bg-foreground text-background dark:hover:bg-foreground hover:bg-foreground/90 active:bg-foreground/85 dark:active:bg-foreground shadow-foreground/20 inset-shadow-xs inset-shadow-background/10 dark:inset-shadow-background/20 dark:ring-foreground/20 ring-foreground/90 inset-ring inset-ring-background/5 shadow-sm ring dark:shadow-none dark:hover:brightness-[105%] dark:active:brightness-[110%]",
+					"bg-foreground text-background hover:dark:bg-foreground hover:bg-foreground/90 active:bg-foreground/85 active:dark:bg-foreground shadow-foreground/20 inset-shadow-xs inset-shadow-background/10 dark:inset-shadow-background/20 dark:ring-foreground/20 ring-foreground/90 inset-ring inset-ring-background/5 shadow-sm ring dark:shadow-none hover:dark:brightness-[105%] active:dark:brightness-[110%]",
 				destructive:
 					"bg-destructive inset-shadow-lg inset-shadow-sm inset-shadow-white/20 inset-ring inset-ring-foreground/5 ring-destructive-border text-destructive-foreground shadow-sm ring hover:brightness-[105%] active:brightness-[110%]",
 				outline:
 					"ring-foreground hover:bg-foreground/5 hover:text-foreground text-foreground hover:ring-foreground bg-transparent ring",
-				ghost: "text-foreground hover:bg-foreground/5 hover:ring-foreground/5 bg-transparent ring ring-transparent",
+				ghost: "text-foreground hover:dark:bg-foreground/5 hover:dark:ring-foreground/5 hover:bg-foreground/2 hover:ring-foreground/2 bg-transparent ring ring-transparent",
 				link: "text-brand-link hover:text-brand-link-hover cursor-pointer underline-offset-4 hover:underline",
 				subtle: "text-foreground hover:text-foreground bg-foreground/5 hover:bg-foreground/10",
 				brand: "bg-brand inset-shadow-lg inset-shadow-sm inset-shadow-white/20 inset-ring inset-ring-foreground/5 ring-brand-border text-brand-foreground shadow-sm ring hover:brightness-[105%] active:brightness-[110%]",
