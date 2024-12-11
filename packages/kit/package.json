@@ -62,6 +62,8 @@
 		"@types/hast": "^3.0.4",
 		"@types/mdast": "^4.0.4",
 		"@types/node": "^22.10.1",
+		"bits-ui": "1.0.0-next.71",
+		"lucide-svelte": "^0.468.0",
 		"mdsx": "^0.0.6",
 		"publint": "^0.2.0",
 		"svelte": "^5.2.11",
@@ -72,7 +74,6 @@
 		"vite": "^5.0.11"
 	},
 	"dependencies": {
-		"bits-ui": "1.0.0-next.65",
 		"clsx": "^2.1.1",
 		"flexsearch": "^0.7.43",
 		"mode-watcher": "^0.5.0",
@@ -81,8 +82,8 @@
 		"rehype-pretty-code": "^0.14.0",
 		"rehype-slug": "^6.0.0",
 		"remark-gfm": "^4.0.0",
-		"shiki": "^1.24.0",
 		"remove-markdown": "^0.5.5",
+		"shiki": "^1.24.0",
 		"svelte-toolbelt": "^0.4.4",
 		"tailwind-merge": "^2.5.5",
 		"tailwind-variants": "^0.3.0",
