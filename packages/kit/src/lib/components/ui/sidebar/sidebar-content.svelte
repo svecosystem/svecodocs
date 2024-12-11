@@ -2,7 +2,7 @@
 	import type { HTMLAttributes } from "svelte/elements";
 	import type { WithElementRef } from "bits-ui";
 	import { cn } from "$lib/utils.js";
-	import ScrollArea from "../scroll-area/scroll-area.svelte";
+	import ScrollArea from "$lib/components/ui/scroll-area/scroll-area.svelte";
 
 	let {
 		ref = $bindable(null),

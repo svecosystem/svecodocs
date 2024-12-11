@@ -23,3 +23,7 @@ section: Components
 <DemoContainer class="flex items-center gap-2.5 flex-wrap">
 	<Checkbox checked />
 </DemoContainer>
+
+## Props
+
+See [Bits UI Checkbox](https://bits-ui.com/docs/components/checkbox) for available props.

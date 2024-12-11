@@ -1,5 +1,5 @@
 ---
-title: Native Select
+title: NativeSelect
 description: A styled native select component to use in examples and documentation.
 section: Components
 ---
