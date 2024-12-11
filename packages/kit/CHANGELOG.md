@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.2
+
+### Patch Changes
+
+- feat: add `PropField`, `Collapsible`, and `Select` components ([#24](https://github.com/svecosystem/svecodocs/pull/24))
+
 ## 0.1.1
 
 ### Patch Changes
