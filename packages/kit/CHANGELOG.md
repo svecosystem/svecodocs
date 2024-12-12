@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.3
+
+### Patch Changes
+
+- add `tailwindcss` to `peerDependencies` ([#26](https://github.com/svecosystem/svecodocs/pull/26))
+
 ## 0.1.2
 
 ### Patch Changes
