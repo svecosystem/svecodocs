@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.4
+
+### Patch Changes
+
+- fix: cleanup empty space if no `defaultValue` or `required` in prop field ([#28](https://github.com/svecosystem/svecodocs/pull/28))
+
 ## 0.1.3
 
 ### Patch Changes
