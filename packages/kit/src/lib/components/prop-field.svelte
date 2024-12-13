@@ -41,24 +41,27 @@
 			{@render children?.()}
 		{/if}
 	</div>
-	<div class="mt-3 flex flex-col gap-2">
-		{#if defaultValue}
-			<div class="text-muted-foreground flex items-center font-mono">
-				<span class="text-xs">
-					default<span class="text-muted-foreground">:</span>
+
+	{#if defaultValue || required}
+		<div class="mt-3 flex flex-col gap-2">
+			{#if defaultValue}
+				<div class="text-muted-foreground flex items-center font-mono">
+					<span class="text-xs">
+						default<span class="text-muted-foreground">:</span>
+					</span>
+					<span class="text-foreground/90 ml-1 min-w-fit font-mono text-xs">
+						{defaultValue}
+					</span>
+				</div>
+			{/if}
+			{#if required}
+				<span
+					class="relative mr-auto min-w-fit font-mono text-xs text-red-600 dark:text-red-400"
+				>
+					required
 				</span>
-				<span class="text-foreground/90 ml-1 min-w-fit font-mono text-xs">
-					{defaultValue}
-				</span>
-			</div>
-		{/if}
-		{#if required}
-			<span
-				class="relative mr-auto min-w-fit font-mono text-xs text-red-600 dark:text-red-400"
-			>
-				required
-			</span>
-		{/if}
-	</div>
+			{/if}
+		</div>
+	{/if}
 	<Separator class="mt-4" />
 </div>
