@@ -26,7 +26,7 @@
 		<Toc toc={{ items: toc }} />
 	</div>
 </aside>
-<main class="mx-auto w-full min-w-0 max-w-[760px] pb-12" id="main-content">
+<main class="mx-auto w-full min-w-0 max-w-[640px] pb-12 2xl:max-w-[760px]" id="main-content">
 	<PageHeader {title} {description} />
 	<PageComponent />
 </main>

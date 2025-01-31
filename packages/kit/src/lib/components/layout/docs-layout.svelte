@@ -24,7 +24,7 @@
 	<Sidebar.Inset>
 		<Header />
 		<div
-			class="bg-background flex w-full flex-1 flex-row-reverse gap-4 px-4 py-8 lg:pl-0 lg:pr-8"
+			class="bg-background flex w-full flex-1 flex-row-reverse px-4 py-8 lg:pl-0 lg:pr-8 xl:gap-4"
 			id="content"
 		>
 			{@render children?.()}
