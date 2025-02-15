@@ -59,7 +59,7 @@
 		"@sveltejs/kit": "^2.9.0",
 		"@sveltejs/package": "^2.3.7",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
-		"@tailwindcss/vite": "4.0.0-beta.6",
+		"@tailwindcss/vite": "^4.0.1",
 		"@types/hast": "^3.0.4",
 		"@types/mdast": "^4.0.4",
 		"@types/node": "^22.10.1",
@@ -69,7 +69,7 @@
 		"publint": "^0.2.0",
 		"svelte": "^5.11.0",
 		"svelte-check": "^4.0.0",
-		"tailwindcss": "4.0.0-beta.6",
+		"tailwindcss": "^4.0.1",
 		"typescript": "^5.0.0",
 		"unified": "^11.0.5",
 		"vite": "^5.0.11"
