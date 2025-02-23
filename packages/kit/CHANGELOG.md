@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.5
+
+### Patch Changes
+
+- fix: layout styles ([#31](https://github.com/svecosystem/svecodocs/pull/31))
+
 ## 0.1.4
 
 ### Patch Changes
