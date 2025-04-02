@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.6
+
+### Patch Changes
+
+- chore: update deps ([#34](https://github.com/svecosystem/svecodocs/pull/34))
+
 ## 0.1.5
 
 ### Patch Changes
