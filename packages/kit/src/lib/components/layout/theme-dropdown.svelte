@@ -15,7 +15,7 @@
 		<MoonStars class="size-6" />
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="z-[100]" align="end" preventScroll={false}>
-		{#each modes as themeMode}
+		{#each modes as themeMode (themeMode)}
 			<DropdownMenu.Item onSelect={() => setMode(themeMode)} class="capitalize">
 				{themeMode}
 			</DropdownMenu.Item>

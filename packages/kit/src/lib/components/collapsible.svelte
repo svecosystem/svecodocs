@@ -11,7 +11,8 @@
 		children,
 		class: className,
 		triggerContent,
-	}: Omit<WithoutChild<ComponentProps<Collapsible.Root>>, "title"> & {
+		..._restProps
+	}: Omit<WithoutChild<ComponentProps<typeof Collapsible.Root>>, "title"> & {
 		title: string;
 		triggerContent?: Snippet;
 	} = $props();

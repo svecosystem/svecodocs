@@ -28,7 +28,7 @@
 		{selectedLabel}
 	</Select.Trigger>
 	<Select.Content>
-		{#each items as item}
+		{#each items as item (item.value)}
 			<Select.Item label={item.label} value={item.value}>
 				{item.label}
 			</Select.Item>

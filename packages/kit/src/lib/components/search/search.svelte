@@ -102,17 +102,17 @@
 								<Command.Loading>Loading...</Command.Loading>
 							{/if}
 
-							{#each results as { title, href }}
+							{#each results as result (result.title + result.href)}
 								<Command.LinkItem
-									{href}
+									href={result.href}
 									class="dark:data-selected:bg-primary-hover data-selected:bg-gray-200/70 flex h-10 cursor-pointer select-none items-center gap-2 rounded-md px-3 py-2.5 text-sm capitalize outline-none"
 									onSelect={() => {
 										searchQuery = "";
 										dialogOpen = false;
 									}}
-									value={title}
+									value={result.title}
 								>
-									{title}
+									{result.title}
 								</Command.LinkItem>
 							{/each}
 						</Command.Viewport>

@@ -29,7 +29,7 @@
 		{#if navigation?.anchors?.length}
 			<Sidebar.Group>
 				<Sidebar.Menu>
-					{#each navigation.anchors as anchor}
+					{#each navigation.anchors as anchor (anchor.title + anchor.href)}
 						{@const isExternal = !anchor.href.startsWith("/")}
 						<Sidebar.MenuItem>
 							<Sidebar.MenuButton
