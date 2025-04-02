@@ -4,3 +4,5 @@ pnpm-lock.yaml
 yarn.lock
 .github
 .github/
+docs/src/routes/api/search.json/search.json
+packages/kit/src/lib/styles/globals.css

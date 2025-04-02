@@ -21,15 +21,15 @@
 	--theme-color-brand-link-hover: var(--theme-color-brand-700);
 	--theme-color-brand-code-link: var(--theme-color-brand-600);
 	--theme-color-brand-code-link-hover: var(--theme-color-brand-500);
+}
 
-	&:where(.dark) {
-		--theme-color-brand: var(--theme-color-brand-600);
-		--theme-color-brand-border: var(--theme-color-brand-700);
-		--theme-color-brand-hover: var(--theme-color-brand-500);
-		--theme-color-brand-foreground: var(--theme-color-foreground);
-		--theme-color-brand-link: var(--theme-color-brand-600);
-		--theme-color-brand-link-hover: var(--theme-color-brand-500);
-		--theme-color-brand-code-link: var(--theme-color-brand-400);
-		--theme-color-brand-code-link-hover: var(--theme-color-brand-300);
-	}
+.dark {
+	--theme-color-brand: var(--theme-color-brand-600);
+	--theme-color-brand-border: var(--theme-color-brand-700);
+	--theme-color-brand-hover: var(--theme-color-brand-500);
+	--theme-color-brand-foreground: var(--theme-color-foreground);
+	--theme-color-brand-link: var(--theme-color-brand-600);
+	--theme-color-brand-link-hover: var(--theme-color-brand-500);
+	--theme-color-brand-code-link: var(--theme-color-brand-400);
+	--theme-color-brand-code-link-hover: var(--theme-color-brand-300);
 }

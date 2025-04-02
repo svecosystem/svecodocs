@@ -11,7 +11,7 @@
 		keywords = siteConfig.current.keywords,
 	}: {
 		title?: string;
-		ogImage?: typeof siteConfig.current.ogImage;
+		ogImage?: ReturnType<typeof useSiteConfig>["current"]["ogImage"];
 		description?: string;
 		keywords?: string[];
 	} = $props();
