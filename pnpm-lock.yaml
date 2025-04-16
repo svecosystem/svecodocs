@@ -111,8 +111,8 @@ importers:
         specifier: ^0.7.43
         version: 0.7.43
       mode-watcher:
-        specifier: ^0.5.0
-        version: 0.5.0(svelte@5.25.6)
+        specifier: ^1.0.0
+        version: 1.0.0(svelte@5.25.6)
       phosphor-svelte:
         specifier: ^3.0.0
         version: 3.0.0(svelte@5.25.6)(vite@6.2.4(@types/node@22.10.1)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.36.0)(yaml@2.6.1))
@@ -2554,10 +2554,10 @@ packages:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  mode-watcher@0.5.0:
-    resolution: {integrity: sha512-5E6fh/aXhAVv+U+DbeM0hCmskQE9u7WSmvnCRijJB/MJu7HtB73sjiCaZ9n1M8QHmzLrBFo8XBAUcWXkDm8Z9A==}
+  mode-watcher@1.0.0:
+    resolution: {integrity: sha512-pR7f1uVe6WAds4WAM8DxGk+w4fN94AgpYQp29IQRZqlWpYS1NwtVaLIil1OrYISuJaotfyLAviRKrc+yCwBw2g==}
     peerDependencies:
-      svelte: ^4.0.0 || ^5.0.0-next.1
+      svelte: ^5.27.0
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -2962,6 +2962,11 @@ packages:
 
   runed@0.23.4:
     resolution: {integrity: sha512-9q8oUiBYeXIDLWNK5DfCWlkL0EW3oGbk845VdKlPeia28l751VpfesaB/+7pI6rnbx1I6rqoZ2fZxptOJLxILA==}
+    peerDependencies:
+      svelte: ^5.7.0
+
+  runed@0.25.0:
+    resolution: {integrity: sha512-7+ma4AG9FT2sWQEA0Egf6mb7PBT2vHyuHail1ie8ropfSjvZGtEAx8YTmUjv/APCsdRRxEVvArNjALk9zFSOrg==}
     peerDependencies:
       svelte: ^5.7.0
 
@@ -5954,9 +5959,11 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  mode-watcher@0.5.0(svelte@5.25.6):
+  mode-watcher@1.0.0(svelte@5.25.6):
     dependencies:
+      runed: 0.25.0(svelte@5.25.6)
       svelte: 5.25.6
+      svelte-toolbelt: 0.7.1(svelte@5.25.6)
 
   mri@1.2.0: {}
 
@@ -6387,6 +6394,11 @@ snapshots:
       queue-microtask: 1.2.3
 
   runed@0.23.4(svelte@5.25.6):
+    dependencies:
+      esm-env: 1.2.2
+      svelte: 5.25.6
+
+  runed@0.25.0(svelte@5.25.6):
     dependencies:
       esm-env: 1.2.2
       svelte: 5.25.6
