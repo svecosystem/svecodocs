@@ -76,7 +76,7 @@
 	"dependencies": {
 		"clsx": "^2.1.1",
 		"flexsearch": "^0.7.43",
-		"mode-watcher": "^0.5.0",
+		"mode-watcher": "^1.0.0",
 		"phosphor-svelte": "^3.0.0",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-pretty-code": "^0.14.0",
