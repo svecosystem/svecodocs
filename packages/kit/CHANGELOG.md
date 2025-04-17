@@ -1,5 +1,15 @@
 # @svecodocs/kit
 
+## 0.2.0
+
+### Minor Changes
+
+- feat: Mobile TOC ([#36](https://github.com/svecosystem/svecodocs/pull/36))
+
+### Patch Changes
+
+- chore: update mode watcher to 1.0 ([#36](https://github.com/svecosystem/svecodocs/pull/36))
+
 ## 0.1.6
 
 ### Patch Changes
