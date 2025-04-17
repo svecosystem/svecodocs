@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.9
+
+### Patch Changes
+
+- bump: mode-watcher, svelte, and phosphor-svelte ([`a4c1396`](https://github.com/svecosystem/svecodocs/commit/a4c139692a7d6a2b0573449dddf5b176132d62ed))
+
 ## 0.1.8
 
 ### Patch Changes
