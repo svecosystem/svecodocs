@@ -35,24 +35,3 @@
 		</Popover.Content>
 	</Popover.Portal>
 </Popover.Root>
-
-<!-- <Collapsible title="On this page" class="mb-4 mt-0">
-	{#snippet triggerContent()}
-		On this page
-	{/snippet}
-	<MobileTocTree {tree} {tocState} />
-</Collapsible> -->
-<!--
-<div class={cn("w-[220px] max-w-[220px] space-y-2 text-sm xl:hidden", className)}>
-	<div class="text-muted-foreground -ml-px flex items-center gap-1.5">
-		<List class="size-4 shrink-0" />
-		<p class="text-muted-foreground text-sm">On this page</p>
-	</div>
-	<div class="relative mt-4">
-		<div
-			class="bg-foreground absolute -left-[0.5px] top-0 h-5 w-0.5 rounded-full"
-			style="transition: top 0.25s; top:{tocState.markerTopStyle};"
-		></div>
-		<MobileTocTree {tree} {tocState} />
-	</div>
-</div> -->
