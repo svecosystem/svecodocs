@@ -111,8 +111,8 @@ importers:
         specifier: ^0.7.43
         version: 0.7.43
       mode-watcher:
-        specifier: ^1.0.0
-        version: 1.0.0(svelte@5.25.6)
+        specifier: ^1.0.1
+        version: 1.0.1(svelte@5.25.6)
       phosphor-svelte:
         specifier: ^3.0.0
         version: 3.0.0(svelte@5.25.6)(vite@6.2.4(@types/node@22.10.1)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.36.0)(yaml@2.6.1))
@@ -2554,8 +2554,8 @@ packages:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  mode-watcher@1.0.0:
-    resolution: {integrity: sha512-pR7f1uVe6WAds4WAM8DxGk+w4fN94AgpYQp29IQRZqlWpYS1NwtVaLIil1OrYISuJaotfyLAviRKrc+yCwBw2g==}
+  mode-watcher@1.0.1:
+    resolution: {integrity: sha512-CUWzs9g9QMAH5WDnWgdDxBfNrkJsBELMPj2rtd7mTkJ1NjHi6H9mTDjxqPBkRkJHzxq7q8AFg/pWiE69WFRgEg==}
     peerDependencies:
       svelte: ^5.27.0
 
@@ -5959,7 +5959,7 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  mode-watcher@1.0.0(svelte@5.25.6):
+  mode-watcher@1.0.1(svelte@5.25.6):
     dependencies:
       runed: 0.25.0(svelte@5.25.6)
       svelte: 5.25.6
