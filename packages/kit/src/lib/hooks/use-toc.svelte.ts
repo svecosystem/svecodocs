@@ -96,6 +96,8 @@ export function useToc(getItemIds: () => string[]) {
 	};
 }
 
+export type TocState = ReturnType<typeof useToc>;
+
 function useIsAtBottom() {
 	let isAtBottom = $state(false);
 
