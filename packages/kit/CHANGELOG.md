@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.8
+
+### Patch Changes
+
+- fix: update `mode-watcher`, `phosphor-svelte` and `svelte` dependencies ([#40](https://github.com/svecosystem/svecodocs/pull/40))
+
 ## 0.1.7
 
 ### Patch Changes
