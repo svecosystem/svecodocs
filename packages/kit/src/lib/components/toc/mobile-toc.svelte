@@ -3,7 +3,7 @@
 	import type { TableOfContents, TocState } from "$lib/hooks/use-toc.svelte.js";
 	import MobileTocTree from "./mobile-toc-tree.svelte";
 	import { Popover } from "bits-ui";
-	import Button from "../ui/button/button.svelte";
+	import Button from "$lib/components/ui/button/button.svelte";
 
 	let { tree, tocState }: { tree: TableOfContents; tocState: TocState } = $props();
 
