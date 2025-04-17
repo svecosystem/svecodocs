@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.1.7
+
+### Patch Changes
+
+- set tailwind peer dep to ^4.0.0 ([#38](https://github.com/svecosystem/svecodocs/pull/38))
+
 ## 0.2.0
 
 ### Minor Changes
