@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.2.2
+
+### Patch Changes
+
+- fix: use dvh instead of svh for sidebar height ([#46](https://github.com/svecosystem/svecodocs/pull/46))
+
 ## 0.2.1
 
 ### Patch Changes
