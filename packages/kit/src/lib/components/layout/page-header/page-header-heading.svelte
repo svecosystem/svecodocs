@@ -5,9 +5,6 @@
 	let { class: className, children, ...restProps }: PrimitiveHeadingAttributes = $props();
 </script>
 
-<h1
-	class={cn("scroll-m-20 text-[2rem] font-semibold tracking-[-0.02em]", className)}
-	{...restProps}
->
+<h1 class={cn("scroll-m-20 text-[30px] font-semibold", className)} {...restProps}>
 	{@render children?.()}
 </h1>

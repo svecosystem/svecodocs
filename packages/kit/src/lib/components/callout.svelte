@@ -39,12 +39,15 @@
 	<Icon class="size-6" weight="bold" />
 
 	{#if title}
-		<Alert.Title class="text-lg">
+		<Alert.Title class="mt-px text-lg">
 			{title}
 		</Alert.Title>
 	{/if}
 
-	<Alert.Description class="leading-relaxed">
+	<Alert.Description
+		class="leading-relaxed data-[title]:mt-2"
+		data-title={title ? "" : undefined}
+	>
 		{@render children?.()}
 	</Alert.Description>
 </Alert.Root>

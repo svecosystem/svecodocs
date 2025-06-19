@@ -9,6 +9,6 @@
 	}: HTMLAttributes<HTMLParagraphElement> = $props();
 </script>
 
-<p class={cn("text-foreground/95 leading-7 [&:not(:first-child)]:mt-6", className)} {...restProps}>
+<p class={cn("text-foreground/95 leading-8 [&:not(:first-child)]:mt-6", className)} {...restProps}>
 	{@render children?.()}
 </p>
