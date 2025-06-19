@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.3.0
+
+### Minor Changes
+
+- style: adjust heading, p, and callout styles ([#48](https://github.com/svecosystem/svecodocs/pull/48))
+
 ## 0.2.2
 
 ### Patch Changes
