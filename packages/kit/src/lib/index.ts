@@ -1,6 +1,7 @@
 // Reexport your entry components here
 export * from "./types.js";
 export * from "./components/markdown/index.js";
+export * from "./releases.js";
 export { default as DemoContainer } from "./components/demo-container.svelte";
 export { default as ScrollArea } from "./components/ui/scroll-area/scroll-area.svelte";
 export { default as Card } from "./components/card.svelte";
@@ -25,6 +26,7 @@ export { default as Checkbox } from "./components/ui/checkbox/checkbox.svelte";
 export { default as Separator } from "./components/ui/separator/separator.svelte";
 export { default as PropField } from "./components/prop-field.svelte";
 export { default as Collapsible } from "./components/collapsible.svelte";
-export * as Select from "./components/ui/select/index.js";
+export { default as ReleasesPage } from "./components/releases-page.svelte";
 
+export * as Select from "./components/ui/select/index.js";
 export * from "./components/steps/index.js";
