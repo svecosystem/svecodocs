@@ -24,6 +24,25 @@
 		description = "Track all the latest updates, improvements, and fixes to the project",
 	}: Props = $props();
 
+	const myRelease = {
+		id: 9999,
+		tag: "@svecodocs/kit@0.3.1",
+		version: "@svecodocs/kit@0.3.1",
+		createdAt: new Date("2025-06-19T17:02:35.000Z"),
+		publishedAt: new Date("2025-06-19T17:02:37.000Z"),
+		changes: [
+			{
+				description: "adjust heading, p, and callout styles",
+				prNumber: 9999,
+				prUrl: "https://github.com/svecosystem/svecodocs/pull/9999",
+				prefix: "feat",
+				scope: "docs",
+			},
+		],
+		rawMarkdown:
+			"### Minor Changes\n\n-   style: adjust heading, p, and callout styles ([#48](https://github.com/svecosystem/svecodocs/pull/48))\n",
+	};
+
 	const prefixConfig = {
 		feat: {
 			color: "text-green-600 dark:text-green-400",
@@ -102,140 +121,70 @@
 			day: "numeric",
 		});
 	}
-
-	const changeTypeConfig = {
-		major: {
-			label: "Breaking Changes",
-			icon: Warning,
-			color: "text-red-600 dark:text-red-400",
-		},
-		minor: {
-			label: "New Features",
-			icon: Sparkle,
-			color: "text-green-600 dark:text-green-400",
-		},
-		patch: {
-			label: "Bug Fixes & Improvements",
-			icon: Bug,
-			color: "text-blue-600 dark:text-blue-400",
-		},
-	};
-
-	function getChangeTypeConfig(type: keyof ReleaseEntry["changes"]) {
-		return (
-			changeTypeConfig[type as keyof typeof changeTypeConfig] || {
-				label: "Changes",
-				icon: CheckCircle,
-				color: "text-muted-foreground",
-			}
-		);
-	}
 </script>
 
 <main class="mx-auto w-full min-w-0 max-w-[640px] pb-12 2xl:max-w-[760px]" id="main-content">
 	<PageHeader {title} {description} />
 
-	<div class="mt-8 space-y-8">
-		{#each releases as release (release.id)}
-			<article class="space-y-4">
-				<div class="flex items-center gap-4 border-b pb-4">
-					<h2 class="text-2xl font-bold">{release.version}</h2>
+	<div class="mt-8 flex flex-col gap-8">
+		{#each [myRelease, ...releases] as release (release.id)}
+			<div class="flex flex-col gap-4">
+				<div class="flex items-center justify-between border-b">
+					<h2 class="font-mono font-semibold">{release.version}</h2>
 					<time
-						class="text-muted-foreground text-sm"
+						class="text-muted-foreground text-xs"
 						datetime={release.publishedAt.toISOString()}
 					>
 						{formatDate(release.publishedAt)}
 					</time>
 				</div>
 
-				<div class="space-y-6">
-					{#each ["major", "minor", "patch"] as const as changeType (changeType)}
-						{@const changes = release.changes[changeType]}
-						{@const config = getChangeTypeConfig(changeType)}
-						{#if changes.length > 0}
-							<section class="space-y-3">
-								<div class="flex items-center gap-3">
-									<div
-										class="bg-muted flex items-center gap-2 rounded-md px-3 py-1.5"
-									>
-										<config.icon class="h-4 w-4 {config.color}" />
-										<span class="text-sm font-medium">{config.label}</span>
-										<span class="text-muted-foreground text-xs">
-											{changes.length}
-										</span>
+				<div class="flex flex-col gap-6">
+					{#each release.changes as change, index (index)}
+						{@const prefix = change.prefix ?? "misc"}
+						{@const prefixConfig = getPrefixConfig(prefix)}
+						<div class="space-y-2">
+							<div class="flex flex-wrap items-center gap-2">
+								<div
+									class="{prefixConfig.bg} flex items-center gap-1 rounded px-2 py-1 text-xs"
+								>
+									<span class="font-medium {prefixConfig.color}">
+										{prefix}{#if change.scope}({change.scope}){/if}
+									</span>
+								</div>
+								<p class="text-sm">{change.description}</p>
+								{#if change.prNumber || change.commitHash}
+									<div class="ml-auto flex items-center gap-2">
+										{#if change.prNumber && change.prUrl}
+											<a
+												href={change.prUrl}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="bg-muted text-muted-foreground hover:text-foreground text-xxs inline-flex items-center gap-1 rounded px-1 py-0.5"
+											>
+												<GitBranch class="size-3" />
+												#{change.prNumber}
+											</a>
+										{/if}
+
+										{#if change.commitHash && change.commitUrl}
+											<a
+												href={change.commitUrl}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="bg-muted text-muted-foreground hover:text-foreground text-xxs inline-flex items-center gap-1 rounded px-1 py-0.5"
+											>
+												<GitCommit class="size-3" />
+												{change.commitHash.slice(0, 7)}
+											</a>
+										{/if}
 									</div>
-								</div>
-
-								<div class="space-y-2">
-									{#each changes as change (change.description)}
-										<div class="bg-card rounded-lg border p-4">
-											<div class="space-y-2">
-												<div class="flex flex-wrap items-center gap-2">
-													{#if change.prefix}
-														{@const prefixConfig = getPrefixConfig(
-															change.prefix
-														)}
-														<div
-															class="{prefixConfig.bg} flex items-center gap-1 rounded px-2 py-1"
-														>
-															<prefixConfig.icon
-																class="h-3 w-3 {prefixConfig.color}"
-															/>
-															<span
-																class="text-xs font-medium {prefixConfig.color}"
-															>
-																{change.prefix}
-															</span>
-														</div>
-													{/if}
-
-													{#if change.scope}
-														<span
-															class="bg-muted text-muted-foreground rounded px-2 py-1 text-xs"
-														>
-															{change.scope}
-														</span>
-													{/if}
-												</div>
-
-												<p class="text-sm">{change.description}</p>
-
-												{#if change.prNumber || change.commitHash}
-													<div class="flex items-center gap-2">
-														{#if change.prNumber && change.prUrl}
-															<a
-																href={change.prUrl}
-																target="_blank"
-																rel="noopener noreferrer"
-																class="bg-muted text-muted-foreground hover:text-foreground inline-flex items-center gap-1 rounded px-2 py-1 text-xs"
-															>
-																<GitBranch class="h-3 w-3" />
-																#{change.prNumber}
-															</a>
-														{/if}
-
-														{#if change.commitHash && change.commitUrl}
-															<a
-																href={change.commitUrl}
-																target="_blank"
-																rel="noopener noreferrer"
-																class="bg-muted text-muted-foreground hover:text-foreground inline-flex items-center gap-1 rounded px-2 py-1 text-xs"
-															>
-																<GitCommit class="h-3 w-3" />
-																{change.commitHash.slice(0, 7)}
-															</a>
-														{/if}
-													</div>
-												{/if}
-											</div>
-										</div>
-									{/each}
-								</div>
-							</section>
-						{/if}
+								{/if}
+							</div>
+						</div>
 					{/each}
 				</div>
-			</article>
+			</div>
 		{/each}
 	</div>
 </main>

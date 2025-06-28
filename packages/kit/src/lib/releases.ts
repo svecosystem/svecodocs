@@ -16,7 +16,6 @@ export type RawReleaseEntry = {
 export type ChangeType = "major" | "minor" | "patch";
 
 export type ChangeEntry = {
-	type: "major" | "minor" | "patch";
 	prefix?: string;
 	scope?: string;
 	description: string;
@@ -32,11 +31,7 @@ export type ReleaseEntry = {
 	version: string;
 	createdAt: Date;
 	publishedAt: Date;
-	changes: {
-		major: ChangeEntry[];
-		minor: ChangeEntry[];
-		patch: ChangeEntry[];
-	};
+	changes: ChangeEntry[];
 	rawMarkdown: string;
 };
 
@@ -52,37 +47,19 @@ export async function getReleases(owner: string, repo: string): Promise<ReleaseE
 }
 
 function transformReleaseEntry(entry: RawReleaseEntry, owner: string, repo: string): ReleaseEntry {
-	const changes: ReleaseEntry["changes"] = {
-		major: [],
-		minor: [],
-		patch: [],
-	};
+	const changes: ReleaseEntry["changes"] = [];
 
-	// parse the markdown content
 	const lines = entry.markdown.split("\n");
-	let currentChangeType: ChangeType | null = null;
 
 	for (const line of lines) {
 		const trimmedLine = line.trim();
 
-		// detect change type sections
-		if (trimmedLine.includes("Major Changes")) {
-			currentChangeType = "major";
-			continue;
-		} else if (trimmedLine.includes("Minor Changes")) {
-			currentChangeType = "minor";
-			continue;
-		} else if (trimmedLine.includes("Patch Changes")) {
-			currentChangeType = "patch";
-			continue;
-		}
-
 		// parse individual changes (lines starting with -)
-		if (trimmedLine.startsWith("-") && currentChangeType) {
+		if (trimmedLine.startsWith("-")) {
 			const changeText = trimmedLine.substring(1).trim();
 			const changeEntry = parseChangeEntry(changeText, owner, repo);
 			if (changeEntry) {
-				changes[currentChangeType].push(changeEntry);
+				changes.push(changeEntry);
 			}
 		}
 	}
@@ -90,7 +67,7 @@ function transformReleaseEntry(entry: RawReleaseEntry, owner: string, repo: stri
 	return {
 		id: entry.id,
 		tag: entry.tag,
-		version: entry.tag.replace(/^v/, ""), // remove 'v' prefix if present
+		version: entry.tag.replace(/^v/, ""),
 		createdAt: new Date(entry.createdAt),
 		publishedAt: new Date(entry.publishedAt),
 		changes,
@@ -102,7 +79,6 @@ function parseChangeEntry(text: string, _owner: string, _repo: string): ChangeEn
 	if (!text) return null;
 
 	const result: ChangeEntry = {
-		type: "patch", // default, will be overridden by context
 		description: text,
 	};
 
