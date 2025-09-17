@@ -170,12 +170,13 @@
 		/* Style anchors with code differently */
 		@apply rounded-[5px];
 	}
-	a > code {
+
+	a>code {
 		/* Style code inside of links differently */
 		color: var(--color-brand-code-link) !important;
 	}
 
-	a:hover > code {
+	a:hover>code {
 		/* Style code inside of links differently */
 		color: var(--color-brand-code-link-hover) !important;
 	}
@@ -203,7 +204,7 @@
 		@apply px-2;
 	}
 
-	[data-rehype-pretty-code-figure] [data-line-numbers] > [data-line]::before {
+	[data-rehype-pretty-code-figure] [data-line-numbers]>[data-line]::before {
 		@apply text-xs text-zinc-50/40;
 		counter-increment: line;
 		content: counter(line);
@@ -267,6 +268,7 @@
 	}
 
 	.dark {
+
 		code[data-theme*="github-light github-dark"],
 		code[data-theme*="github-light github-dark"] span {
 			color: var(--shiki-dark);
@@ -274,7 +276,8 @@
 	}
 
 	::selection {
-		background-color: var(--color-muted); /* Change this to any color you want */
+		background-color: var(--color-muted);
+		/* Change this to any color you want */
 		/* color: white; Optional: change the text color when selected */
 	}
 
@@ -294,5 +297,11 @@
 		code::selection {
 			background-color: var(--color-background-secondary);
 		}
+	}
+}
+
+@layer components {
+	.search-result mark {
+		@apply bg-[#fdffa4] dark:text-background text-foreground rounded px-0.5 py-px;
 	}
 }

@@ -26,5 +26,5 @@ export { default as Separator } from "./components/ui/separator/separator.svelte
 export { default as PropField } from "./components/prop-field.svelte";
 export { default as Collapsible } from "./components/collapsible.svelte";
 export * as Select from "./components/ui/select/index.js";
-
 export * from "./components/steps/index.js";
+export * from "./components/search/search-utils.js";

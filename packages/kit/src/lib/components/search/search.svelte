@@ -6,7 +6,6 @@
 
 	let searchState = $state<"loading" | "ready">("loading");
 	let searchQuery = $state("");
-	let results = $state<SearchContent[]>([]);
 
 	onMount(async () => {
 		const content = await fetch("/api/search.json").then((res) => res.json());
@@ -15,10 +14,11 @@
 		searchState = "ready";
 	});
 
-	$effect(() => {
+	const results: SearchContent[] = $derived.by(() => {
 		if (searchState === "ready") {
-			results = searchContentIndex(searchQuery);
+			return searchContentIndex(searchQuery);
 		}
+		return [];
 	});
 
 	let dialogOpen = $state(false);

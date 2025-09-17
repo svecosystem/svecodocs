@@ -6,12 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-export function cleanMarkdown(raw: string) {
-	return removeMd(raw, {
+export function cleanMarkdown(rawMd: string) {
+	return removeMd(rawMd, {
 		replaceLinksWithURL: true,
 		gfm: true,
 		useImgAltText: true,
 	})
 		.replaceAll("\n", " ")
-		.replaceAll("\t", " ");
+		.replaceAll("\t", " ")
+		.trim();
 }
