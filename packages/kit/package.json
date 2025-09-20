@@ -48,7 +48,7 @@
 	},
 	"peerDependencies": {
 		"@sveltejs/kit": "^2.0.0",
-		"bits-ui": "^1.0.0-next.65",
+		"bits-ui": "^2.11.0",
 		"svelte": "^5.0.0",
 		"tailwindcss": "^4.0.0"
 	},
@@ -63,7 +63,6 @@
 		"@types/hast": "^3.0.4",
 		"@types/mdast": "^4.0.4",
 		"@types/node": "catalog:",
-		"bits-ui": "^1.3.16",
 		"mdsx": "^0.0.6",
 		"publint": "^0.3.2",
 		"svelte": "catalog:",
@@ -74,6 +73,7 @@
 		"vite": "catalog:"
 	},
 	"dependencies": {
+		"bits-ui": "^2.11.0",
 		"clsx": "^2.1.1",
 		"flexsearch": "^0.7.43",
 		"mode-watcher": "^1.0.2",
@@ -84,7 +84,7 @@
 		"remark-gfm": "^4.0.0",
 		"remove-markdown": "^0.5.5",
 		"shiki": "^1.24.0",
-		"svelte-toolbelt": "^0.7.1",
+		"svelte-toolbelt": "^0.10.5",
 		"tailwind-merge": "^3.1.0",
 		"tailwind-variants": "^1.0.0",
 		"tw-animate-css": "^1.2.5",

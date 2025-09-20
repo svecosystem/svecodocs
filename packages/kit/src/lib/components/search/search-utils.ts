@@ -83,11 +83,16 @@ function highlightMatches(text: string, query: string): string {
 function fuzzyMatch(text: string, query: string): boolean {
 	const textLower = text.toLowerCase();
 	const queryLower = query.toLowerCase();
-	if (textLower.includes(queryLower)) return true;
 
 	let queryIndex = 0;
+	let lastMatchIndex = -1;
+
 	for (let i = 0; i < textLower.length && queryIndex < queryLower.length; i++) {
 		if (textLower[i] === queryLower[queryIndex]) {
+			if (queryIndex > 0 && i - lastMatchIndex > 5) {
+				return false;
+			}
+			lastMatchIndex = i;
 			queryIndex++;
 		}
 	}

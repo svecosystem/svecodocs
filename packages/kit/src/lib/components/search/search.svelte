@@ -2,7 +2,7 @@
 	import MagnifyingGlass from "phosphor-svelte/lib/MagnifyingGlass";
 	import { onMount } from "svelte";
 	import { Command, Dialog } from "bits-ui";
-	import { type SearchContent, createContentIndex, searchContentIndex } from "./search-utils.js";
+	import { type SearchResult, createContentIndex, searchContentIndex } from "./search-utils.js";
 
 	let searchState = $state<"loading" | "ready">("loading");
 	let searchQuery = $state("");
@@ -14,12 +14,9 @@
 		searchState = "ready";
 	});
 
-	const results: SearchContent[] = $derived.by(() => {
-		if (searchState === "ready") {
-			return searchContentIndex(searchQuery);
-		}
-		return [];
-	});
+	const results: SearchResult[] = $derived(
+		searchState === "ready" ? searchContentIndex(searchQuery) : []
+	);
 
 	let dialogOpen = $state(false);
 
@@ -35,7 +32,7 @@
 
 <Dialog.Root
 	bind:open={dialogOpen}
-	onOpenChange={(o) => {
+	onOpenChangeComplete={(o) => {
 		if (!o) {
 			searchQuery = "";
 		}
@@ -65,7 +62,7 @@
 			class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/20 dark:bg-black/80"
 		/>
 		<Dialog.Content
-			class="bg-background shadow-popover data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-top-[48%] fixed left-[50%] top-[20%] z-50 w-full max-w-[94%] translate-x-[-50%] translate-y-[0%] rounded-lg outline-none sm:max-w-[490px] md:w-full"
+			class="bg-background shadow-popover data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed left-[50%] top-[20%] z-50 w-full max-w-[94%] translate-x-[-50%] translate-y-[0%] rounded-lg outline-none sm:max-w-[600px] md:w-full"
 			onCloseAutoFocus={(e) => {
 				e.preventDefault();
 			}}
@@ -74,7 +71,7 @@
 			<Dialog.Description class="sr-only">Search for documentation</Dialog.Description>
 			<Command.Root
 				shouldFilter={false}
-				class="bg-background flex h-full w-full flex-col self-start rounded-lg border border-transparent"
+				class="bg-background flex h-full w-full flex-col self-start overflow-hidden rounded-lg border border-transparent"
 			>
 				<Command.Input
 					bind:value={searchQuery}
@@ -95,24 +92,39 @@
 
 				{#if searchQuery !== "" && results.length > 0}
 					<Command.List
-						class="max-h-[280px] overflow-y-auto overflow-x-hidden border-t px-2 pb-2 pt-2"
+						class="max-h-[400px] overflow-y-auto overflow-x-hidden border-t px-2 pb-2 pt-2"
 					>
 						<Command.Viewport>
 							{#if searchState === "loading"}
 								<Command.Loading>Loading...</Command.Loading>
 							{/if}
 
-							{#each results as result (result.title + result.href)}
+							{#each results as { title, href, snippet, category } (title + href)}
 								<Command.LinkItem
-									href={result.href}
-									class="dark:data-selected:bg-primary-hover data-selected:bg-gray-200/70 flex h-10 cursor-pointer select-none items-center gap-2 rounded-md px-3 py-2.5 text-sm outline-none"
+									{href}
+									class="dark:data-selected:bg-primary-hover data-selected:bg-gray-200/70 flex cursor-pointer select-none flex-col items-start gap-1 rounded-md px-3 py-2.5 text-sm outline-none"
 									onSelect={() => {
 										searchQuery = "";
 										dialogOpen = false;
 									}}
-									value={result.title}
+									value={title}
 								>
-									{result.title}
+									<div class="flex w-full items-center justify-between">
+										<span class="font-medium capitalize">{title}</span>
+										{#if category}
+											<span class="text-muted-foreground text-xs">
+												{category}
+											</span>
+										{/if}
+									</div>
+									{#if snippet}
+										<div
+											class="search-result text-muted-foreground text-xs leading-relaxed"
+										>
+											<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+											{@html snippet}
+										</div>
+									{/if}
 								</Command.LinkItem>
 							{/each}
 						</Command.Viewport>
