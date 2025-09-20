@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.4.0
+
+### Minor Changes
+
+- feat: improve search ([#53](https://github.com/svecosystem/svecodocs/pull/53))
+
 ## 0.3.0
 
 ### Minor Changes
