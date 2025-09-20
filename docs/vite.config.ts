@@ -11,6 +11,9 @@ export default defineConfig({
 	optimizeDeps: {
 		exclude: ["@svecodocs/kit"],
 	},
+	ssr: {
+		noExternal: ["@svecodocs/kit"],
+	},
 	server: {
 		fs: {
 			allow: [resolve(__dirname, "./.velite")],
