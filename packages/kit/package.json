@@ -45,6 +45,10 @@
 		"./mdsxConfig": {
 			"types": "./dist/configs/mdsx-config.d.ts",
 			"default": "./dist/configs/mdsx-config.js"
+		},
+		"./search": {
+			"types": "./dist/components/search/search-utils.d.ts",
+			"default": "./dist/components/search/search-utils.js"
 		}
 	},
 	"peerDependencies": {

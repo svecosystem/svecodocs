@@ -1,4 +1,5 @@
 import FlexSearch from "flexsearch";
+import removeMd from "remove-markdown";
 
 export function defineSearchContent(data: SearchContent[]) {
 	return data;
@@ -147,4 +148,15 @@ export function searchContentIndex(query: string): SearchResult[] {
 			category: item.category,
 		};
 	});
+}
+
+export function cleanMarkdown(rawMd: string) {
+	return removeMd(rawMd, {
+		replaceLinksWithURL: true,
+		gfm: true,
+		useImgAltText: true,
+	})
+		.replaceAll("\n", " ")
+		.replaceAll("\t", " ")
+		.trim();
 }
