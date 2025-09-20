@@ -16,7 +16,7 @@ export { default as Input } from "./components/ui/input/input.svelte";
 export { default as Textarea } from "./components/ui/textarea/textarea.svelte";
 export { default as Label } from "./components/ui/label/label.svelte";
 export { default as NativeSelect } from "./components/ui/native-select/native-select.svelte";
-export { cn, cleanMarkdown } from "./utils.js";
+export { cn } from "./utils.js";
 export { defineSiteConfig } from "./define-site-config.js";
 export { defineNavigation } from "./define-navigation.js";
 export { default as Slider } from "./components/ui/slider/slider.svelte";
@@ -26,5 +26,5 @@ export { default as Separator } from "./components/ui/separator/separator.svelte
 export { default as PropField } from "./components/prop-field.svelte";
 export { default as Collapsible } from "./components/collapsible.svelte";
 export * as Select from "./components/ui/select/index.js";
-
 export * from "./components/steps/index.js";
+export * from "./components/search/search-utils.js";
