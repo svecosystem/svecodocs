@@ -18,10 +18,8 @@ export function buildDocsSearchIndex() {
 	);
 }
 
-const searchData = buildDocsSearchIndex();
-
 writeFileSync(
 	resolve(__dirname, "../src/routes/api/search.json/search.json"),
-	JSON.stringify(searchData),
+	JSON.stringify(buildDocsSearchIndex()),
 	{ flag: "w" }
 );

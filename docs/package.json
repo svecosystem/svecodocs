@@ -25,6 +25,7 @@
 		"tailwindcss": "catalog:",
 		"typescript": "catalog:",
 		"velite": "^0.2.4",
-		"vite": "catalog:"
+		"vite": "catalog:",
+		"vite-plugin-devtools-json": "^1.0.0"
 	}
 }
