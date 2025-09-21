@@ -2,7 +2,7 @@ import { fileURLToPath } from "node:url";
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { docs } from "../.velite/index.js";
-import { cleanMarkdown, defineSearchContent } from "@svecodocs/kit";
+import { cleanMarkdown, defineSearchContent } from "@svecodocs/kit/search";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
