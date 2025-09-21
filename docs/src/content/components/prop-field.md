@@ -70,6 +70,8 @@ Configuration options to customize the behavior of the `Checkbox` component.
 </Collapsible>
 </PropField>
 
+## Some Really Long Title That will Wrap
+
 ## Props
 
 <PropField name="name" type="string" required>

@@ -20,10 +20,42 @@ export function useToc(getItemIds: () => string[]) {
 	const urlHash = $derived(pageState.current.url.hash);
 	const isAtBottom = useIsAtBottom();
 
-	const activeIndex = $derived(itemIds.findIndex((id) => id === activeId));
-	const markerTopStyle = $derived.by(() => {
-		if (activeIndex === -1) return "0px";
-		return activeIndex * 28 + "px";
+	let markerTopStyle = $state("0px");
+
+	$effect(() => {
+		if (!activeId) {
+			markerTopStyle = "0px";
+			return;
+		}
+
+		requestAnimationFrame(() => {
+			const tocContainer = document.querySelector("[data-toc-container]");
+			if (!tocContainer) return;
+
+			const tocLinks = Array.from(tocContainer.querySelectorAll("a[href]"));
+
+			let targetIndex = -1;
+			for (let i = 0; i < tocLinks.length; i++) {
+				const href = tocLinks[i].getAttribute("href");
+				if (href && href.includes(`#${activeId}`)) {
+					targetIndex = i;
+					break;
+				}
+			}
+
+			if (targetIndex === -1) {
+				const oldIndex = itemIds.findIndex((id) => id === activeId);
+				markerTopStyle = oldIndex * 28 + "px";
+				return;
+			}
+
+			let totalHeight = 0;
+			for (let i = 0; i < targetIndex; i++) {
+				totalHeight += tocLinks[i].getBoundingClientRect().height;
+			}
+
+			markerTopStyle = totalHeight + "px";
+		});
 	});
 
 	function isActive(item: TocItem) {
