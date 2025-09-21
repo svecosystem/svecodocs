@@ -16,10 +16,10 @@
 		<List class="size-4 shrink-0" />
 		<p class="text-muted-foreground text-sm">On this page</p>
 	</div>
-	<div class="relative mt-4">
+	<div class="relative mt-4" data-toc-container>
 		<div
-			class="bg-foreground absolute -left-[0.5px] top-0 h-5 w-0.5 rounded-full"
-			style="transition: top 0.25s; top:{tocState.markerTopStyle};"
+			class="bg-foreground absolute -left-[0.5px] top-0 w-0.5 rounded-full"
+			style="transition: top 0.25s, height 0.25s; top:{tocState.markerTopStyle}; height:{tocState.markerHeightStyle};"
 		></div>
 		<TocTree {tree} {tocState} />
 	</div>

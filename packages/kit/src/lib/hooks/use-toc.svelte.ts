@@ -1,6 +1,5 @@
 import { untrack } from "svelte";
-import { page } from "$app/stores";
-import { fromStore } from "svelte/store";
+import { page } from "$app/state";
 import { addEventListener } from "svelte-toolbelt";
 
 export type TocItem = {
@@ -16,14 +15,53 @@ export type TableOfContents = {
 export function useToc(getItemIds: () => string[]) {
 	const itemIds = $derived(getItemIds());
 	let activeId = $state<string | null>(null);
-	const pageState = fromStore(page);
-	const urlHash = $derived(pageState.current.url.hash);
+	const urlHash = $derived(page.url.hash);
 	const isAtBottom = useIsAtBottom();
 
-	const activeIndex = $derived(itemIds.findIndex((id) => id === activeId));
-	const markerTopStyle = $derived.by(() => {
-		if (activeIndex === -1) return "0px";
-		return activeIndex * 28 + "px";
+	let markerTopStyle = $state("0px");
+	let markerHeightStyle = $state("20px");
+
+	$effect(() => {
+		if (!activeId) {
+			markerTopStyle = "0px";
+			return;
+		}
+
+		requestAnimationFrame(() => {
+			const tocContainer = document.querySelector("[data-toc-container]");
+			if (!tocContainer) return;
+
+			const tocLinks = Array.from(tocContainer.querySelectorAll("a[href]"));
+
+			let targetIndex = -1;
+			let targetElement: Element | null = null;
+			for (let i = 0; i < tocLinks.length; i++) {
+				const href = tocLinks[i].getAttribute("href");
+				if (href && href.includes(`#${activeId}`)) {
+					targetIndex = i;
+					targetElement = tocLinks[i];
+					break;
+				}
+			}
+
+			if (targetIndex === -1 || !targetElement) {
+				const oldIndex = itemIds.findIndex((id) => id === activeId);
+				markerTopStyle = oldIndex * 28 + "px";
+				markerHeightStyle = "20px";
+				return;
+			}
+
+			let totalHeight = 0;
+			for (let i = 0; i < targetIndex; i++) {
+				totalHeight += tocLinks[i].getBoundingClientRect().height;
+			}
+
+			const activeElementHeight = targetElement.getBoundingClientRect().height;
+
+			markerTopStyle = totalHeight + "px";
+			const isLastItem = targetIndex === tocLinks.length - 1;
+			markerHeightStyle = activeElementHeight - (isLastItem ? 0 : 8) + "px";
+		});
 	});
 
 	function isActive(item: TocItem) {
@@ -90,6 +128,9 @@ export function useToc(getItemIds: () => string[]) {
 		},
 		get markerTopStyle() {
 			return markerTopStyle;
+		},
+		get markerHeightStyle() {
+			return markerHeightStyle;
 		},
 		isActive,
 		isLastItem,
