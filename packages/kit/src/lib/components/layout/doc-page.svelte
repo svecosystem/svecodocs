@@ -10,13 +10,13 @@
 		title,
 		description,
 		toc,
-		metadata,
+		metadata = {},
 	}: {
 		component: Component;
 		title: string;
 		description?: string;
 		toc: TOCEntry[];
-		metadata: ComponentProps<typeof Metadata>;
+		metadata?: ComponentProps<typeof Metadata>;
 	} = $props();
 
 	const PageComponent = $derived(component);
