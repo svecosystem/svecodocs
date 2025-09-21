@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.4.1
+
+### Patch Changes
+
+- fix: TOC indicator ([#55](https://github.com/svecosystem/svecodocs/pull/55))
+
 ## 0.4.0
 
 ### Minor Changes
