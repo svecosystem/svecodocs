@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.4.2
+
+### Patch Changes
+
+- fix: Expose metadata through docspage ([#60](https://github.com/svecosystem/svecodocs/pull/60))
+
 ## 0.4.1
 
 ### Patch Changes
