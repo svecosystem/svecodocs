@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.4.3
+
+### Patch Changes
+
+- fix: only include metadata in page not layout so it can be overwritten ([#62](https://github.com/svecosystem/svecodocs/pull/62))
+
 ## 0.4.2
 
 ### Patch Changes
