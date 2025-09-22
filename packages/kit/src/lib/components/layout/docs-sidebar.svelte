@@ -3,8 +3,11 @@
 	import { page } from "$app/stores";
 	import type { Navigation, SidebarNavSection } from "$lib/types.js";
 	import type { Snippet } from "svelte";
+	import {getBasePathContext} from "../context.js";
 
 	let { navigation, logo }: { navigation: Navigation; logo: Snippet } = $props();
+
+	const basePath = getBasePathContext() ?? "";
 </script>
 
 <Sidebar.Root>
@@ -16,7 +19,7 @@
 					class="hover:bg-background-secondary active:bg-background-secondary dark:hover:bg-background-secondary dark:active:bg-background-secondary [&>svg]:size-0 [&>svg]:h-7 [&>svg]:w-auto"
 				>
 					{#snippet child({ props })}
-						<a href="/docs" {...props}>
+						<a href={basePath+"/docs"} {...props}>
 							{@render logo()}
 						</a>
 					{/snippet}

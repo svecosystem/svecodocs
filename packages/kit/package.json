@@ -49,6 +49,10 @@
 		"./search": {
 			"types": "./dist/components/search/search-utils.d.ts",
 			"default": "./dist/components/search/search-utils.js"
+		},
+		"./context":{
+			"types": "./dist/components/context/context.d.ts",
+			"default": "./dist/components/context/context.js"
 		}
 	},
 	"peerDependencies": {
