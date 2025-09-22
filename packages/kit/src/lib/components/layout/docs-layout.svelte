@@ -6,7 +6,6 @@
 	import type { Navigation } from "$lib/types.js";
 	import Header from "./header.svelte";
 	import Footer from "./footer.svelte";
-	import Metadata from "../metadata.svelte";
 
 	let {
 		children,
@@ -16,7 +15,6 @@
 	}: { children?: Snippet; navigation: Navigation; logo: Snippet; theme?: string } = $props();
 </script>
 
-<Metadata />
 <a href="#main-content" class="sr-only">Skip to main content</a>
 <ModeWatcher defaultTheme={theme} />
 <Sidebar.Provider>
