@@ -3,7 +3,7 @@
 	import { page } from "$app/stores";
 	import type { Navigation, SidebarNavSection } from "$lib/types.js";
 	import type { Snippet } from "svelte";
-	import {getBasePathContext} from "../context/context.ts";
+	import {getBasePathContext} from "../context/context.js";
 
 	let { navigation, logo }: { navigation: Navigation; logo: Snippet } = $props();
 
