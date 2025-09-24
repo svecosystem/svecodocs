@@ -1,6 +1,6 @@
 {
 	"name": "@svecodocs/kit",
-	"version": "0.4.3",
+	"version": "0.5.0",
 	"scripts": {
 		"build": "pnpm package",
 		"dev": "svelte-package --watch",

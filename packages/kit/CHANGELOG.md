@@ -1,5 +1,15 @@
 # @svecodocs/kit
 
+## 0.5.0
+
+### Minor Changes
+
+- feat: Contributors section ([#66](https://github.com/svecosystem/svecodocs/pull/66))
+
+### Patch Changes
+
+- feat: forward component props to docpage component ([#66](https://github.com/svecosystem/svecodocs/pull/66))
+
 ## 0.4.3
 
 ### Patch Changes
