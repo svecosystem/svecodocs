@@ -18,6 +18,11 @@
 	],
 	"types": "./dist/index.d.ts",
 	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/svecosystem/svecodocs",
+		"directory": "packages/kit"
+	},
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
