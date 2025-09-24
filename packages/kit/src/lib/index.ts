@@ -5,6 +5,7 @@ export { default as DemoContainer } from "./components/demo-container.svelte";
 export { default as ScrollArea } from "./components/ui/scroll-area/scroll-area.svelte";
 export { default as Card } from "./components/card.svelte";
 export { default as CardGrid } from "./components/card-grid.svelte";
+export { default as ContributorsSection } from "./components/contributors-section.svelte";
 export { default as Button } from "./components/ui/button/button.svelte";
 export { default as Tabs } from "./components/tabs/tabs.svelte";
 export { default as TabItem } from "./components/tabs/tab-item.svelte";

@@ -54,3 +54,10 @@ export type TOCEntry = {
 	url: string;
 	items?: TOCEntry[];
 };
+
+export type Contributor = {
+	login: string;
+	name?: string;
+	avatar_url: string;
+	contributions: number;
+};
