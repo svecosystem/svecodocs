@@ -18,15 +18,13 @@
 			>
 				<Avatar.Root
 					class="border-foreground/50 group-hover:border-foreground size-8 rounded-full border"
+					loadingStatus="loaded"
 				>
 					<Avatar.Image
 						class="rounded-full"
 						src={contributor.avatar_url}
 						alt={contributor.name}
 					/>
-					<Avatar.Fallback>
-						{contributor.name?.charAt(0)}
-					</Avatar.Fallback>
 				</Avatar.Root>
 				<span class="underline-offset-2 group-hover:underline"
 					>{contributor.name ?? contributor.login}</span
