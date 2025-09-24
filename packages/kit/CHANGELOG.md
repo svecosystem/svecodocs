@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.5.1
+
+### Patch Changes
+
+- fix: contributors avatar ([#69](https://github.com/svecosystem/svecodocs/pull/69))
+
 ## 0.5.0
 
 ### Minor Changes
