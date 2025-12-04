@@ -21,6 +21,7 @@ export type AnchorNavItem = {
 	title: string;
 	href: string;
 	icon: Component;
+	description: string;
 	disabled?: boolean;
 };
 
@@ -36,6 +37,7 @@ export type SidebarNavSection = {
 
 export type SidebarNavItem = {
 	title: string;
+	description: string;
 	href?: string;
 	disabled?: boolean;
 	external?: boolean;
@@ -47,6 +49,17 @@ export type Navigation = {
 	header?: HeaderNavItem[];
 	sections?: SidebarNavSection[];
 	items?: SidebarNavItem[];
+};
+
+export type NavigationNeighbor = {
+	title: string;
+	description: string;
+	href: string;
+};
+
+export type NavigationNeighbors = {
+	previous?: NavigationNeighbor;
+	next?: NavigationNeighbor;
 };
 
 export type TOCEntry = {
