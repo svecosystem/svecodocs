@@ -19,6 +19,13 @@ export type SiteConfig = {
 		name: string;
 		url: string;
 	};
+	footer?: {
+		copyright?: {
+			name?: string;
+			url?: string;
+			year?: number;
+		}
+	}
 };
 
 export function createSiteConfig(config: SiteConfigState) {

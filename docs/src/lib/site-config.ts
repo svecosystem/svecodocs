@@ -19,4 +19,11 @@ export const siteConfig = defineSiteConfig({
 		x: "https://x.com/huntabyte",
 		github: "https://github.com/svecosystem/svecodocs",
 	},
+	footer: {
+		copyright: {
+			url: "https://github.com/svecosystem",
+			year: new Date().getFullYear(),
+			name: "Svecosystem",
+		},
+	},
 });
