@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { page } from "$app/stores";
-	import { useSiteConfig } from "$lib/hooks/use-site-config.svelte.js";
+	import { page } from "$app/state";
+	import { useSiteConfig } from "#lib/hooks/use-site-config.svelte.js";
 
 	const siteConfig = useSiteConfig();
 
@@ -37,7 +37,7 @@
 	<meta name="twitter:creator" content="huntabyte" />
 	<meta property="og:title" content={title} />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={siteConfig.current.url + $page.url.pathname} />
+	<meta property="og:url" content={siteConfig.current.url + page.url.pathname} />
 	<meta property="og:image" content={ogImage?.url} />
 	<meta property="og:image:alt" content={title} />
 	<meta property="og:image:width" content={ogImage?.width} />

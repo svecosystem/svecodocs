@@ -6,15 +6,19 @@
 		"dev": "pnpm \"/dev:/\"",
 		"dev:content": "velite dev --watch",
 		"dev:svelte": "vite dev",
-		"build": "velite && node ./scripts/update-velite-output.js && pnpm build:search && vite build",
+		"build": "svelte-kit sync && velite && node ./scripts/update-velite-output.js && pnpm build:search && vite build",
 		"build:search": "node ./scripts/build-search-data.js",
 		"preview": "vite preview",
-		"check": "velite && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check": "svelte-kit sync && velite && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "pnpm build:content && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"imports": {
+		"#lib/*": "./src/lib/*",
+		"#content/*": "./.velite/*"
 	},
 	"devDependencies": {
 		"@svecodocs/kit": "workspace:*",
-		"@sveltejs/adapter-cloudflare": "^7.2.3",
+		"@sveltejs/adapter-cloudflare": "^8.0.0",
 		"@sveltejs/kit": "catalog:",
 		"@sveltejs/vite-plugin-svelte": "catalog:",
 		"@tailwindcss/vite": "catalog:",
@@ -26,6 +30,6 @@
 		"typescript": "catalog:",
 		"velite": "^0.2.4",
 		"vite": "catalog:",
-		"vite-plugin-devtools-json": "^1.0.0"
+		"vite-plugin-devtools-json": "^1.1.0"
 	}
 }

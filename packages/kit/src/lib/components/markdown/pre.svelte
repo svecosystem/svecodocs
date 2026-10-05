@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils.js";
-	import ScrollArea from "$lib/components/ui/scroll-area/scroll-area.svelte";
-	import { useCopyToClipboard } from "$lib/hooks/use-copy-to-clipboard.svelte.js";
-	import { Button } from "$lib/components/ui/button/index.js";
+	import { cn } from "#lib/utils.js";
+	import ScrollArea from "#lib/components/ui/scroll-area/scroll-area.svelte";
+	import { useCopyToClipboard } from "#lib/hooks/use-copy-to-clipboard.svelte.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import ClipboardText from "phosphor-svelte/lib/ClipboardText";
 	import Check from "phosphor-svelte/lib/Check";
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { PrimitiveAttributes } from "$lib/types.js";
-	import { cn } from "$lib/utils.js";
+	import type { PrimitiveAttributes } from "#lib/types.js";
+	import { cn } from "#lib/utils.js";
 
 	let { class: className, children, ...restProps }: PrimitiveAttributes = $props();
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useToc, type TableOfContents } from "$lib/hooks/use-toc.svelte.js";
+	import { useToc, type TableOfContents } from "#lib/hooks/use-toc.svelte.js";
 	import DesktopToc from "./desktop-toc.svelte";
 	import MobileToc from "./mobile-toc.svelte";
 

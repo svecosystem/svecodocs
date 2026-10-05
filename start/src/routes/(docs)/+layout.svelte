@@ -1,8 +1,8 @@
 <script lang="ts">
-	import SvecosystemDark from "$lib/components/logos/svecosystem-dark.svelte";
-	import SvecosystemLight from "$lib/components/logos/svecosystem-light.svelte";
+	import SvecosystemDark from "#lib/components/logos/svecosystem-dark.svelte";
+	import SvecosystemLight from "#lib/components/logos/svecosystem-light.svelte";
 	import { DocsLayout } from "@svecodocs/kit";
-	import { navigation } from "$lib/navigation";
+	import { navigation } from "#lib/navigation.js";
 
 	let { children } = $props();
 </script>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import List from "phosphor-svelte/lib/List";
 	import TocTree from "./toc-tree.svelte";
-	import type { TableOfContents, TocState } from "$lib/hooks/use-toc.svelte.js";
-	import { cn } from "$lib/utils.js";
+	import type { TableOfContents, TocState } from "#lib/hooks/use-toc.svelte.js";
+	import { cn } from "#lib/utils.js";
 
 	let {
 		tree,

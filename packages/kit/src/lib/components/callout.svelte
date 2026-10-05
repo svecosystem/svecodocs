@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Alert from "$lib/components/ui/alert/index.js";
-	import { cn } from "$lib/utils.js";
+	import * as Alert from "#lib/components/ui/alert/index.js";
+	import { cn } from "#lib/utils.js";
 	import Info from "phosphor-svelte/lib/Info";
 	import RocketLaunch from "phosphor-svelte/lib/RocketLaunch";
 	import Warning from "phosphor-svelte/lib/Warning";

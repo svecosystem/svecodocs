@@ -57,7 +57,7 @@
 		}
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/kit": "^3.0.0",
 		"bits-ui": "^2.11.0",
 		"svelte": "^5.0.0",
 		"tailwindcss": "^4.0.0"
@@ -67,7 +67,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "catalog:",
-		"@sveltejs/package": "2.5.0",
+		"@sveltejs/package": "3.0.0",
 		"@sveltejs/vite-plugin-svelte": "catalog:",
 		"@tailwindcss/vite": "catalog:",
 		"@types/hast": "^3.0.4",
@@ -81,6 +81,9 @@
 		"typescript": "catalog:",
 		"unified": "^11.0.5",
 		"vite": "catalog:"
+	},
+	"imports": {
+		"#lib/*": "./src/lib/*"
 	},
 	"dependencies": {
 		"bits-ui": "^2.11.0",

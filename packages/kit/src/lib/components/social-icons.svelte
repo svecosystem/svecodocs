@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button/index.js";
-	import GithubIcon from "$lib/components/icons/github-icon.svelte";
-	import XComIcon from "$lib/components/icons/xcom-icon.svelte";
-	import { useSiteConfig } from "$lib/hooks/use-site-config.svelte.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import GithubIcon from "#lib/components/icons/github-icon.svelte";
+	import XComIcon from "#lib/components/icons/xcom-icon.svelte";
+	import { useSiteConfig } from "#lib/hooks/use-site-config.svelte.js";
 	import type { Component } from "svelte";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 
 	const siteConfig = useSiteConfig();
 </script>

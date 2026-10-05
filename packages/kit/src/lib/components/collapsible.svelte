@@ -2,7 +2,7 @@
 	import { Collapsible, type WithoutChild } from "bits-ui";
 	import type { ComponentProps, Snippet } from "svelte";
 	import CaretRight from "phosphor-svelte/lib/CaretRight";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import Button from "./ui/button/button.svelte";
 
 	let {

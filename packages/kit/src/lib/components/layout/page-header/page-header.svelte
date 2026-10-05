@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Separator from "$lib/components/ui/separator/separator.svelte";
-	import type { PrimitiveAttributes } from "$lib/types.js";
-	import { cn } from "$lib/utils.js";
+	import Separator from "#lib/components/ui/separator/separator.svelte";
+	import type { PrimitiveAttributes } from "#lib/types.js";
+	import { cn } from "#lib/utils.js";
 	import PageHeaderDescription from "./page-header-description.svelte";
 	import PageHeaderHeading from "./page-header-heading.svelte";
 
