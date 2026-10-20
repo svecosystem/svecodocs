@@ -1,5 +1,11 @@
 # @svecodocs/kit
 
+## 0.6.0
+
+### Minor Changes
+
+- breaking: require SvelteKit 3 ([#75](https://github.com/svecosystem/svecodocs/pull/75))
+
 ## 0.5.1
 
 ### Patch Changes
