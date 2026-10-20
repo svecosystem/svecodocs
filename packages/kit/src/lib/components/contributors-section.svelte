@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Contributor } from "$lib/types.js";
+	import type { Contributor } from "#lib/types.js";
 	import { Avatar } from "bits-ui";
 	import H2 from "./markdown/h2.svelte";
 

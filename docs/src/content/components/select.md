@@ -6,7 +6,7 @@ section: Components
 
 <script>
 	import { Select, DemoContainer } from "@svecodocs/kit";
-	import SelectDemo from "$lib/components/demos/select-demo.svelte";
+	import SelectDemo from "#lib/components/demos/select-demo.svelte";
 </script>
 
 ## Usage

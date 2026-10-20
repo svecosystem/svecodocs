@@ -17,7 +17,7 @@ You can override the default icon for the callout by passing a component via the
 
 ```svelte title="document.md"
 <script>
-	import { Callout } from "$lib/components";
+	import { Callout } from "@svecodocs/kit";
 </script>
 
 <Callout type="note" title="Note">

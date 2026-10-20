@@ -14,7 +14,7 @@ The `Steps` and `Step` components are used to display a series of steps, breakin
 
 ```svelte title="document.md"
 <script>
-	import { Steps, Step } from "$lib/components";
+	import { Steps, Step } from "@svecodocs/kit";
 </script>
 
 <Steps>

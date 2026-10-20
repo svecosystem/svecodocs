@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { TableOfContents, TocState } from "$lib/hooks/use-toc.svelte.js";
-	import { cn } from "$lib/utils.js";
+	import type { TableOfContents, TocState } from "#lib/hooks/use-toc.svelte.js";
+	import { cn } from "#lib/utils.js";
 	import { tick } from "svelte";
 	import Tree from "./mobile-toc-tree.svelte";
 

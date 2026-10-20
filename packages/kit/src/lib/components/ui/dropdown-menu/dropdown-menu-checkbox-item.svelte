@@ -2,7 +2,7 @@
 	import { DropdownMenu as DropdownMenuPrimitive, type WithoutChildrenOrChild } from "bits-ui";
 	import Check from "phosphor-svelte/lib/Check";
 	import Minus from "phosphor-svelte/lib/Minus";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	let {

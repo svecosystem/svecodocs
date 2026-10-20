@@ -1,6 +1,6 @@
 <script lang="ts">
-	import SidebarTrigger from "$lib/components/ui/sidebar/sidebar-trigger.svelte";
-	import Search from "$lib/components/search/search.svelte";
+	import SidebarTrigger from "#lib/components/ui/sidebar/sidebar-trigger.svelte";
+	import Search from "#lib/components/search/search.svelte";
 	import SocialIcons from "../social-icons.svelte";
 	import ThemeDropdown from "./theme-dropdown.svelte";
 </script>

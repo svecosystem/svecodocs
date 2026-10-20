@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PrimitiveSVGAttributes } from "$lib/types.js";
+	import type { PrimitiveSVGAttributes } from "#lib/types.js";
 	let restProps: PrimitiveSVGAttributes = $props();
 </script>
 

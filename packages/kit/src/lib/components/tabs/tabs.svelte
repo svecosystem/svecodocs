@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Tabs from "$lib/components/ui/tabs/index.js";
+	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import type { Snippet } from "svelte";
-	import { Separator } from "$lib/components/ui/separator/index.js";
+	import { Separator } from "#lib/components/ui/separator/index.js";
 
 	let {
 		items,

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import PageHeader from "$lib/components/layout/page-header/page-header.svelte";
-	import Toc from "$lib/components/toc/toc.svelte";
+	import PageHeader from "#lib/components/layout/page-header/page-header.svelte";
+	import Toc from "#lib/components/toc/toc.svelte";
 	import type { Component, ComponentProps } from "svelte";
-	import type { Contributor, TOCEntry } from "$lib/types.js";
+	import type { Contributor, TOCEntry } from "#lib/types.js";
 	import Metadata from "../metadata.svelte";
 	import ContributorSection from "../contributors-section.svelte";
 

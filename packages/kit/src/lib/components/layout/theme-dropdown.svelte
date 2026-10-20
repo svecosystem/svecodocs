@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { setMode } from "mode-watcher";
-	import { buttonVariants } from "$lib/components/ui/button/index.js";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+	import { buttonVariants } from "#lib/components/ui/button/index.js";
+	import * as DropdownMenu from "#lib/components/ui/dropdown-menu/index.js";
 	import MoonStars from "phosphor-svelte/lib/MoonStars";
 
 	const modes = ["light", "dark", "system"] as const;

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { TableOfContents, TocState } from "$lib/hooks/use-toc.svelte.js";
-	import { cn } from "$lib/utils.js";
+	import type { TableOfContents, TocState } from "#lib/hooks/use-toc.svelte.js";
+	import { cn } from "#lib/utils.js";
 	import Tree from "./toc-tree.svelte";
 
 	let {

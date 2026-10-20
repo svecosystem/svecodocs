@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Tabs from "$lib/components/ui/tabs/index.js";
+	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import type { Snippet } from "svelte";
 
 	let { value, children }: { value: string; children?: Snippet } = $props();

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { ModeWatcher } from "mode-watcher";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import DocsSidebar from "$lib/components/layout/docs-sidebar.svelte";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
+	import DocsSidebar from "#lib/components/layout/docs-sidebar.svelte";
 	import type { Snippet } from "svelte";
-	import type { Navigation } from "$lib/types.js";
+	import type { Navigation } from "#lib/types.js";
 	import Header from "./header.svelte";
 	import Footer from "./footer.svelte";
 
